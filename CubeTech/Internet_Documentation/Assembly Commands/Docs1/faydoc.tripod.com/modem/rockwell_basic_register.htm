@@ -1,0 +1,2103 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Rockwell S Register definitions</title></head>
+<body background="images/background_item.jpg"><!--'"</title></head>-->
+<script type="text/javascript">
+////// Compete /////////////////////
+__compete_code = '667f89f26d96c30e99728fe6a608804d';
+(function () {
+    var s = document.createElement('script'),
+        d = document.getElementsByTagName('head')[0] ||
+            document.getElementsByTagName('body')[0],
+        t = 'https:' == document.location.protocol ? 
+            'https://c.compete.com/bootstrap/' : 
+            'http://c.compete.com/bootstrap/';
+    s.src = t + __compete_code + '/bootstrap.js';
+    s.type = 'text/javascript';
+    s.async = 'async'; 
+    if (d) { d.appendChild(s); }
+})();
+
+
+////// Quantcast  /////////////////////
+function channValidator(chann) {
+    return (typeof(chann) == 'string' && chann != '');
+}
+
+function lycosQuantcast(){
+    var lb = "";
+    if(typeof(cm_host) !== 'undefined' && channValidator(cm_host)){
+        lb += cm_host.split('.')[0] + '.';
+    }
+
+    if(typeof(cm_taxid) !== 'undefined' && channValidator(cm_taxid)){
+        lb += cm_taxid;
+        lb = lb.replace('/','');
+    } else {
+        lb = lb.replace('.','');
+    }
+    return lb;
+}
+
+var _qevents = _qevents || [];
+
+(function() {
+    var elem = document.createElement('script');
+    elem.src = (document.location.protocol == "https:" ? "https://secure" :"http://edge") + ".quantserve.com/quant.js";
+    elem.async = true;
+    elem.type = "text/javascript";
+    var scpt = document.getElementsByTagName('script')[0];
+    scpt.parentNode.insertBefore(elem, scpt);
+})();
+
+_qevents.push({
+    qacct:"p-6eQegedn62bSo",
+    labels:lycosQuantcast()
+});
+
+////// OwnerIQ  /////////////////////
+var __oiq_pct = 50;
+if( __oiq_pct>=100 || Math.floor(Math.random()*100/(100-__oiq_pct)) > 0 ) {
+    var _oiqq = _oiqq || [];
+    _oiqq.push(['oiq_addPageBrand', 'Lycos']);
+    _oiqq.push(['oiq_addPageCat', 'Internet > Websites']);
+    _oiqq.push(['oiq_addPageLifecycle', 'Intend']);
+    _oiqq.push(['oiq_doTag']);
+
+    (function() {
+        var oiq = document.createElement('script'); oiq.type = 'text/javascript'; oiq.async = true;
+        oiq.src = document.location.protocol + '//px.owneriq.net/stas/s/lycosn.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(oiq, s);
+    })();
+}
+
+
+
+/////// Google Analytics ////////////
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-21402695-19']);
+_gaq.push(['_setDomainName', 'tripod.com']);
+_gaq.push(['_setCustomVar', 1, 'member_name', 'faydoc', 3]);
+_gaq.push(['_trackPageview']);
+(function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+
+/////// Lycos Initialization ////////////
+function getReferrer() {
+    // Reads the referrer out of the cookie, if available.
+    var all= this.document.cookie;
+    if (all== '') return false;
+    var cookie_name = 'REFERRER=';
+    var start = all.lastIndexOf(cookie_name);
+    if (start == -1) return false;  // referrer URL not found.
+    start += cookie_name.length;
+    var end = all.indexOf(';', start);
+    if (end == -1) end = all.length;
+    return all.substring(start, end);
+}
+function getQuery() {
+    // Get the referrer search query from cookie, if available.
+    var rfr = getReferrer();
+    if (rfr == '') return false;
+    var q = extractQuery(rfr, 'yahoo.com', 'p=');
+    if (q) return q;
+    q = extractQuery(rfr, '', 'q=');
+    return q ? q : "";
+}
+function extractQuery(full, site, q_param) {
+    var start = full.lastIndexOf(site);
+    if (start == -1) return false;
+    start = full.lastIndexOf(q_param);
+    if (start == -1) return false;
+    start += q_param.length;
+    var end = full.indexOf('&', start);
+    if (end == -1) end = full.length;
+    return unescape(full.substring(start, end)).split(" ").join("+");
+}
+
+function generateHref(atag, template){
+    atag.href=template.replace('_MYURL_', window.location.href.replace('http://', '')).replace('_MYTITLE_', 'Check%20out%20this%20Tripod%20Member%20site!'); 
+}
+
+
+var lycos_ad = Array();
+var lycos_onload_timer;
+
+var cm_role = "live";
+var cm_host = "tripod.lycos.com";
+var cm_taxid = "/memberembedded";
+var tripod_member_name = "faydoc";
+var tripod_member_page = "faydoc/modem/rockwell_basic_register.htm";
+var tripod_ratings_hash = "1372261351:0b97895cb72f6cb63a56176f95567920";
+
+var lycos_ad_category = {"find_what":"reliv.com"};
+
+var lycos_ad_remote_addr = "99.159.74.223";
+var lycos_ad_www_server = "www.tripod.lycos.com";
+var lycos_ad_track_small = "http://members.tripod.com/adm/img/common/ot_smallframe.gif?rand=215825";
+var lycos_ad_track_served = "http://members.tripod.com/adm/img/common/ot_adserved.gif?rand=215825";
+var lycos_search_query = getQuery();
+
+
+////// Criteo /////////////////////
+var cto_conf = { a:true, i: "294", c:"img", kw: "" } ;
+(function (){
+    var c = document.createElement("script"); c.type = "text/javascript"; c.async = true;
+    c.src = "http://members.tripod.com/adm/partner/criteo_ld_kw.js";
+    var s = document.getElementsByTagName("body")[0]; s.appendChild(c);
+})(); 
+
+</script>
+
+<script type="text/javascript" src="http://scripts.lycos.com/catman/init.js"></script>
+<script type="text/javascript"> 
+
+(function(isV) {
+    if (!isV) {
+        return;
+    }
+
+    //this.lycos_search_query = lycos_get_search_referrer();
+    var adMgr = new AdManager();
+    var lycos_prod_set = adMgr.chooseProductSet();
+    var slots = ["leaderboard", "leaderboard2", "toolbar_image", "toolbar_text", "smallbox", "top_promo", "footer2"];
+    var adCat = this.lycos_ad_category;
+    adMgr.setForcedParam('page', (adCat && adCat.dmoz) ? adCat.dmoz : 'member');
+
+    if (this.lycos_search_query) {
+        adMgr.setForcedParam("keyword", this.lycos_search_query);
+    } 
+    else if (adCat && adCat.find_what) {
+        adMgr.setForcedParam('keyword', adCat.find_what);
+    }
+
+    for (var s in slots) {
+        var slot = slots[s];
+        if (adMgr.isSlotAvailable(slot)) {
+            this.lycos_ad[slot] = adMgr.getSlot(slot);
+        }
+    }
+
+    adMgr.renderHeader();
+    adMgr.renderFooter();
+}((function() {
+    var w = 0, h = 0, minimumThreshold = 300;
+    if (top == self) {
+        return true;
+    }
+
+    if (typeof(window.innerWidth) == 'number' ) {
+        w = window.innerWidth;
+        h = window.innerHeight;
+    }
+    else if (document.documentElement && (document.documentElement.clientWidth || document.documentElement.clientHeight)) {
+        w = document.documentElement.clientWidth;
+        h = document.documentElement.clientHeight;
+    }
+    else if (document.body && (document.body.clientWidth || document.body.clientHeight)) {
+        w = document.body.clientWidth;
+        h = document.body.clientHeight;
+    }
+
+    return ((w > minimumThreshold) && (h > minimumThreshold));
+}())));
+    
+window.onload = function() {
+    var f = document.getElementById("FooterAd");
+    var b = document.getElementsByTagName("body")[0];
+    b.appendChild(f);
+    f.style.display = "block";
+    document.getElementById('lycosFooterAdiFrame').src = '/adm/ad/footerAd.iframe.html';
+
+
+    // DOM Injection Ad
+    (function(isTrellix) {
+        var e = document.createElement('iframe');
+        e.style.border = '0';
+        e.style.margin = 0;
+        e.style.display = 'block';
+        e.style.cssFloat = 'right';
+        e.style.height = '254px';
+        e.style.overflow = 'hidden';
+        e.style.padding = 0;
+        e.style.width = '300px';
+
+        var getCommentNodes = function(regexPattern) {
+            var nodes = {};
+            var nodesA = [];
+            var preferredNodesList = ['a', 'c', 'b'];
+
+            (function getNodesThatHaveComments(n, pattern) {
+                if (n.hasChildNodes()) {
+                    if (n.tagName === 'IFRAME') {
+                        return false;
+                    }
+                    for (var i = 0; i < n.childNodes.length; i++) {
+                        if ((n.childNodes[i].nodeType === 8) && (pattern.test(n.childNodes[i].nodeValue))) {
+                            var areaName = pattern.exec(n.childNodes[i].nodeValue)[1];
+                            nodes[areaName] = n;
+                        }
+                        else if (n.childNodes[i].nodeType === 1) {
+                            getNodesThatHaveComments(n.childNodes[i], pattern);
+                        }
+                    }
+                }
+            }(document.body, regexPattern));
+
+            for (var i in preferredNodesList) {
+                if (nodes[preferredNodesList[i]]) {
+                    if (nodes[preferredNodesList[i]].parentNode.parentNode.parentNode.parentNode) {
+                        nodesA.push(nodes[preferredNodesList[i]].parentNode.parentNode.parentNode.parentNode);
+                    }
+                }
+            }
+
+            return nodesA;
+        }
+
+        var properNode = null;
+        var areaNodes = getCommentNodes(new RegExp('^area Type="area_(\\w+)"'));
+        for (var i = 0; i < areaNodes.length; i++) {
+            var a = parseInt(getComputedStyle(areaNodes[i]).width);
+            if ((a >= 300) && (a <= 400)) {
+                properNode = areaNodes[i];
+                break;
+            }
+        }
+
+        if ((isTrellix) && (properNode)) {
+            e.src = '/adm/ad/injectAd.iframe.html';
+            properNode.insertBefore(e, properNode.firstChild);
+        }
+        else {
+            e.src = '/adm/ad/sliderAd.iframe.html';
+            var sliderBlock = document.getElementById('lyslider-adblock-wrapper');
+            var sliderHolder = document.getElementById('lyslider-adblock-holder');
+            var sliderClose = document.getElementById('lyslider-adblock-close');
+            sliderBlock.style.display = 'block';
+
+            sliderClose.onclick = function() {
+                sliderBlock.parentNode.removeChild(sliderBlock);
+                return false;
+            }
+
+            var iframeOnload = function() {
+                setTimeout((function sliiide() {
+                    var s = (window.getComputedStyle) ? parseInt(getComputedStyle(sliderHolder).right) : parseInt(sliderHolder.currentStyle.right);
+                    if (s <= 0) {
+                        sliderHolder.style.right = (s + 6) + 'px';
+                        setTimeout(sliiide, 10);
+                    }
+                    else {
+                        sliderHolder.style.right = '0px';
+                        sliderClose.style.display = 'block';
+                    }
+                }), 1000);
+            }
+
+            if (e.attachEvent) {
+                e.attachEvent('onload', iframeOnload);
+            }
+            else {
+                e.addEventListener('load', iframeOnload, false);
+            }
+
+            sliderHolder.insertBefore(e, sliderHolder.firstChild);
+        }
+    }(document.isTrellix));
+
+}
+
+
+
+</script>
+<style>
+	#body .adCenterClass{margin:0 auto}
+</style>
+
+<div id="tb_container" style="background:#DFDCCF; border-bottom:1px solid #393939; position:relative; z-index:999999999!important">
+    <div id="tb_ad" class="adCenterClass" style="display:block!important; overflow:hidden; width:916px;">
+    <a href="http://adtrack.ministerial5.com/clicknew/?a=637394" title="build your own website at Tripod.com" style="float:left; width:186px; border:0">
+    	<img src="http://ly.lygo.com/ly/tpSite/images/freeAd2.jpg" alt="Make your own free website on Tripod.com" style="border:0; display:block" />
+    </a> 
+        <div id="ad_container" style="display:block!important; float:left; width:728px ">
+        <script type="text/javascript">document.write(lycos_ad['leaderboard']);</script>
+        </div>
+    </div>
+</div>
+
+<!-- ///////////////////////////////////// -->
+<div id="lyslider-adblock-wrapper" style="display:none; height:300px; overflow:hidden; position:absolute; right:0; top:150px; width:320px; z-index:99999999; ">
+<div id="lyslider-adblock-holder" style="background-color:#888; height:250px; margin-bottom:25px; padding:4px; position:absolute; right:-320px; top:10px; width:300px; ">
+<a id="lyslider-adblock-close" href="#" style="background-color:#222; bottom:-19px; color:#fff; display:block; font:10px Arial, Helvetica, Sans-serif; padding:4px; position:absolute; right:0; text-decoration:none; z-index:9999999999">Close Ad</a>
+</div>
+</div>
+
+
+<div id="FooterAd" style="background:#DFDCCF; border-top:1px solid #393939; clear:both; display:none; width:100%!important; position:relative; z-index:999999!important; height:90px!important"> 
+	<div class="adCenterClass" style="display:block!important; overflow:hidden; width:916px;">
+	<a href="http://adtrack.ministerial5.com/clicknew/?a=637394" title="build your own website at Tripod.com" style="float:left; display:block; width:186px; border:0">
+    	<img src="http://ly.lygo.com/ly/tpSite/images/freeAd2.jpg" alt="Make your own free website on Tripod.com" style="border:0; display:block; " />
+    </a> 
+        <div id="footerAd_container" style="display:block!important; float:left; width:728px">
+        <iframe id="lycosFooterAdiFrame" style="border:0; display:block; float:left; height:96px; overflow:hidden; padding:0; width:750px"></iframe>
+        <!-- <script type="text/javascript">document.write(lycos_ad['leaderboard2']);</script> -->
+        </div>
+	</div>
+</div>
+<noscript>
+ <img src="http://members.tripod.com/adm/img/common/ot_noscript.gif?rand=215825" alt="" width="1" height="1" />
+ <!-- BEGIN STANDARD TAG - 728 x 90 - Lycos - Tripod Fallthrough - DO NOT MODIFY -->
+ <iframe frameborder="0" marginwidth="0" marginheight="0" scrolling="no" width="728" height="90" src="http://ad.yieldmanager.com/st?ad_type=iframe&amp;ad_size=728x90&amp;section=209094"></iframe>
+ <!-- END TAG -->
+</noscript>
+
+<!-- Start Ybrant -->
+<img src="http://ad.yieldmanager.com/pixel?id=1901600&t=2" width="1" height="1" />
+<!--   End Ybrant -->
+
+<!-- Start Datonics -->
+<script type="text/javascript" src="http://ads.pro-market.net/ads/scripts/site-132783.js"></script>
+<!--   End Datonics -->
+
+<!-- Start Chango -->
+<script type="text/javascript">
+    var __cho__ = {"pid":1694};
+    (function() {
+        var c = document.createElement('script');
+        c.type = 'text/javascript';
+        c.async = true;
+        c.src = document.location.protocol + '//cc.chango.com/static/o.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(c, s);
+    })();
+</script>
+<!--   End Chango -->
+
+
+<table border="3" cellpadding="10" cellspacing="3">
+  <tr>
+    <td><!--webbot bot="Navigation" S-Type="global" S-Orientation="horizontal"
+      S-Rendering="graphics" B-Include-Home="FALSE" B-Include-Up="TRUE" U-Page="/W:/doc/modem/rockwell_basic_register.htm"
+      S-Target startspan --><nobr>[&nbsp;<a href="index.htm" target="">Up</a>&nbsp;]</nobr> <nobr>[&nbsp;<a href="http://www.fay.naverex.kiev.ua/docs/index.htm" target="">Docs&nbsp;Home</a>&nbsp;]</nobr><!--webbot bot="Navigation" endspan i-checksum="63939" -->
+    </td>
+    <td align="center">
+      <h1><font color="#800000"><!--webbot bot="Navigation" S-Type="banner"
+      S-Rendering S-Orientation B-Include-Home B-Include-Up U-Page="/W:/doc/modem/rockwell_basic_register.htm" S-Target startspan -->Rockwell S Register definitions<!--webbot bot="Navigation" endspan i-checksum="29336" -->
+      </font></h1>
+    </td>
+    <td align="right"><!--webbot bot="Navigation" S-Type="arrows"
+      S-Orientation="horizontal" S-Rendering="graphics" B-Include-Home="FALSE"
+      B-Include-Up="FALSE" U-Page="/W:/doc/modem/rockwell_basic_register.htm" S-Target startspan --><nobr>[&nbsp;<a href="rockwell_basic_commands.htm" target="">Back</a>&nbsp;]</nobr> <nobr>[&nbsp;<a href="rockwell_rcv336_commands.htm" target="">Next</a>&nbsp;]</nobr><!--webbot bot="Navigation" endspan i-checksum="9346" -->
+    </td>
+  </tr>
+</table>
+<hr>
+<table border="1" cellpadding="5" cellspacing="0">
+<tr>
+<td align="center">
+<h3>Register</h3>
+</td>
+<td align="center">
+<h3>Name</h3>
+</td>
+<td align="center">
+<h3>Default</h3>
+</td>
+<td align="center">
+<h3>Range</h3>
+</td>
+<td align="center">
+<h3>Description</h3>
+</td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="0"></a>S0</b></font></td>
+<td><b>Number of Rings to Auto-Answer</b>.</td>
+<td align="center">0</td>
+<td align="center">0 - 255</td>
+<td><i>Sets
+the number of the rings required before the the modem automatically
+answers a call. Setting this register to zero disables auto-answer mode.</i></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="1"></a>S1</b></font></td>
+<td><b>Ring Counter</b></td>
+<td align="center">0</td>
+<td align="center">0 - 255</td>
+<td><a href="#1">S1</a><i> is incremented each time the
+modem detects a ring signal on the telephone line. </i><a href="#1">S1</a>
+<i>is
+cleared if no rings occur over an eight second interval.</i></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="2"></a>S2</b></font></td>
+<td><b>Escape Character</b></td>
+<td align="center">43 (+)</td>
+<td align="center">0 - 255, ASCII decimal</td>
+<td><a href="#2">S2</a><i> holds the decimal value of the
+ASCII character used as the escape character. The default value
+corresponds to an ASCII '+'. A value over 127 disables the escape process,
+i.e., no escape character will be recognized.</i></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="3"></a>S3</b></font></td>
+<td><b>Carriage Return Character</b></td>
+<td align="center">13 (Carriage Return)</td>
+<td align="center">0 - 127, ASCII decimal</td>
+<td><i>Sets
+the command line and result code terminator character. Pertains to
+asynchronous operation only.</i></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="4"></a>S4</b></font></td>
+<td><b>Line Feed Character</b></td>
+<td align="center">10 (Line Feed)</td>
+<td align="center">0 - 127, ASCII decimal</td>
+<td><i>Sets
+the character recognized as a line feed. Pertains to asynchronous
+operation only. The Line Feed control character is output after the
+Carriage Return control character if verbose result codes are used.</i></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="5"></a>S5</b></font></td>
+<td><b>Backspace Character</b></td>
+<td align="center">8 (Backspace)</td>
+<td align="center">0 - 127, ASCII decimal</td>
+<td><i>Sets
+the character recognized as a backspace. Pertains to asynchronous
+operation only. The modem will not recognize the Backspace character if it
+is set to a value that is greater than 32 ASCII. This character can be
+used to edit a command line. When the echo command is enabled, the modem
+echoes back the local DTE the Backspace character, an ASCII space
+character and a second Backspace character; this means a total of three
+characters are transmitted each time the modem processes the Backspace
+character.</i></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="6"></a>S6</b></font></td>
+<td><b>Wait Time for Dial Tone Before Blind
+Dialing, or After W Dial Modifier (W-Class Models)</b></td>
+<td align="center">2</td>
+<td align="center">2 - 255 seconds</td>
+<td>
+<ol>
+<li><i>Sets the length of time, in seconds,
+that the modem will wait before starting to dial after going off-hook
+when blind dialing. This operation, however, may be affected by some
+ATX options according to country restrictions. The Wait for Dial
+Tone call progress feature (W dial modifier in the dial string)
+will override the value register </i><a href="#6">S6</a>.
+<li><i>For W-class models, </i><a href="#6">S6</a><i>
+sets the length of time, in seconds, that the modem will wait for dial
+tone when encountering a W dial modifier before returning
+NO DIAL TONE result code.</i></li>
+</ol>
+<p><i>The modem always pauses for a minimum
+of 2 seconds, even if the value of </i><a href="#6">S6</a><i> is less than 2
+seconds.</i></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="7"></a>S7</b></font></td>
+<td><b>Wait Time For Carrier After Dial, For
+Silence, or For Dial Tone After W Dial Modifier (US Models)</b></td>
+<td align="center">50</td>
+<td align="center">1 - 255 seconds</td>
+<td>
+<ol>
+<li><i>Sets the length of time, in
+seconds, that the modem will wait for carrier before hanging up. The
+timer is started when the modem finishes dialing (originate), or 2
+seconds after going off-hook (answer). In originate mode, the timer is
+reset upon detection of answer tone if allowed by country
+restrictions.</i>
+<li><i>Sets the length of time, in seconds,
+that modem will wait for silence when encountering the @ dial modifier
+before continuing with the next dial string parameter.</i>
+<li><i>For US models, </i><a href="#7">S7</a> <i>sets
+the length of time, in seconds, that the modem will wait for dial tone
+when encountering a W dial modifier before continuing with
+the next dial string parameter.</i></li>
+</ol>
+</td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="8"></a>S8</b></font></td>
+<td><b>Pause Time For Dial Delay</b></td>
+<td align="center">2</td>
+<td align="center">0 - 255 seconds</td>
+<td><i>Sets
+the time, in seconds, that the modem must pause when the ,
+dial modifier is encountered in the dial string.</i></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="9"></a>S9</b></font></td>
+<td><b>Carrier Detect Response Time</b></td>
+<td align="center">6<br>
+(0.6 second)</td>
+<td align="center">1 - 255 tenth of a second</td>
+<td><i>Sets the time, in tenth of a
+second, that the carrier must be present before the modem considers it
+valid and turn on RLSD. As this time is increased, there is less chance to
+detect a false carrier due to noise from the telephone line.</i></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="10"></a>S10</b></font></td>
+<td><b>Lost Carrier To Hang Up Delay</b></td>
+<td align="center">14<br>
+(1.4 seconds)</td>
+<td align="center">1 - 255 tenth of a second</td>
+<td><i>Sets
+the length of time, in tenth of a second, that the modem waits before
+hanging up after a loss of carrier. This allows for a temporary carrier
+loss without causing the local modem to disconnect. When register </i><a href="#10">S10</a><i>
+is set to 255, the modem functions as if a carrier is always present.</i>
+<p><i>The actual interval the modem waits
+before disconnecting is the value in register </i><a href="#10">S10</a><i> minus the
+value in the register </i><a href="#9">S9</a><i>. Therefore, the </i><a href="#10">S10</a><i>
+value must be greater than the </i><a href="#9">S9</a><i> value or else the modem
+disconnects before if recognize the carrier.</i></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="11"></a>S11</b></font></td>
+<td><b>DTMF Tone Duration</b></td>
+<td align="center">95<br>
+(95 milliseconds)</td>
+<td align="center">50 - 255 milliseconds</td>
+<td><i>Set
+the duration of tones in DTMF dialing (US models only). This value has no
+effect on pulse dialing.</i>
+<br>
+<i>For
+W-class models, this parameter is a country parameter loaded by
+ConfigurACE.</i></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="12"></a>S12</b></font></td>
+<td><b>Escape Prompt Delay (EPD)</b></td>
+<td align="center">50<br>
+(1 second)</td>
+<td align="center">0 - 255 1/50 of a second</td>
+<td><i>Defines the maximum period, in fiftieths
+of a second, allowed between receipt of the last character of the three
+escape character sequence from the DTE and sending of the OK result code
+to DTE. If any characters are detected during this time, the OK will not
+be sent. Note that sending of the OK result code does not affect entry
+into command mode.</i></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="13"></a>S13</b></font></td>
+<td><b>Reserved</b></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="14"></a>S14</b></font></td>
+<td><b>General Bit Mapped Option Status</b></td>
+<td align="center">138 (8Ah) (10001010b)</td>
+<td align="center">-</td>
+<td><i>Indicates the status of command options.</i>
+<table border="1" cellpadding="3" cellspacing="0">
+<tr>
+<td><b>Bit 0</b></td>
+<td>This Bit is ignored.</td>
+</tr>
+<tr>
+<td><b>Bit 1</b></td>
+<td>Command echo (<a href="rockwell_basic_commands.htm#E0">En</a>)<br>
+0 (<a href="rockwell_basic_commands.htm#E0">E0</a>) - Disabled<br>
+1 (<a href="rockwell_basic_commands.htm#E1">E1</a>) - Enabled <font color="#FF00FF">(default)</font></td>
+</tr>
+<tr>
+<td><b>Bit 2</b></td>
+<td>Quiet mode (<a href="rockwell_basic_commands.htm#Q0">Qn</a>)<br>
+0 (<a href="rockwell_basic_commands.htm#Q0">Q0</a>) - Send result codes <font color="#FF00FF">(default)</font><br>
+1 (<a href="rockwell_basic_commands.htm#Q1">Q1</a>) - Do not send result code</td>
+</tr>
+<tr>
+<td><b>Bit 3</b></td>
+<td>Result codes (<a href="rockwell_basic_commands.htm#V0">Vn</a>)<br>
+0 (<a href="rockwell_basic_commands.htm#V0">V0</a>) - Numeric<br>
+1 (<a href="rockwell_basic_commands.htm#V1">V1</a>) - Verbose <font color="#FF00FF">(default)</font></td>
+</tr>
+<tr>
+<td><b>Bit 4</b></td>
+<td>Reserved</td>
+</tr>
+<tr>
+<td><b>Bit 5</b></td>
+<td>Tone (<a href="rockwell_basic_commands.htm#T">T</a>) / Pulse (<a href="rockwell_basic_commands.htm#P">P</a>)<br>
+0 (<a href="rockwell_basic_commands.htm#T">T</a>) - Tone <font color="#FF00FF">(default)</font><br>
+1 (<a href="rockwell_basic_commands.htm#P">P</a>) - Pulse</td>
+</tr>
+<tr>
+<td><b>Bit 6</b></td>
+<td>Reserved</td>
+</tr>
+<tr>
+<td><b>Bit 7</b></td>
+<td>Originate / Answer<br>
+0 - Answer<br>
+1 - Originate <font color="#FF00FF">(default)</font></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="15"></a>S15</b></font></td>
+<td><b>Reserved</b></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="16"></a>S16</b></font></td>
+<td><b>General Bit
+Mapped Test Options Status</b></td>
+<td align="center">0</td>
+<td align="center">-</td>
+<td><i>Indicates
+the test in progress status.</i>
+<table border="1" cellpadding="3" cellspacing="0">
+<tr>
+<td><b>Bit 0</b></td>
+<td>Local analog loopback<br>
+0 - Disabled <font color="#ff00ff">(default)</font><br>
+1 - Enabled (<a href="rockwell_basic_commands.htm#&amp;T1">&amp;T1</a>)</td>
+</tr>
+<tr>
+<td><b>Bit 1</b></td>
+<td>Not used</td>
+</tr>
+<tr>
+<td><b>Bit 2</b></td>
+<td>Local digital loopback<br>
+0 - Disabled <font color="#ff00ff">(default)</font><br>
+1 - Enabled (<a href="rockwell_basic_commands.htm#&amp;T3">&amp;T3</a>)</td>
+</tr>
+<tr>
+<td><b>Bit 3</b></td>
+<td>Remote digital loopback (RDL) status<br>
+0 - Modem not in RDL <font color="#ff00ff">(default)</font><br>
+1 - RDL in progress</td>
+</tr>
+<tr>
+<td><b>Bit 4</b></td>
+<td>RDL requested (<a href="rockwell_basic_commands.htm#&amp;T6">&amp;T6</a>)<br>
+0 - RDL not requested <font color="#ff00ff">(default)</font><br>
+0 - RDL requested (<a href="rockwell_basic_commands.htm#&amp;T6">&amp;T6</a>)</td>
+</tr>
+<tr>
+<td><b>Bit 5</b></td>
+<td>RDL with self test<br>
+0 - Disabled <font color="#ff00ff">(default)</font><br>
+1 - Enabled (<a href="rockwell_basic_commands.htm#&amp;T7">&amp;T7</a>)</td>
+</tr>
+<tr>
+<td><b>Bit 6</b></td>
+<td>Local analog loopback (LAL) with self
+test<br>
+0 - Disabled <font color="#ff00ff">(default)</font><br>
+1 - Enabled (<a href="rockwell_basic_commands.htm#&amp;T8">&amp;T8</a>)</td>
+</tr>
+<tr>
+<td><b>Bit 7</b></td>
+<td>Not used</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="17"></a>S17</b></font></td>
+<td><b>Reserved</b></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="18"></a>S18</b></font></td>
+<td><b>Test
+Timer</b></td>
+<td align="center">0</td>
+<td align="center">0 - 255 seconds</td>
+<td><i>Set the length of time, in seconds, that
+the modem conducts a test (commanded by </i><a href="rockwell_basic_commands.htm#&amp;T0">&amp;Tn</a><i>) before
+returning to the command mode. If this register value is zero, the test
+will not automatically terminate; the test must be terminated from the
+command mode by issuing an </i><a href="rockwell_basic_commands.htm#&amp;T0">&amp;T0</a> <i>or </i><a href="rockwell_basic_commands.htm#H0">H</a> <i>command.
+When </i><a href="#18">S18</a> <i>is non-zero, the modem returns the OK message upon
+test termination.</i></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="19"></a>S19</b></font></td>
+<td><b>AutoSync Bit
+Mapped Options</b></td>
+<td align="center">0</td>
+<td align="center">-</td>
+<td><i>Defines the options for AutoSync
+operation (see </i><a href="rockwell_basic_commands.htm#&amp;Q4">&amp;Q4</a> <i>command). </i><a href="#19">S19</a> <i>must be
+set to desired value before </i><a href="rockwell_basic_commands.htm#&amp;Q4">&amp;Q4</a> <i>is issued.</i>
+<table border="1" cellpadding="3" cellspacing="0">
+<tr>
+<td><b>Bit 0</b></td>
+<td>Reserved</td>
+</tr>
+<tr>
+<td><b>Bit 1</b></td>
+<td>BSC/HDLC format selected<br>
+0 - BSC selected <font color="#ff00ff">(default)</font><br>
+1 - HDLC selected</td>
+</tr>
+<tr>
+<td><b>Bit 2</b></td>
+<td>Address detection enable/disable<br>
+0 - Disabled <font color="#ff00ff">(default)</font><br>
+1 - Enabled</td>
+</tr>
+<tr>
+<td><b>Bit 3</b></td>
+<td>NRZI/NZI coding select<br>
+0 - NRZI <font color="#ff00ff">(default)</font><br>
+1 - NZI</td>
+</tr>
+<tr>
+<td><b>Bit 4</b></td>
+<td>Idle indicator select<br>
+0 - Mark idle <font color="#ff00ff">(default)</font><br>
+1 - Flag or sync idle</td>
+</tr>
+<tr>
+<td><b>Bit 5</b></td>
+<td>Reserved</td>
+</tr>
+<tr>
+<td><b>Bit 6</b></td>
+<td>Reserved</td>
+</tr>
+<tr>
+<td><b>Bit 7</b></td>
+<td>Reserved</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="20"></a>S20</b></font></td>
+<td><b>AutoSync
+HDLC Address or BSC Sync Character</b></td>
+<td align="center">0</td>
+<td align="center">0 - 255</td>
+<td><i>Defines the HDLC address</i> (<a href="#19">S19Bit 1 = 1 </a>) <i> or BSC Sync Character
+</i> (<a href="#19">S19 Bit 1 = 0</a>) <i> for
+AutoSync operation</i> (see <a href="rockwell_basic_commands.htm#&amp;Q4">&amp;Q4</a> command).
+<a href="#20">S20</a><i>
+must be set to the desired value before </i><a href="rockwell_basic_commands.htm#&amp;Q4">&amp;Q4</a><i> is issued.</i></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="21"></a>S21</b></font></td>
+<td><b>V.24/General Bit
+Mapped Option Status</b></td>
+<td align="center">52 (34h) (00110100b)</td>
+<td align="center">-</td>
+<td><i>Indicates
+the status of command options.</i>
+<table border="1" cellpadding="3" cellspacing="0" height="333">
+<tr>
+<td height="57"><b>Bit 0</b></td>
+<td height="57" width="100%">Set by <a href="rockwell_basic_commands.htm#&amp;J0">&amp;Jn</a>
+command but ignored otherwise.<br>
+0 - <a href="rockwell_basic_commands.htm#&amp;J0">&amp;J0</a> <font color="#ff00ff">(default)</font><br>
+1 - <a href="rockwell_basic_commands.htm#&amp;J1">&amp;J1</a></td>
+</tr>
+<tr>
+<td height="57"><b>Bit 1</b></td>
+<td height="57" width="100%">CTS behavior (<a href="rockwell_basic_commands.htm#&amp;R0">&amp;Rn</a>)<br>
+0 - CTS tracks RTS (<a href="rockwell_basic_commands.htm#&amp;R0">&amp;R0</a>)<br>
+1 - CTS always on (<a href="rockwell_basic_commands.htm#&amp;R1">&amp;R1</a>) <font color="#ff00ff">(default)</font></td>
+</tr>
+<tr>
+<td height="26"><b>Bit 2</b></td>
+<td height="32" rowspan="2" width="100%">RLSD (DCD)
+behavior (<a href="rockwell_basic_commands.htm#&amp;C0">&amp;Cn</a>)<br>
+0 - <a href="rockwell_basic_commands.htm#&amp;C0">&amp;C0</a> selected<br>
+1 - <a href="rockwell_basic_commands.htm#&amp;C1">&amp;C1</a> selected <font color="#ff00ff">(default)</font></td>
+</tr>
+<tr>
+<td height="6"><b>Bit 3</b></td>
+</tr>
+<tr>
+<td height="22"><b>Bit 4</b></td>
+<td height="22" width="100%">DTR behavior (<a href="rockwell_basic_commands.htm#&amp;D0">&amp;Dn</a>)<br>
+0 - <a href="rockwell_basic_commands.htm#&amp;D0">&amp;D0</a> selected<br>
+1 - <a href="rockwell_basic_commands.htm#&amp;D1">&amp;D1</a> selected<br>
+2 - <a href="rockwell_basic_commands.htm#&amp;D2">&amp;D2</a> selected <font color="#ff00ff">(default)</font><br>
+3 - <a href="rockwell_basic_commands.htm#&amp;D3">&amp;D3</a> selected</td>
+</tr>
+<tr>
+<td height="57"><b>Bit 5</b></td>
+<td height="57" width="100%">RLSD (DCD) behavior (<a href="rockwell_basic_commands.htm#&amp;C0">&amp;Cn</a>)<br>
+0 - <a href="rockwell_basic_commands.htm#&amp;C0">&amp;C0</a> selected<br>
+1 - <a href="rockwell_basic_commands.htm#&amp;C1">&amp;C1</a> selected <font color="#ff00ff">(default)</font></td>
+</tr>
+<tr>
+<td height="22"><b>Bit 6</b></td>
+<td height="22" width="100%">DSR behavior (<a href="rockwell_basic_commands.htm#&amp;S0">&amp;Sn</a>)<br>
+0 - <a href="rockwell_basic_commands.htm#&amp;S0">&amp;S0</a> selected <font color="#ff00ff">(default)</font><br>
+1 - <a href="rockwell_basic_commands.htm#$S1">&amp;S1</a> selected</td>
+</tr>
+<tr>
+<td height="22"><b>Bit 7</b></td>
+<td height="22" width="100%">Long space disconnected (<a href="rockwell_basic_commands.htm#Y0">Yn</a>)<br>
+0 - <a href="rockwell_basic_commands.htm#Y0">Y0</a> <font color="#ff00ff">(default)</font><br>
+1 - <a href="rockwell_basic_commands.htm#Y1">Y1</a></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="22"></a>S22</b></font></td>
+<td><b>Speaker/Result Bit
+Mapped Option Status</b></td>
+<td align="center">117 (75h) (01110101b)</td>
+<td align="center">-</td>
+<td><i>Indicated
+the status of command options</i>
+<table border="1" cellpadding="3" cellspacing="0">
+<tr>
+<td><b>Bit 0</b></td>
+<td rowspan="2" width="100%">Speaker volume (<a href="rockwell_basic_commands.htm#L0">Ln</a>)<br>
+0 (<a href="rockwell_basic_commands.htm#L0">L0</a>) - Off<br>
+1 (<a href="rockwell_basic_commands.htm#L1">L1</a>) - Low <font color="#ff00ff">(default)</font><br>
+2 (<a href="rockwell_basic_commands.htm#L2">L2</a>) - Medium<br>
+3 (<a href="rockwell_basic_commands.htm#L3">L3</a>) - High</td>
+</tr>
+<tr>
+<td><b>Bit 1</b></td>
+</tr>
+<tr>
+<td><b>Bit 2</b></td>
+<td rowspan="2" width="100%">Speaker control (<a href="rockwell_basic_commands.htm#M0">Mn</a>)<br>
+0 (<a href="rockwell_basic_commands.htm#M0">M0</a>) - Disabled<br>
+1 (<a href="rockwell_basic_commands.htm#M1">M1</a>) - Off on carrier <font color="#ff00ff">(default)</font><br>
+2 (<a href="rockwell_basic_commands.htm#M2">M2</a>) - Always on</td>
+</tr>
+<tr>
+<td><b>Bit 3</b></td>
+</tr>
+<tr>
+<td><b>Bit 4</b></td>
+<td rowspan="3" width="100%">Limit result code<br>
+0 - <a href="rockwell_basic_commands.htm#X0">X0</a><br>
+4 - <a href="rockwell_basic_commands.htm#X1">X1</a><br>
+5 - <a href="rockwell_basic_commands.htm#X2">X2</a><br>
+6 - <a href="rockwell_basic_commands.htm#X3">X3</a><br>
+7 - <a href="rockwell_basic_commands.htm#X4">X4</a> <font color="#ff00ff">(default)</font></td>
+</tr>
+<tr>
+<td><b>Bit 5</b></td>
+</tr>
+<tr>
+<td><b>Bit 6</b></td>
+</tr>
+<tr>
+<td><b>Bit 7</b></td>
+<td width="100%">Reserved</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="23"></a>S23</b></font></td>
+<td><b>General Bit
+Mapped Options Status</b></td>
+<td align="center">62 (3Dh) (00111110b)</td>
+<td align="center">-</td>
+<td><i>Indicates
+the status of command options</i>
+<table border="1" cellpadding="3" cellspacing="0">
+<tr>
+<td><b>Bit 0</b></td>
+<td width="100%">Grant RDL<br>
+0 - RDL not allowed (<a href="rockwell_basic_commands.htm#&amp;T5">&amp;T5</a>) <font color="#ff00ff">(default)</font><br>
+1 - RDL allowed (<a href="rockwell_basic_commands.htm#&amp;T4">&amp;T4</a>)</td>
+</tr>
+<tr>
+<td><b>Bit 1</b></td>
+<td rowspan="3" width="100%">DTE Rate<br>
+0 - 0 - 300 bps<br>
+1 - 600 bps<br>
+2 - 1200 bps<br>
+3 - 2400 bps<br>
+4 - 4800 bps<br>
+5 - 9600 bps<br>
+6 - 19200 bps<br>
+7 -38400 bps or higher <font color="#ff00ff">(default)</font></td>
+</tr>
+<tr>
+<td><b>Bit 2</b></td>
+</tr>
+<tr>
+<td><b>Bit 3</b></td>
+</tr>
+<tr>
+<td><b>Bit 4</b></td>
+<td rowspan="2" width="100%">Assumed DTE parity<br>
+0 - even<br>
+1 - not used<br>
+2 - odd<br>
+3 - none <font color="#ff00ff">(default)</font></td>
+</tr>
+<tr>
+<td><b>Bit 5</b></td>
+</tr>
+<tr>
+<td><b>Bit 6</b></td>
+<td rowspan="2" width="100%">Guard tone (<a href="rockwell_basic_commands.htm#&amp;G0">&amp;Gn</a>)<br>
+0 - None (<a href="rockwell_basic_commands.htm#&amp;G0">&amp;G0</a>) <font color="#ff00ff">(default)</font><br>
+1 - None (<a href="rockwell_basic_commands.htm#&amp;G1">&amp;G1</a>)<br>
+2 - 1800 Hz (<a href="rockwell_basic_commands.htm#&amp;G2">&amp;G2</a>)</td>
+</tr>
+<tr>
+<td><b>Bit 7</b></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="24"></a>S24</b></font></td>
+<td><b>Sleep
+Inactivity Timer</b></td>
+<td align="center">0</td>
+<td align="center">0 - 255 seconds</td>
+<td><i>Sets the length of time, in
+seconds, that the modem will operate in normal mode with no detected
+telephone line or DTE line activity before entering low-power sleep mode.
+The timer is reset upon any DTE line or telephone line activity. If the </i><a href="#24">S24</a><i>
+value is zero, neither DTE line nor telephone inactivity will cause the
+modem to enter the sleep mode.</i></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="25"></a>S25</b></font></td>
+<td><b>Delay
+To DTR</b></td>
+<td align="center">5</td>
+<td align="center">0 - 255<br>
+(1 second for synchronous modes 1; 0.01 second otherwise)</td>
+<td><i>Sets
+the length of time that the modem will ignore DTR for talking the action
+specified by </i><a href="rockwell_basic_commands.htm#&amp;D0">&amp;Dn</a><i>. Its units are seconds for synchronous modes
+and one hundredths of a second for other modes.</i></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="26"></a>S26</b></font></td>
+<td><b>RTS
+to CTS Delay</b></td>
+<td align="center">1</td>
+<td align="center">0 - 255 hundredths of a
+second</td>
+<td><i>Set the time delay, in
+hundredths of a second, before the modem turns CTS ON after detecting an
+OFF-to-ON transition on RTS when </i><a href="rockwell_basic_commands.htm#&amp;R0">&amp;R0</a><i> is commanded.
+Pertains to synchronous operation only.</i></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="27"></a>S27</b></font></td>
+<td><b>Bit
+Mapped Option Status</b></td>
+<td align="center">73 (49h) (01001001b)</td>
+<td align="center">-</td>
+<td><i>Indicates
+the status of command options.</i>
+<table border="1" cellpadding="3" cellspacing="0">
+<tr>
+<td><b>Bit 0</b></td>
+<td rowspan="3" width="100%">Synchronous/asynchronous
+selection (<a href="rockwell_basic_commands.htm#&amp;M0">&amp;Mn</a>
+/ <a href="rockwell_basic_commands.htm#&amp;Q0">&amp;Qn</a>)<br>
+0 0 0 - <a href="rockwell_basic_commands.htm#&amp;M0">&amp;M0</a> or
+<a href="rockwell_basic_commands.htm#&amp;Q0">&amp;Q0</a><br>
+0 0 1 - <a href="rockwell_basic_commands.htm#&amp;M1">&amp;M1</a> or
+<a href="rockwell_basic_commands.htm#&amp;Q1">&amp;Q1</a><br>
+0 1 0 - <a href="rockwell_basic_commands.htm#&amp;M2">&amp;M2</a> or
+<a href="rockwell_basic_commands.htm#&amp;Q2">&amp;Q2</a><br>
+0 1 1 - <a href="rockwell_basic_commands.htm#&amp;M3">&amp;M3</a> or
+<a href="rockwell_basic_commands.htm#&amp;Q3">&amp;Q3</a><br>
+1 0 0 - <a href="rockwell_basic_commands.htm#&amp;Q4">&amp;Q4</a><br>
+1 0 1 - <a href="rockwell_basic_commands.htm#&amp;Q5">&amp;Q5</a> <font color="#ff00ff">(default)</font><br>
+1 1 0 - <a href="rockwell_basic_commands.htm#&amp;Q6">&amp;Q6</a></td>
+</tr>
+<tr>
+<td><b>Bit 1</b></td>
+</tr>
+<tr>
+<td><b>Bit 3</b></td>
+</tr>
+<tr>
+<td><b>Bit 2</b></td>
+<td width="100%">Leased line control (<a href="rockwell_basic_commands.htm#&amp;L0">&amp;Ln</a>)<br>
+0 - Dial up line control (<a href="rockwell_basic_commands.htm#&amp;L0">&amp;L0</a>) <font color="#ff00ff">(default)</font></td>
+</tr>
+<tr>
+<td><b>Bit 4</b></td>
+<td width="100%" rowspan="2">Internal
+clock selected (<a href="rockwell_basic_commands.htm#&amp;X0">&amp;Xn</a>)<br>
+0 - Internal clock (<a href="rockwell_basic_commands.htm#&amp;X0">&amp;X0</a>) <font color="#ff00ff">(default)</font><br>
+1 - External clock (<a href="rockwell_basic_commands.htm#&amp;X1">&amp;X1</a>)<br>
+2 - Slave clock (<a href="rockwell_basic_commands.htm#&amp;X2">&amp;X2</a>)</td>
+</tr>
+<tr>
+<td><b>Bit 5</b></td>
+</tr>
+<tr>
+<td><b>Bit 6</b></td>
+<td width="100%">CCITT/Bell mode select (<a href="rockwell_basic_commands.htm#B0">Bn</a>)<br>
+0 - CCITT mode (<a href="rockwell_basic_commands.htm#B0">B0</a>)<br>
+1 - Bell mode (<a href="rockwell_basic_commands.htm#B1">B1</a>) <font color="#ff00ff">(default)</font></td>
+</tr>
+<tr>
+<td><b>Bit 7</b></td>
+<td width="100%">Reserved</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="28"></a>S28</b></font></td>
+<td><b>Bit
+Mapped Option Status</b></td>
+<td align="center">0</td>
+<td align="center">-</td>
+<td><i>Indicates
+the status of command options.</i>
+<table border="1" cellpadding="3" cellspacing="0">
+<tr>
+<td><b>Bit 0</b></td>
+<td>Reserved</td>
+</tr>
+<tr>
+<td><b>Bit 1</b></td>
+<td>Reserved</td>
+</tr>
+<tr>
+<td><b>Bit 2</b></td>
+<td>Reserved <font color="#FF00FF"> (always 0)</font></td>
+</tr>
+<tr>
+<td><b>Bit 3</b></td>
+<td rowspan="2">Pulse
+dialing (<a href="rockwell_basic_commands.htm#&amp;P0">&amp;Pn</a>)<br>
+0 - 39% - 61% make/break ratio at 10 pulses per second (<a href="rockwell_basic_commands.htm#&amp;P0">&amp;P0</a>)
+<font color="#ff00ff">(default)</font><br>
+1 - 33% - 67% make/break ratio at 10 pulses per second (<a href="rockwell_basic_commands.htm#&amp;P1">&amp;P1</a>)<br>
+2 - 39% - 61% make/break ratio at 20 pulses per second (<a href="rockwell_basic_commands.htm#&amp;P2">&amp;P2</a>)<br>
+3 - 33% - 67% make/break ratio at 20 pulses per second (<a href="rockwell_basic_commands.htm#&amp;P3">&amp;P3</a>)</td>
+</tr>
+<tr>
+<td><b>Bit 4</b></td>
+</tr>
+<tr>
+<td><b>Bit 5</b></td>
+<td>Reserved</td>
+</tr>
+<tr>
+<td><b>Bit 6</b></td>
+<td>Reserved</td>
+</tr>
+<tr>
+<td><b>Bit 7</b></td>
+<td>Reserved</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="29"></a>S29</b></font></td>
+<td><b>Flash
+Dial Modifier Time</b></td>
+<td align="center">70 (700 ms)</td>
+<td align="center">0 - 255<br>
+10 ms interval</td>
+<td><i>Sets
+the length of time, in units of 10 ms, that the modem will go on-hook when
+it encounters the flash (!) dial modifier in the dial string. The time can
+be limited as it is a country dependent parameter.</i></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="30"></a>S30</b></font></td>
+<td><b>Disconnect
+Inactivity Timer</b></td>
+<td align="center">0 (disabled)</td>
+<td align="center">0 - 255 tens of seconds (0 -
+2550 seconds)</td>
+<td><i>Sets
+the length of time, in tens of seconds, that the modem will stay online
+before disconnected when no data is sent or received. In error-correction
+mode, any data transmitted or received will reset the timer. In other
+modes, any data transmitted will reset the timer. The timer is inoperative
+in synchronous mode.</i></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="31"></a>S31</b></font></td>
+<td><b>Bit
+Mapped Option Status</b></td>
+<td align="center">194 (C2h) (11000010b)</td>
+<td align="center">-</td>
+<td><i>Indicates
+the status of command options.</i>
+<table border="1" cellpadding="3" cellspacing="0">
+<tr>
+<td><b>Bit 0</b></td>
+<td>Single line connect
+message enable/disable (<a href="rockwell_basic_commands.htm#/V0">\Vn</a>)<br>
+0 - Messages controlled by <a href="#95">S95</a>, <a href="rockwell_basic_commands.htm#W0">Wn</a> and
+<a href="rockwell_basic_commands.htm#V0">Vn</a> (<a href="rockwell_basic_commands.htm#/V0">\V0</a>)
+<font color="#ff00ff">(default)</font><br>
+1 - Single line connect message (<a href="rockwell_basic_commands.htm#/V1">\V1</a>)</td>
+</tr>
+<tr>
+<td><b>Bit 1</b></td>
+<td>Auto line speed detection
+(<a href="rockwell_basic_commands.htm#N0">Nn</a>)<br>
+0 - Disabled (<a href="rockwell_basic_commands.htm#N0">N0</a>)<br>
+1 - Enabled (<a href="rockwell_basic_commands.htm#N1">N1</a>) <font color="#ff00ff">(default)</font></td>
+</tr>
+<tr>
+<td><b>Bit 2</b></td>
+<td rowspan="2">Error
+correction progress messages (<a href="rockwell_basic_commands.htm#W0">Wn</a>)<br>
+0 - DTE speed only (<a href="rockwell_basic_commands.htm#W0">W0</a>) <font color="#ff00ff">(default)</font><br>
+1 - Full reporting (<a href="rockwell_basic_commands.htm#W1">W1</a>)<br>
+2 - DCE speed only (<a href="rockwell_basic_commands.htm#W2">W2</a>)</td>
+</tr>
+<tr>
+<td><b>Bit 3</b></td>
+</tr>
+<tr>
+<td><b>Bit 4</b></td>
+<td rowspan="2">Caller ID (<a href="rockwell_basic_commands.htm#CID0">#CID</a>)<br>
+0 - Caller ID disabled (<a href="rockwell_basic_commands.htm#CID0">#CID=0</a>) <font color="#ff00ff">(default)</font><br>
+1 - Short (formatted) Caller ID enabled (<a href="rockwell_basic_commands.htm#CID1">#CID=1</a>)<br>
+2 - Long (unformatted) Caller ID enabled (#<a href="rockwell_basic_commands.htm#CID2">CID=2</a>)</td>
+</tr>
+<tr>
+<td><b>Bit 5</b></td>
+</tr>
+<tr>
+<td><b>Bit 6</b></td>
+<td>Reserved (<font color="#FF00FF">Default = 1</font>)</td>
+</tr>
+<tr>
+<td><b>Bit 7</b></td>
+<td>Reserved (<font color="#FF00FF">Default = 1</font>)</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="32"></a>S32</b></font></td>
+<td><b>XON
+Character</b></td>
+<td align="center">17 (11h)</td>
+<td align="center">0 - 255, ASCII decimal</td>
+<td><i>Sets
+the value of the XON character.</i></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="33"></a>S33</b></font></td>
+<td><b>XOFF
+Character</b></td>
+<td align="center">19 (13h)</td>
+<td align="center">0 - 255, ASCII decimal</td>
+<td><i>Sets
+the value of the XOFF character.</i></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="34"></a>S34</b></font></td>
+<td><b>Reserved</b></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="35"></a>S35</b></font></td>
+<td><b>Reserved</b></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="36"></a>S36</b></font></td>
+<td><b>LAPM
+Failure Control</b></td>
+<td align="center">7<br>
+(00000111b)</td>
+<td align="center">-</td>
+<td><i>Indicates
+the status of command options.</i>
+<table border="1" cellpadding="3" cellspacing="0">
+<tr>
+<td><b>Bit 0</b></td>
+<td rowspan="3">This value
+indicates what should happen upon a LAPM failure. These fallback
+options are initiated immediately upon connection if <a href="#48">S48=128</a>.
+If an invalid number is entered, the number is accepted into the
+register, but <a href="#36">S36</a> will act as if the default value has been
+entered.<br>
+0 - Modem disconnects<br>
+1 - Modem stays on-line and a Direct mode connection is established<br>
+2 - Reserved<br>
+3 - Modem stays on-line and a Normal mode connection is established.<br>
+4 - An MNP connection is attempted and if it fails, the modem
+disconnects<br>
+5 - An MNP connection is attempted and if it fails, a Direct mode
+connection is established<br>
+6 - Reserved<br>
+7 - An MNP connection is attempted and if it fails, a Normal mode
+connection is established</td>
+</tr>
+<tr>
+<td><b>Bit 1</b></td>
+</tr>
+<tr>
+<td><b>Bit 2</b></td>
+</tr>
+<tr>
+<td><b>Bit 3</b></td>
+<td>Reserved</td>
+</tr>
+<tr>
+<td><b>Bit 4</b></td>
+<td>Reserved</td>
+</tr>
+<tr>
+<td><b>Bit 5</b></td>
+<td>Reserved</td>
+</tr>
+<tr>
+<td><b>Bit 6</b></td>
+<td>Reserved</td>
+</tr>
+<tr>
+<td><b>Bit 7</b></td>
+<td>Reserved</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="37"></a>S37</b></font></td>
+<td><b>Desired
+Line Connection Speed</b></td>
+<td align="center">0</td>
+<td align="center">-</td>
+<td><i>This
+register specifies the desired line connection speed.<br>
+Notes:</i>
+<ol>
+<li><i>When the </i><a href="rockwell_basic_commands.htm#N0">Nn</a><i> command is
+issued or the </i><a href="#37">S37</a><i> register value is modified, the </i><a href="rockwell_basic_commands.htm#+MS">+MS</a><i>
+command subparameters are updated to reflect the speed and modulation
+specified by the </i><a href="#37">S37</a><i> value (see </i><a href="rockwell_basic_commands.htm#+MS">+MS</a><i>
+command).<br>
+For example:<br>
+If </i><a href="rockwell_basic_commands.htm#N0">N0</a><i> command is active, </i><a href="#37">S37=10</a><i> updates
+the </i><a href="rockwell_basic_commands.htm#+MS">+MS</a><i> command subparameters to reflect </i><a href="rockwell_basic_commands.htm#+MS">+MS=10,1,300,12000</a><br>
+<i>If </i><a href="rockwell_basic_commands.htm#N1">N1</a><i> command is active, </i><a href="#37">S37=10</a><i>
+updates the </i><a href="rockwell_basic_commands.htm#+MS">+MS</a><i> command subparameters to reflect </i><a href="rockwell_basic_commands.htm#+MS">+MS=10,0,12000,12000</a>
+<li><a href="#37">S37</a><i> is not updated by the </i><a href="rockwell_basic_commands.htm#+MS">+MS</a><i>
+command</i>
+<li><i>Use of the </i><a href="rockwell_basic_commands.htm#+MS">+MS</a><i> command
+is recommended instead of the </i><b>Nn</b><i> and </i><a href="#37">S37=x</a><i>
+commands. </i><a href="rockwell_basic_commands.htm#N0">Nn</a><i> and </i><a href="#37">S37=x</a><i> commands are
+supported for compatibility with existing communication software</i></li>
+</ol>
+<table border="1" cellpadding="3" cellspacing="0">
+<tr>
+<td><b>Bit
+0</b></td>
+<td rowspan="5">Desired line connection
+speed. This is interlinked with the <a href="rockwell_basic_commands.htm#F0">Fn</a> command (RC144). If
+an invalid number is entered, the number is accepted into the
+register, but <a href="#37">S37</a> will act as if the default value has been
+entered.
+<table border="1" cellpadding="3" cellspacing="0">
+<tr>
+<td align="right">0</td>
+<td>Attempt automode connection.
+If N0 is active, connection is at the most recently
+sensed DTE speed (<a href="rockwell_basic_commands.htm#+MS">+MS</a> command settings are updated to
+the appropriate values). If <a href="rockwell_basic_commands.htm#N1">N1</a> is active, connection
+is attempted at the highest possible speed (<a href="rockwell_basic_commands.htm#+MS">+MS</a>
+settings are updated to 11,1,300,28800 to reflect V.34,
+automode, 300 bps minimum speed, and 28800 bps maximum
+speed). <font color="#ff00ff">(default)</font></td>
+</tr>
+<tr>
+<td align="right">1</td>
+<td rowspan="3">Attempt to
+connect at 300 bps. <a href="rockwell_basic_commands.htm#F1">F1</a> command (RC144)</td>
+</tr>
+<tr>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right">4</td>
+<td>Reserved</td>
+</tr>
+<tr>
+<td align="right">5</td>
+<td>Attempt to connect at V.22
+1200 bps. <a href="rockwell_basic_commands.htm#F4">F4</a> command (RC144)</td>
+</tr>
+<tr>
+<td align="right">6</td>
+<td>Attempt to connect at V.22
+bis 2400 bps. <a href="rockwell_basic_commands.htm#F5">F5</a> command (RC144)</td>
+</tr>
+<tr>
+<td align="right">7</td>
+<td>Attempt to connect at V.23</td>
+</tr>
+<tr>
+<td align="right">8</td>
+<td>Attempt to connect at V.32
+bis/V.32 4800 bps. <a href="rockwell_basic_commands.htm#F6">F6</a> command (RC144)</td>
+</tr>
+<tr>
+<td align="right">9</td>
+<td>Attempt to connect at V.22
+9600 bps. <a href="rockwell_basic_commands.htm#F8">F8</a> command (RC144)</td>
+</tr>
+<tr>
+<td align="right">10</td>
+<td>Attempt to connect at V.32
+bis 12000 bps. <a href="rockwell_basic_commands.htm#F9">F9</a> command (RC144)</td>
+</tr>
+<tr>
+<td align="right">11</td>
+<td>Attempt to connect at V.32
+bis 14400 bps. <a href="rockwell_basic_commands.htm#F10">F10</a> command (RC144)</td>
+</tr>
+<tr>
+<td align="right">12</td>
+<td>Attempt to connect at V.32
+bis 7200 bps. <a href="rockwell_basic_commands.htm#F7">F7</a> command (RC144)</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td><b>Bit 1</b></td>
+</tr>
+<tr>
+<td><b>Bit 2</b></td>
+</tr>
+<tr>
+<td><b>Bit 3</b></td>
+</tr>
+<tr>
+<td><b>Bit 4</b></td>
+</tr>
+<tr>
+<td><b>Bit 5</b></td>
+<td>Reserved</td>
+</tr>
+<tr>
+<td><b>Bit 6</b></td>
+<td>Reserved</td>
+</tr>
+<tr>
+<td><b>Bit 7</b></td>
+<td>Reserved</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="38"></a>S38</b></font></td>
+<td><b>Delay Before Forced Hang Up</b></td>
+<td align="center">20</td>
+<td align="center">0 - 255 seconds</td>
+<td><i>This
+register specifies the delay between the modem's receipt of the </i><a href="rockwell_basic_commands.htm#H">H</a><i>
+command to disconnect (or ON-to-OFF transition of DTR if the modem is
+programmed to follow the signal), and the disconnect operation. Applicable
+to error-correction connection only. This register can be used to ensure
+that data in the modem buffer is sent before the modem disconnects.</i>
+<ol>
+<li><i>If </i><a href="#38">S38</a><i> is set to a
+value between 0 and 254, the modem will wait that number of seconds
+for the remote modem to acknowledge all data in the modem buffer
+before disconnecting. If time expires before all data has been lost.
+If all data is transmitted prior to time-out, the response to the </i><a href="rockwell_basic_commands.htm#H0">H0</a><i>
+command will be OK.</i>
+<li><i>If </i><a href="#38">S38</a><i> is set to 255,
+the modem does not time-out and continues to attempt to deliver data
+in the buffer until the connection is lost or the data is delivered.</i></li>
+</ol>
+</td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="39"></a>S39</b></font></td>
+<td><b>Flow
+Control Bit Mapped Option Status</b></td>
+<td align="center">3<br>
+(00000011b)</td>
+<td align="center">-</td>
+<td><i>Indicates
+the status of command options.</i>
+<table border="1" cellpadding="3" cellspacing="0">
+<tr>
+<td><b>Bit 0</b></td>
+<td rowspan="3">Status of command options</td>
+</tr>
+<tr>
+<td><b>Bit 1</b></td>
+</tr>
+<tr>
+<td><b>Bit 2</b></td>
+</tr>
+<tr>
+<td><b>Bit 3</b></td>
+<td>RTS/CTS (<a href="rockwell_basic_commands.htm#&amp;K3">&amp;K3</a>) <font color="#ff00ff">(default)</font></td>
+</tr>
+<tr>
+<td><b>Bit 4</b></td>
+<td>XONN/XOFF (<a href="rockwell_basic_commands.htm#&amp;K4">&amp;K4</a>)</td>
+</tr>
+<tr>
+<td><b>Bit 5</b></td>
+<td>Transparent
+XON (<a href="rockwell_basic_commands.htm#&amp;K5">&amp;K5</a>)</td>
+</tr>
+<tr>
+<td><b>Bit 6</b></td>
+<td>Both methods (<a href="rockwell_basic_commands.htm#&amp;K6">&amp;K6</a>)</td>
+</tr>
+<tr>
+<td><b>Bit 7</b></td>
+<td>Reserved</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="40"></a>S40</b></font></td>
+<td></td>
+<td align="center"></td>
+<td align="center"></td>
+<td><i>Indicates
+the status of command options.</i>
+<table border="1" cellpadding="3" cellspacing="0">
+<tr>
+<td><b>Bit 0</b></td>
+<td rowspan="2">MNP Extended services (<a href="rockwell_basic_commands.htm#-K0">-Kn</a>)<br>
+0 - Disable extended services (<a href="rockwell_basic_commands.htm#-K0">-K0</a>) <font color="#ff00ff">(default)</font><br>
+1 - Enable extended services (<a href="rockwell_basic_commands.htm#-K1">-K1</a>)<br>
+2 - Enable extended services (<a href="rockwell_basic_commands.htm#-K2">-K2</a>)</td>
+</tr>
+<tr>
+<td><b>Bit 1</b></td>
+</tr>
+<tr>
+<td><b>Bit 2</b></td>
+<td>Reserved</td>
+</tr>
+<tr>
+<td><b>Bit 3</b></td>
+<td rowspan="3">Break Handling (<a href="rockwell_basic_commands.htm#/Kn">\Kn</a>)<br>
+0 - <a href="rockwell_basic_commands.htm#/Kn">\K0</a><br>
+1 - <a href="rockwell_basic_commands.htm#/Kn">\K1</a><br>
+2 - <a href="rockwell_basic_commands.htm#/Kn">\K2</a><br>
+3 - <a href="rockwell_basic_commands.htm#/Kn">\K3</a><br>
+4 - <a href="rockwell_basic_commands.htm#/Kn">\K4</a><br>
+5 - <a href="rockwell_basic_commands.htm#/Kn">\K5</a> <font color="#ff00ff">(default)</font></td>
+</tr>
+<tr>
+<td><b>Bit 4</b></td>
+</tr>
+<tr>
+<td><b>Bit 5</b></td>
+</tr>
+<tr>
+<td><b>Bit 6</b></td>
+<td rowspan="2">MNP block size (<a href="rockwell_basic_commands.htm#/A0">\An</a>)<br>
+0 - 64 chars (<a href="file:///W:/doc/modem/rockwell_basic_commands.htm#/A0">\A0</a>)<br>
+1 - 128 chars (<a href="rockwell_basic_commands.htm#/A1">\A1</a>) <font color="#ff00ff">(default)</font><br>
+2 - 192 chars (<a href="rockwell_basic_commands.htm#/A2">\A2</a>)<br>
+3 - 256 chars (<a href="rockwell_basic_commands.htm#/A3">\A3</a>)</td>
+</tr>
+<tr>
+<td><b>Bit 7</b></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="41"></a>S41</b></font></td>
+<td></td>
+<td align="center"></td>
+<td align="center"></td>
+<td><i>Indicates
+the status of command options.</i>
+<table border="1" cellpadding="3" cellspacing="0">
+<tr>
+<td><b>Bit 0</b></td>
+<td rowspan="2">Compression selection (<a href="rockwell_basic_commands.htm#%C0">%Cn</a>)<br>
+0 - Disabled (<a href="rockwell_basic_commands.htm#%C0">%C0</a>)<br>
+1 - MNP 5 (<a href="rockwell_basic_commands.htm#%C1">%C1</a>)<br>
+2 - V.42 bis (<a href="rockwell_basic_commands.htm#%C2">%C2</a>)<br>
+3 - MNP 5 and V.42 bis (<a href="rockwell_basic_commands.htm#%C3">%C3</a>) <font color="#ff00ff">(default)</font></td>
+</tr>
+<tr>
+<td><b>Bit 1</b></td>
+</tr>
+<tr>
+<td><b>Bit 6</b></td>
+<td rowspan="2">Auto retrain and
+fallback/fall forward (<a href="rockwell_basic_commands.htm#%E0">%En</a>)<br>
+0 0 - Retrain and fallback/fall forward disabled (<a href="rockwell_basic_commands.htm#%E0">%E0</a>)<br>
+0 1 - Retrain enabled (<a href="rockwell_basic_commands.htm#%E1">%E1</a>)<br>
+1 0 - Retrain and fallback/fall forward enabled (<a href="rockwell_basic_commands.htm#%E2">%E2</a>) <font color="#ff00ff">(default)</font></td>
+</tr>
+<tr>
+<td><b>Bit 2</b></td>
+</tr>
+<tr>
+<td><b>Bit 3</b></td>
+<td>Reserved</td>
+</tr>
+<tr>
+<td><b>Bit 4</b></td>
+<td>Reserved</td>
+</tr>
+<tr>
+<td><b>Bit 5</b></td>
+<td>Reserved</td>
+</tr>
+<tr>
+<td><b>Bit 7</b></td>
+<td>Reserved</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="42"></a>S42</b></font></td>
+<td><b>Reserved</b></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="43"></a>S43</b></font></td>
+<td><b>Reserved</b></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="44"></a>S44</b></font></td>
+<td><b>Reserved</b></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="45"></a>S45</b></font></td>
+<td><b>Reserved</b></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="46"></a>S46</b></font></td>
+<td><b>Data
+Compression Control</b></td>
+<td align="center">138</td>
+<td align="center">136 or 138</td>
+<td><i>Controls selection of compression. The
+following actions are executed for the given values:<br>
+136 - Execute error correction protocol with no compression.<br>
+138 - Execute error correction protocol with compression. <font color="#ff00ff">(default)</font></i></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="47"></a>S47</b></font></td>
+<td><b>Reserved</b></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="48"></a>S48</b></font></td>
+<td><b>V.42
+Negotiation Action</b></td>
+<td align="center">7</td>
+<td align="center">0, 7, or 128. If an invalid
+number is entered, it is accepted into the S-Register, but <a href="#48">S48</a> will
+act as if 128 has been entered.</td>
+<td><i>The
+V.42 negotiation process determines the capabilities of the remote modem.
+However, when the capabilities of the remote modem are known and
+negotiation is unnecessary, this process can be bypassed if so desired.</i>
+<br>
+<i>0 - Disable negotiation; bypass the
+detection and negotiation phases; and process with LAPM.<br>
+7 - Enable negotiation. <font color="#ff00ff">(default)</font><br>
+128 - Disable negotiation; bypass the detection and negotiation phases;
+and process at once with the fallback action specified in </i><a href="#36">S36</a><i>.
+Can be used to force MNP.</i></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="49"></a>S49</b></font></td>
+<td><b>Reserved</b></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="50"></a>S50</b></font></td>
+<td><b>Reserved</b></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="51"></a>S51</b></font></td>
+<td><b>Reserved</b></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="52"></a>S52</b></font></td>
+<td><b>Reserved</b></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="53"></a>S53</b></font></td>
+<td><b>Reserved</b></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="54"></a>S54</b></font></td>
+<td><b>Reserved</b></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="55"></a>S55</b></font></td>
+<td><b>Reserved</b></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="56"></a>S56</b></font></td>
+<td><b>Reserved</b></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="57"></a>S57</b></font></td>
+<td><b>Reserved</b></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="58"></a>S58</b></font></td>
+<td><b>Reserved</b></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="59"></a>S59</b></font></td>
+<td><b>Reserved</b></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="60"></a>S60</b></font></td>
+<td><b>Reserved</b></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="61"></a>S61</b></font></td>
+<td><b>Reserved</b></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="62"></a>S62</b></font></td>
+<td><b>Reserved</b></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="63"></a>S63</b></font></td>
+<td><b>Reserved</b></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="64"></a>S64</b></font></td>
+<td><b>Reserved</b></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="65"></a>S65</b></font></td>
+<td><b>Reserved</b></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="66"></a>S66</b></font></td>
+<td><b>Reserved</b></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="67"></a>S67</b></font></td>
+<td><b>Reserved</b></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="68"></a>S68</b></font></td>
+<td><b>Reserved</b></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="69"></a>S69</b></font></td>
+<td><b>Reserved</b></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="70"></a>S70</b></font></td>
+<td><b>Reserved</b></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="71"></a>S71</b></font></td>
+<td><b>Reserved</b></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="72"></a>S72</b></font></td>
+<td><b>Reserved</b></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="73"></a>S73</b></font></td>
+<td><b>Reserved</b></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="74"></a>S74</b></font></td>
+<td><b>Reserved</b></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="75"></a>S75</b></font></td>
+<td><b>Reserved</b></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="76"></a>S76</b></font></td>
+<td><b>Reserved</b></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="77"></a>S77</b></font></td>
+<td><b>Reserved</b></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="78"></a>S78</b></font></td>
+<td><b>Reserved</b></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="79"></a>S79</b></font></td>
+<td><b>Reserved</b></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="80"></a>S80</b></font></td>
+<td><b>Reserved</b></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="81"></a>S81</b></font></td>
+<td><b>Reserved</b></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="82"></a>S82</b></font></td>
+<td><b>Break
+Handling Options</b></td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td><a href="#82">S82</a><i> is for compatibility purposes
+only, changing this register will not have any affect.</i></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="83"></a>S83</b></font></td>
+<td><b>Reserved</b></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="84"></a>S84</b></font></td>
+<td><b>Reserved</b></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="85"></a>S85</b></font></td>
+<td><b>Reserved</b></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="86"></a>S86</b></font></td>
+<td><b>Call
+Failure reason Code</b></td>
+<td align="center">-</td>
+<td align="center">0, 4, 5, 9, 12, 13, or 14</td>
+<td><i>When the modem issues a NO CARRIER
+result code, a value is written to this S-Register to help determine the
+reason for the failed connection. </i><a href="#86">S86</a><i> records the first
+event that contributes to a NO CARRIER message. The cause codes are:<br>
+</i>
+0 -<i> Normal disconnect, no error occurred.<br>
+</i>
+4 -<i> Loss of carrier.<br>
+</i>
+5 -<i> V.42 negotiation failed to detect an error-correction modem at the
+other end.<br>
+</i>
+9 -<i> The modems could not find a common protocol.<br>
+</i>
+12 -<i> Normal disconnect initiated by the remote modem.<br>
+</i>
+13 -<i> Remote modem does not respond after 10 re-transmissions of the same
+message.<br>
+</i>
+14 -<i> Protocol violation</i></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="87"></a>S87</b></font></td>
+<td><b>Reserved</b></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="88"></a>S88</b></font></td>
+<td><b>Reserved</b></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="89"></a>S89</b></font></td>
+<td><b>Reserved</b></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="90"></a>S90</b></font></td>
+<td><b>Reserved</b></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="91"></a>S91</b></font></td>
+<td><b>PSTN
+Transmit Attenuation Level</b></td>
+<td align="center">10<br>
+(-10 dBm transmit level)</td>
+<td align="center">0 to 15 dBm (Corresponding
+from 0 to -15 dBm transmit level)</td>
+<td><i>Sets
+the transmit attenuation level from 0 to 15 dBm for the PSTN mode,
+resulting in a transmit level from 0 to -15 dBm. In some countries, the
+transmit level may not be changed and there are checks to prevent transmit
+attenuation level change using ConfigurACE.</i></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="92"></a>S92</b></font></td>
+<td><b>Fax
+Transmit Attenuation Level</b></td>
+<td align="center">10<br>
+(-10 dBm transmit level)</td>
+<td align="center">0 to 15 dBm (Corresponding
+from 0 to -15 dBm transmit level)</td>
+<td><i>Sets
+the transmit attenuation level from 0 to 15 dBm for the fax mode,
+resulting in a transmit level from 0 to -15 dBm. In some countries, the
+transmit level may not be changed and there are checks to prevent transmit
+attenuation level change using ConfigurACE.</i></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="93"></a>S93</b></font></td>
+<td><b>Reserved</b></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="94"></a>S94</b></font></td>
+<td><b>Reserved</b></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="95"></a>S95</b></font></td>
+<td><b>Extended
+result Codes</b></td>
+<td align="center">0</td>
+<td align="center">-</td>
+<td><i>The bits in this register can be set to
+override some of the </i><a href="rockwell_basic_commands.htm#W0">Wn</a><i> command options. A Bit set to 1 in
+this register will enable the corresponding result code regardless of the </i><a href="rockwell_basic_commands.htm#W0">Wn</a><i>
+setting.</i>
+<table border="1" cellpadding="3" cellspacing="0">
+<tr>
+<td><b>Bit
+0</b></td>
+<td>CONNECT result code indicates DCE
+speed instead of DTE speed.</td>
+</tr>
+<tr>
+<td><b>Bit 1</b></td>
+<td>Append/ARQ to CONNECT XXXX result
+code in error-correction mode (XXXX=rate)</td>
+</tr>
+<tr>
+<td><b>Bit 2</b></td>
+<td>Enable CARRIER XXXX result code (XXXX=rate)</td>
+</tr>
+<tr>
+<td><b>Bit 3</b></td>
+<td>Enable PROTOCOL XXXX result code (XXXX=protocol
+identifier)</td>
+</tr>
+<tr>
+<td><b>Bit 4</b></td>
+<td>Reserved</td>
+</tr>
+<tr>
+<td><b>Bit 5</b></td>
+<td>Enable COMPRESSION XXXX result code (XXXX=compression
+type)</td>
+</tr>
+<tr>
+<td><b>Bit 6</b></td>
+<td>Reserved</td>
+</tr>
+<tr>
+<td><b>Bit 7</b></td>
+<td>Reserved</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="96"></a>S96</b></font></td>
+<td><b>Reserved</b></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="97"></a>S97</b></font></td>
+<td><b>Reserved</b></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="98"></a>S98</b></font></td>
+<td><b>Reserved</b></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td align="center"><font color="#800000"><b><a name="99"></a>S99</b></font></td>
+<td><b>Reserved</b></td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+</table>
+<p></p>
+</body>
+</html>

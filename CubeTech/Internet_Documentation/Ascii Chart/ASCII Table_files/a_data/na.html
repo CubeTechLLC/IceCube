@@ -1,0 +1,22 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252"><script type="text/javascript">
+
+function getNaID() {
+var cookieName = "na_id";
+var nextacCookie = "" + document.cookie;
+var startIndex = nextacCookie.indexOf(cookieName);
+if (startIndex != -1) {
+   var endIndex = nextacCookie.indexOf(';',startIndex);
+   if (endIndex == -1)
+      endIndex = nextacCookie.length;
+   return nextacCookie.substring(startIndex + cookieName.length + 1, endIndex);
+ }
+}
+
+nacv = getNaID();
+if (nacv && nacv != "ignore") {
+  var pix = new Image();
+  pix.src = "http://r.nexac.com/e/getdata.xgi?na_id=" + nacv + "&dt=br&pkey=uire97wqcxp23&ru=http%3A//a.tribalfusion.com/i.ad%3Fsize%3D0x0%26site%3Ddatalogix%26split%3D1%26adSpace%3Ddata%26na_id%3D%3Cna_id%3E%26na_mp%3D%3Cna_mp%3E%26c9_var%3D%3Cna_da%3E";
+}
+
+</script></head><body></body></html>

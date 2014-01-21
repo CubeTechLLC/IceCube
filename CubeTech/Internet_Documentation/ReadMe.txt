@@ -1,0 +1,1 @@
+I do not own these documentations, I just downloaded them so I can learn how to make an OS.

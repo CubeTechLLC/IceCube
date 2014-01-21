@@ -1,0 +1,201 @@
+* {
+	padding: 0;
+	margin: 0;
+	outline: 0;
+	font-weight: normal;
+	font-size: 1em;
+}
+
+b {
+	font-weight: bold;
+}
+
+html {
+	background-color: white;
+	font-family: Source Sans Pro, Helvetica, Arial, sans-serif;
+}
+
+body {
+	width: 65%;
+	margin: 2em auto 2em auto;
+}
+
+a {
+	color: #0066aa;
+/* 	font-weight: bold; */
+}
+
+header {
+	display: block;
+}
+
+header h1 {
+	font-size: 24pt;
+	font-weight: bold;
+}
+
+header h1 a {
+	color: black;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+header h1 a:hover {
+	text-decoration: underline;
+}
+
+header h2 {
+	color: #888888;
+	font-size: 16pt;
+	font-weight: bold;
+}
+
+nav {
+	float: right;
+	display: block;
+	width: 30%;
+}
+
+nav h1 {
+	font-size: 14pt;
+	font-weight: bold;
+	margin-bottom: 1em;
+}
+
+nav p {
+	font-size: 11pt;
+	margin-bottom: 1em;
+}
+
+nav section {
+	margin-bottom: 2em;
+}
+
+article {
+	display: block;
+	margin: 1.5em 0 4em 0;
+}
+
+article h1 {
+	margin-top: 0.5em;
+	font-weight: bold;
+	font-size: 16pt;
+	margin-bottom: 0.5em;
+}
+
+article h1 a {
+	color: black;
+	text-decoration: none;
+}
+
+article h1 a:hover {
+	text-decoration: underline;
+}
+
+article h2 {
+	margin-top: 0.5em;
+	font-weight: bold;
+	font-size: 11pt;
+}
+
+article h2:nth-child(n+3) {
+	margin-top: 1.5em;
+}
+
+article p {
+	margin: 1em 0 0 0;
+	font-size: 11pt;
+}
+
+article ol {
+	display: block;
+	margin-top: 1em;
+}
+
+article ul {
+	display: block;
+	margin-top: 1em;
+	padding-left: 1em;
+}
+
+article li {
+	list-style-position: inside;
+	margin-bottom: 0.33em;
+}
+
+#content_column {
+	width: 62%;
+}
+
+#next_previous_links {
+	border-top: 1px solid #cccccc;
+	margin-top: 2em;
+}
+
+#previous_link {
+	margin-top: 4em;
+	display: block;
+}
+
+#next_link {
+	margin-top: 1em;
+	display: block;
+}
+
+pre {
+	margin-top: 1em;
+	margin-bottom: 1em;
+
+	white-space: pre-wrap;       /* css-3 */
+	white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+	white-space: -pre-wrap;      /* Opera 4-6 */
+	white-space: -o-pre-wrap;    /* Opera 7 */
+	word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+
+/* pinboard */
+
+.pin-item br {
+	display: none;
+}
+
+.pin-item {
+	margin-bottom: 2em;
+}
+
+.pin-title {
+	display: block;
+	margin-top: 1em;
+	font-size: 11pt;
+}
+
+.pin-description { 
+	display: block;
+	margin: 0.2em 0 1em 0;
+	font-size: 11pt;
+}
+
+.pin-tag {
+	display: none;
+}
+
+/* Mobile */
+
+@media only screen and (max-device-width: 480px)
+{
+	html {
+		zoom: .4;
+	}
+	body {
+		width: 90%;
+	}
+	input[name="s"] {
+		width: 100px;
+	}
+}
+@media only screen and (max-device-width: 768px)
+{
+	input[name="s"] {
+		width: 100px;
+	}
+}

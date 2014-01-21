@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style type="text/css">
+:root {
+  font-family: sans-serif;
+}
+img {
+  border: 0;
+}
+th {
+  text-align: start;
+  white-space: nowrap;
+}
+th > a {
+  color: inherit;
+}
+table[order] > thead > tr > th {
+  cursor: pointer;
+}
+table[order] > thead > tr > th::after {
+  display: none;
+  width: .8em;
+  -moz-margin-end: -.8em;
+  text-align: end;
+}
+table[order="asc"] > thead > tr > th::after {
+  content: "\2193"; /* DOWNWARDS ARROW (U+2193) */
+}
+table[order="desc"] > thead > tr > th::after {
+  content: "\2191"; /* UPWARDS ARROW (U+2191) */
+}
+table[order][order-by="0"] > thead > tr > th:first-child > a ,
+table[order][order-by="1"] > thead > tr > th:first-child + th > a ,
+table[order][order-by="2"] > thead > tr > th:first-child + th + th > a {
+  text-decoration: underline;
+}
+table[order][order-by="0"] > thead > tr > th:first-child::after ,
+table[order][order-by="1"] > thead > tr > th:first-child + th::after ,
+table[order][order-by="2"] > thead > tr > th:first-child + th + th::after {
+  display: inline-block;
+}
+table.remove-hidden > tbody > tr.hidden-object {
+  display: none;
+}
+td > a {
+  display: inline-block;
+}
+/* name */
+th:first-child {
+  -moz-padding-end: 2em;
+}
+/* size */
+th:first-child + th {
+  -moz-padding-end: 1em;
+}
+td:first-child + td {
+  text-align: end;
+  -moz-padding-end: 1em;
+  white-space: nowrap;
+}
+/* date */
+td:first-child + td + td {
+  -moz-padding-start: 1em;
+  -moz-padding-end: .5em;
+  white-space: nowrap;
+}
+/* time */
+td:last-child {
+  -moz-padding-start: .5em;
+  white-space: nowrap;
+}
+.symlink {
+  font-style: italic;
+}
+.dir ,
+.symlink ,
+.file {
+  -moz-margin-start: 20px;
+}
+.dir::before ,
+.file > img {
+  -moz-margin-end: 4px;
+  -moz-margin-start: -20px;
+  max-width: 16px;
+  max-height: 16px;
+  vertical-align: middle;
+}
+.dir::before {
+  content: url(resource://gre/res/html/folder.png);
+}
+</style>
+<link rel="stylesheet" media="screen, projection" type="text/css" href="commands_files/dirListing.css">
+<script type="application/javascript">
+var gTable, gOrderBy, gTBody, gRows, gUI_showHidden;
+document.addEventListener("DOMContentLoaded", function() {
+  gTable = document.getElementsByTagName("table")[0];
+  gTBody = gTable.tBodies[0];
+  if (gTBody.rows.length < 2)
+    return;
+  gUI_showHidden = document.getElementById("UI_showHidden");
+  var headCells = gTable.tHead.rows[0].cells,
+      hiddenObjects = false;
+  function rowAction(i) {
+    return function(event) {
+      event.preventDefault();
+      orderBy(i);
+    }
+  }
+  for (var i = headCells.length - 1; i >= 0; i--) {
+    var anchor = document.createElement("a");
+    anchor.href = "";
+    anchor.appendChild(headCells[i].firstChild);
+    headCells[i].appendChild(anchor);
+    headCells[i].addEventListener("click", rowAction(i), true);
+  }
+  if (gUI_showHidden) {
+    gRows = Array.slice(gTBody.rows);
+    hiddenObjects = gRows.some(function (row) row.className == "hidden-object");
+  }
+  gTable.setAttribute("order", "");
+  if (hiddenObjects) {
+    gUI_showHidden.style.display = "block";
+    updateHidden();
+  }
+}, "false");
+function compareRows(rowA, rowB) {
+  var a = rowA.cells[gOrderBy].getAttribute("sortable-data") || "";
+  var b = rowB.cells[gOrderBy].getAttribute("sortable-data") || "";
+  var intA = +a;
+  var intB = +b;
+  if (a == intA && b == intB) {
+    a = intA;
+    b = intB;
+  } else {
+    a = a.toLowerCase();
+    b = b.toLowerCase();
+  }
+  if (a < b)
+    return -1;
+  if (a > b)
+    return 1;
+  return 0;
+}
+function orderBy(column) {
+  if (!gRows)
+    gRows = Array.slice(gTBody.rows);
+  var order;
+  if (gOrderBy == column) {
+    order = gTable.getAttribute("order") == "asc" ? "desc" : "asc";
+  } else {
+    order = "asc";
+    gOrderBy = column;
+    gTable.setAttribute("order-by", column);
+    gRows.sort(compareRows);
+  }
+  gTable.removeChild(gTBody);
+  gTable.setAttribute("order", order);
+  if (order == "asc")
+    for (var i = 0; i < gRows.length; i++)
+      gTBody.appendChild(gRows[i]);
+  else
+    for (var i = gRows.length - 1; i >= 0; i--)
+      gTBody.appendChild(gRows[i]);
+  gTable.appendChild(gTBody);
+}
+function updateHidden() {
+  gTable.className = gUI_showHidden.getElementsByTagName("input")[0].checked ?
+                     "" :
+                     "remove-hidden";
+}
+</script>
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8%2F9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAjFJREFUeNqsU8uOElEQPffR3XQ3ONASdBJCSBxHos5%2B3Bg3rvkCv8PElS78gPkO%2FATjQoUdO2ftrJiRh6aneTb9sOpC4weMN6lcuFV16pxDIfI8x12OYIDhcPiu2Wx%2B%2FHF5CW1Z6Jyegt%2FTNEWSJIjjGFEUIQxDrFYrWFSzXC4%2FdLvd95pRKpXKy%2BpRFZ7nwaWo1%2BsGnQG2260BKJfLKJVKGI1GEEJw7ateryd0v993W63WEwjgxfn5obGYzgCbzcaEbdsIggDj8Riu6z6iUk9SYZMSx8W0LMsM%2FSKK75xnJlIq80anQXdbEp0OhcPJ0eiaJnGRMEyyPDsAKKUM9clkYoDo3SZJzzSdp0VSKYmfV1co%2Bz580kw5KDIM8RbRfEnUf1HzxtQyMAGcaGruTKczMzEIaqhKifV6jd%2BzGQQB5llunF%2FM52BizC2K5sYPYvZcu653tjOM9O93wnYc08gmkgg4VAxixfqFUJT36AYBZGd6PJkFCZnnlBxMp38gqIgLpZB0y4Nph18lyWh5FFbrOSxbl3V4G%2BVB7T4ajYYxTyuLtO%2BCvWGgJE1Mc7JNsJEhvgw%2FQV4fo%2F24nbEsX2u1d5sVyn8sJO0ZAQiIYnFh%2BxrfLz%2Fj29cBS%2FO14zg3i8XigW3ZkErDtmKoeM%2BAJGRMnXeEPGKf0nCD1ydvkDzU9Jbc6OpR7WIw6L8lQ%2B4pQ1%2FlPF0RGM9Ns91Wmptk0GfB4EJkt77vXYj%2F8m%2B8y%2FkrwABHbz2H9V68DQAAAABJRU5ErkJggg%3D%3D">
+<title>Index of 
+ 
+./sites.google.com/site/ibmmainframeassembly/Home/mnemonics/</title>
+<!-- base href="./sites.google.com/site/ibmmainframeassembly/Home/mnemonics/" -->
+</head>
+<body dir="ltr">
+<h1>Index of  
+./sites.google.com/site/ibmmainframeassembly/Home/mnemonics/</h1>
+<p id="UI_goUp"><a class="up" href="./sites.google.com/site/ibmmainframeassembly/Home/">Up to higher level directory</a></p>
+<p id="UI_showHidden" style="display:none"><label><input checked="checked" onchange="updateHidden()" type="checkbox">Show hidden objects</label></p>
+<table order="">
+ <thead>
+  <tr>
+   <th><a href="">Name</a></th>
+   <th><a href="">Size</a></th>
+   <th colspan="2"><a href="">Last Modified</a></th>
+  </tr>
+ </thead>
+ <tbody>
+<tr>
+ <td sortable-data="2a--add-r-x"><a class="file" href="./sites.google.com/site/ibmmainframeassembly/Home/mnemonics/a--add-r-x"><img src="commands_files/a" alt="File:">a--add-r-x</a></td>
+ <td sortable-data="21716">22 KB</td>
+ <td sortable-data="1371475830000000">06/17/2013</td>
+ <td>09:30:30 AM</td>
+</tr><tr>
+ <td sortable-data="2add-instructions"><a class="file" href="./sites.google.com/site/ibmmainframeassembly/Home/mnemonics/add-instructions"><img src="commands_files/a" alt="File:">add-instructions</a></td>
+ <td sortable-data="20117">20 KB</td>
+ <td sortable-data="1371475830000000">06/17/2013</td>
+ <td>09:30:30 AM</td>
+</tr><tr>
+ <td sortable-data="2ah--add-halfword"><a class="file" href="./sites.google.com/site/ibmmainframeassembly/Home/mnemonics/ah--add-halfword"><img src="commands_files/a" alt="File:">ah--add-halfword</a></td>
+ <td sortable-data="21222">21 KB</td>
+ <td sortable-data="1371475830000000">06/17/2013</td>
+ <td>09:30:30 AM</td>
+</tr><tr>
+ <td sortable-data="2and-instructions"><a class="file" href="./sites.google.com/site/ibmmainframeassembly/Home/mnemonics/and-instructions"><img src="commands_files/a" alt="File:">and-instructions</a></td>
+ <td sortable-data="20136">20 KB</td>
+ <td sortable-data="1371475830000000">06/17/2013</td>
+ <td>09:30:30 AM</td>
+</tr><tr>
+ <td sortable-data="2ap--add-decimal"><a class="file" href="./sites.google.com/site/ibmmainframeassembly/Home/mnemonics/ap--add-decimal"><img src="commands_files/a" alt="File:">ap--add-decimal</a></td>
+ <td sortable-data="22728">23 KB</td>
+ <td sortable-data="1371475830000000">06/17/2013</td>
+ <td>09:30:30 AM</td>
+</tr><tr>
+ <td sortable-data="2ar"><a class="file" href="./sites.google.com/site/ibmmainframeassembly/Home/mnemonics/ar"><img src="commands_files/a" alt="File:">ar</a></td>
+ <td sortable-data="20850">21 KB</td>
+ <td sortable-data="1371475830000000">06/17/2013</td>
+ <td>09:30:30 AM</td>
+</tr><tr>
+ <td sortable-data="2balr---using"><a class="file" href="./sites.google.com/site/ibmmainframeassembly/Home/mnemonics/balr---using"><img src="commands_files/a" alt="File:">balr---using</a></td>
+ <td sortable-data="20603">21 KB</td>
+ <td sortable-data="1371475830000000">06/17/2013</td>
+ <td>09:30:30 AM</td>
+</tr><tr>
+ <td sortable-data="2branching"><a class="file" href="./sites.google.com/site/ibmmainframeassembly/Home/mnemonics/branching"><img src="commands_files/a" alt="File:">branching</a></td>
+ <td sortable-data="25089">25 KB</td>
+ <td sortable-data="1371475830000000">06/17/2013</td>
+ <td>09:30:30 AM</td>
+</tr><tr>
+ <td sortable-data="2bxh"><a class="file" href="./sites.google.com/site/ibmmainframeassembly/Home/mnemonics/bxh"><img src="commands_files/a" alt="File:">bxh</a></td>
+ <td sortable-data="21542">22 KB</td>
+ <td sortable-data="1371475830000000">06/17/2013</td>
+ <td>09:30:30 AM</td>
+</tr><tr>
+ <td sortable-data="2c--compare"><a class="file" href="./sites.google.com/site/ibmmainframeassembly/Home/mnemonics/c--compare"><img src="commands_files/a" alt="File:">c--compare</a></td>
+ <td sortable-data="21265">21 KB</td>
+ <td sortable-data="1371475830000000">06/17/2013</td>
+ <td>09:30:30 AM</td>
+</tr><tr>
+ <td sortable-data="2ch--compare-halfword"><a class="file" href="./sites.google.com/site/ibmmainframeassembly/Home/mnemonics/ch--compare-halfword"><img src="commands_files/a" alt="File:">ch--compare-halfword</a></td>
+ <td sortable-data="20328">20 KB</td>
+ <td sortable-data="1371475830000000">06/17/2013</td>
+ <td>09:30:30 AM</td>
+</tr><tr>
+ <td sortable-data="2clc-compare-logical-characters"><a class="file" href="./sites.google.com/site/ibmmainframeassembly/Home/mnemonics/clc-compare-logical-characters"><img src="commands_files/a" alt="File:">clc-compare-logical-characters</a></td>
+ <td sortable-data="20431">20 KB</td>
+ <td sortable-data="1371475830000000">06/17/2013</td>
+ <td>09:30:30 AM</td>
+</tr><tr>
+ <td sortable-data="2cli-compare-logical-immediate"><a class="file" href="./sites.google.com/site/ibmmainframeassembly/Home/mnemonics/cli-compare-logical-immediate"><img src="commands_files/a" alt="File:">cli-compare-logical-immediate</a></td>
+ <td sortable-data="20372">20 KB</td>
+ <td sortable-data="1371475830000000">06/17/2013</td>
+ <td>09:30:30 AM</td>
+</tr><tr>
+ <td sortable-data="2compare-opcodes"><a class="file" href="./sites.google.com/site/ibmmainframeassembly/Home/mnemonics/compare-opcodes"><img src="commands_files/a" alt="File:">compare-opcodes</a></td>
+ <td sortable-data="20772">21 KB</td>
+ <td sortable-data="1371475830000000">06/17/2013</td>
+ <td>09:30:30 AM</td>
+</tr><tr>
+ <td sortable-data="2cp--compare-packeddecimal"><a class="file" href="./sites.google.com/site/ibmmainframeassembly/Home/mnemonics/cp--compare-packeddecimal"><img src="commands_files/a" alt="File:">cp--compare-packeddecimal</a></td>
+ <td sortable-data="20988">21 KB</td>
+ <td sortable-data="1371475830000000">06/17/2013</td>
+ <td>09:30:30 AM</td>
+</tr><tr>
+ <td sortable-data="2cr--compare-register"><a class="file" href="./sites.google.com/site/ibmmainframeassembly/Home/mnemonics/cr--compare-register"><img src="commands_files/a" alt="File:">cr--compare-register</a></td>
+ <td sortable-data="20538">21 KB</td>
+ <td sortable-data="1371475830000000">06/17/2013</td>
+ <td>09:30:30 AM</td>
+</tr><tr>
+ <td sortable-data="2cvb--convert-to-binary"><a class="file" href="./sites.google.com/site/ibmmainframeassembly/Home/mnemonics/cvb--convert-to-binary"><img src="commands_files/a" alt="File:">cvb--convert-to-binary</a></td>
+ <td sortable-data="20691">21 KB</td>
+ <td sortable-data="1371475830000000">06/17/2013</td>
+ <td>09:30:30 AM</td>
+</tr><tr>
+ <td sortable-data="2cvd--convert-to-decimal"><a class="file" href="./sites.google.com/site/ibmmainframeassembly/Home/mnemonics/cvd--convert-to-decimal"><img src="commands_files/a" alt="File:">cvd--convert-to-decimal</a></td>
+ <td sortable-data="22493">22 KB</td>
+ <td sortable-data="1371475830000000">06/17/2013</td>
+ <td>09:30:30 AM</td>
+</tr><tr>
+ <td sortable-data="2dc--define-constant"><a class="file" href="./sites.google.com/site/ibmmainframeassembly/Home/mnemonics/dc--define-constant"><img src="commands_files/a" alt="File:">dc--define-constant</a></td>
+ <td sortable-data="22073">22 KB</td>
+ <td sortable-data="1371475830000000">06/17/2013</td>
+ <td>09:30:30 AM</td>
+</tr><tr>
+ <td sortable-data="2divide-instructions"><a class="file" href="./sites.google.com/site/ibmmainframeassembly/Home/mnemonics/divide-instructions"><img src="commands_files/a" alt="File:">divide-instructions</a></td>
+ <td sortable-data="20093">20 KB</td>
+ <td sortable-data="1371475830000000">06/17/2013</td>
+ <td>09:30:30 AM</td>
+</tr><tr>
+ <td sortable-data="2dp--divide-decimal"><a class="file" href="./sites.google.com/site/ibmmainframeassembly/Home/mnemonics/dp--divide-decimal"><img src="commands_files/a" alt="File:">dp--divide-decimal</a></td>
+ <td sortable-data="24212">24 KB</td>
+ <td sortable-data="1371475830000000">06/17/2013</td>
+ <td>09:30:30 AM</td>
+</tr><tr>
+ <td sortable-data="2ds--define-storage"><a class="file" href="./sites.google.com/site/ibmmainframeassembly/Home/mnemonics/ds--define-storage"><img src="commands_files/a" alt="File:">ds--define-storage</a></td>
+ <td sortable-data="20170">20 KB</td>
+ <td sortable-data="1371475830000000">06/17/2013</td>
+ <td>09:30:30 AM</td>
+</tr><tr>
+ <td sortable-data="2ex--execute"><a class="file" href="./sites.google.com/site/ibmmainframeassembly/Home/mnemonics/ex--execute"><img src="commands_files/a" alt="File:">ex--execute</a></td>
+ <td sortable-data="24256">24 KB</td>
+ <td sortable-data="1371475830000000">06/17/2013</td>
+ <td>09:30:30 AM</td>
+</tr><tr>
+ <td sortable-data="2ic--insert-character"><a class="file" href="./sites.google.com/site/ibmmainframeassembly/Home/mnemonics/ic--insert-character"><img src="commands_files/a" alt="File:">ic--insert-character</a></td>
+ <td sortable-data="20409">20 KB</td>
+ <td sortable-data="1371475830000000">06/17/2013</td>
+ <td>09:30:30 AM</td>
+</tr><tr>
+ <td sortable-data="2icm--insert-characters-under-mask"><a class="file" href="./sites.google.com/site/ibmmainframeassembly/Home/mnemonics/icm--insert-characters-under-mask"><img src="commands_files/a" alt="File:">icm--insert-characters-under-mask</a></td>
+ <td sortable-data="21191">21 KB</td>
+ <td sortable-data="1371475830000000">06/17/2013</td>
+ <td>09:30:30 AM</td>
+</tr><tr>
+ <td sortable-data="2l--load"><a class="file" href="./sites.google.com/site/ibmmainframeassembly/Home/mnemonics/l--load"><img src="commands_files/a" alt="File:">l--load</a></td>
+ <td sortable-data="20814">21 KB</td>
+ <td sortable-data="1371475830000000">06/17/2013</td>
+ <td>09:30:30 AM</td>
+</tr><tr>
+ <td sortable-data="2lpsw--load-p"><a class="file" href="./sites.google.com/site/ibmmainframeassembly/Home/mnemonics/lpsw--load-p"><img src="commands_files/a" alt="File:">lpsw--load-p</a></td>
+ <td sortable-data="20345">20 KB</td>
+ <td sortable-data="1371475830000000">06/17/2013</td>
+ <td>09:30:30 AM</td>
+</tr><tr>
+ <td sortable-data="2ltorg"><a class="file" href="./sites.google.com/site/ibmmainframeassembly/Home/mnemonics/ltorg"><img src="commands_files/a" alt="File:">ltorg</a></td>
+ <td sortable-data="21299">21 KB</td>
+ <td sortable-data="1371475830000000">06/17/2013</td>
+ <td>09:30:30 AM</td>
+</tr><tr>
+ <td sortable-data="2m--multiply"><a class="file" href="./sites.google.com/site/ibmmainframeassembly/Home/mnemonics/m--multiply"><img src="commands_files/a" alt="File:">m--multiply</a></td>
+ <td sortable-data="20551">21 KB</td>
+ <td sortable-data="1371475830000000">06/17/2013</td>
+ <td>09:30:30 AM</td>
+</tr><tr>
+ <td sortable-data="2mh--multiply-halfword"><a class="file" href="./sites.google.com/site/ibmmainframeassembly/Home/mnemonics/mh--multiply-halfword"><img src="commands_files/a" alt="File:">mh--multiply-halfword</a></td>
+ <td sortable-data="22215">22 KB</td>
+ <td sortable-data="1371475830000000">06/17/2013</td>
+ <td>09:30:30 AM</td>
+</tr><tr>
+ <td sortable-data="2move-instructions"><a class="file" href="./sites.google.com/site/ibmmainframeassembly/Home/mnemonics/move-instructions"><img src="commands_files/a" alt="File:">move-instructions</a></td>
+ <td sortable-data="19754">20 KB</td>
+ <td sortable-data="1371475830000000">06/17/2013</td>
+ <td>09:30:30 AM</td>
+</tr><tr>
+ <td sortable-data="2mp--multiply-decimal"><a class="file" href="./sites.google.com/site/ibmmainframeassembly/Home/mnemonics/mp--multiply-decimal"><img src="commands_files/a" alt="File:">mp--multiply-decimal</a></td>
+ <td sortable-data="22137">22 KB</td>
+ <td sortable-data="1371475830000000">06/17/2013</td>
+ <td>09:30:30 AM</td>
+</tr><tr>
+ <td sortable-data="2mr--multiply"><a class="file" href="./sites.google.com/site/ibmmainframeassembly/Home/mnemonics/mr--multiply"><img src="commands_files/a" alt="File:">mr--multiply</a></td>
+ <td sortable-data="21181">21 KB</td>
+ <td sortable-data="1371475830000000">06/17/2013</td>
+ <td>09:30:30 AM</td>
+</tr><tr>
+ <td sortable-data="2multiply"><a class="file" href="./sites.google.com/site/ibmmainframeassembly/Home/mnemonics/multiply"><img src="commands_files/a" alt="File:">multiply</a></td>
+ <td sortable-data="20231">20 KB</td>
+ <td sortable-data="1371475830000000">06/17/2013</td>
+ <td>09:30:30 AM</td>
+</tr><tr>
+ <td sortable-data="2mvc--moving-characters"><a class="file" href="./sites.google.com/site/ibmmainframeassembly/Home/mnemonics/mvc--moving-characters"><img src="commands_files/a" alt="File:">mvc--moving-characters</a></td>
+ <td sortable-data="20882">21 KB</td>
+ <td sortable-data="1371475830000000">06/17/2013</td>
+ <td>09:30:30 AM</td>
+</tr><tr>
+ <td sortable-data="2mvcin--moving-character-inverse"><a class="file" href="./sites.google.com/site/ibmmainframeassembly/Home/mnemonics/mvcin--moving-character-inverse"><img src="commands_files/a" alt="File:">mvcin--moving-character-inverse</a></td>
+ <td sortable-data="20410">20 KB</td>
+ <td sortable-data="1371475830000000">06/17/2013</td>
+ <td>09:30:30 AM</td>
+</tr><tr>
+ <td sortable-data="2mvi--move-immediate"><a class="file" href="./sites.google.com/site/ibmmainframeassembly/Home/mnemonics/mvi--move-immediate"><img src="commands_files/a" alt="File:">mvi--move-immediate</a></td>
+ <td sortable-data="21195">21 KB</td>
+ <td sortable-data="1371475830000000">06/17/2013</td>
+ <td>09:30:30 AM</td>
+</tr><tr>
+ <td sortable-data="2ni--and-immediate"><a class="file" href="./sites.google.com/site/ibmmainframeassembly/Home/mnemonics/ni--and-immediate"><img src="commands_files/a" alt="File:">ni--and-immediate</a></td>
+ <td sortable-data="20583">21 KB</td>
+ <td sortable-data="1371475830000000">06/17/2013</td>
+ <td>09:30:30 AM</td>
+</tr><tr>
+ <td sortable-data="2or-instructions"><a class="file" href="./sites.google.com/site/ibmmainframeassembly/Home/mnemonics/or-instructions"><img src="commands_files/a" alt="File:">or-instructions</a></td>
+ <td sortable-data="20131">20 KB</td>
+ <td sortable-data="1371475830000000">06/17/2013</td>
+ <td>09:30:30 AM</td>
+</tr><tr>
+ <td sortable-data="2pack"><a class="file" href="./sites.google.com/site/ibmmainframeassembly/Home/mnemonics/pack"><img src="commands_files/a" alt="File:">pack</a></td>
+ <td sortable-data="24442">24 KB</td>
+ <td sortable-data="1371475830000000">06/17/2013</td>
+ <td>09:30:30 AM</td>
+</tr><tr>
+ <td sortable-data="2s"><a class="file" href="./sites.google.com/site/ibmmainframeassembly/Home/mnemonics/s"><img src="commands_files/a" alt="File:">s</a></td>
+ <td sortable-data="19932">20 KB</td>
+ <td sortable-data="1371475830000000">06/17/2013</td>
+ <td>09:30:30 AM</td>
+</tr><tr>
+ <td sortable-data="2sh--subtract-halfword"><a class="file" href="./sites.google.com/site/ibmmainframeassembly/Home/mnemonics/sh--subtract-halfword"><img src="commands_files/a" alt="File:">sh--subtract-halfword</a></td>
+ <td sortable-data="20669">21 KB</td>
+ <td sortable-data="1371475830000000">06/17/2013</td>
+ <td>09:30:30 AM</td>
+</tr><tr>
+ <td sortable-data="2sp--subtract-decimal"><a class="file" href="./sites.google.com/site/ibmmainframeassembly/Home/mnemonics/sp--subtract-decimal"><img src="commands_files/a" alt="File:">sp--subtract-decimal</a></td>
+ <td sortable-data="22575">23 KB</td>
+ <td sortable-data="1371475830000000">06/17/2013</td>
+ <td>09:30:30 AM</td>
+</tr><tr>
+ <td sortable-data="2sr--subtract-register"><a class="file" href="./sites.google.com/site/ibmmainframeassembly/Home/mnemonics/sr--subtract-register"><img src="commands_files/a" alt="File:">sr--subtract-register</a></td>
+ <td sortable-data="20856">21 KB</td>
+ <td sortable-data="1371475830000000">06/17/2013</td>
+ <td>09:30:30 AM</td>
+</tr><tr>
+ <td sortable-data="2stc--store-character"><a class="file" href="./sites.google.com/site/ibmmainframeassembly/Home/mnemonics/stc--store-character"><img src="commands_files/a" alt="File:">stc--store-character</a></td>
+ <td sortable-data="20288">20 KB</td>
+ <td sortable-data="1371475830000000">06/17/2013</td>
+ <td>09:30:30 AM</td>
+</tr><tr>
+ <td sortable-data="2stcm--store-characters-under-mask"><a class="file" href="./sites.google.com/site/ibmmainframeassembly/Home/mnemonics/stcm--store-characters-under-mask"><img src="commands_files/a" alt="File:">stcm--store-characters-under-mask</a></td>
+ <td sortable-data="21166">21 KB</td>
+ <td sortable-data="1371475830000000">06/17/2013</td>
+ <td>09:30:30 AM</td>
+</tr><tr>
+ <td sortable-data="2unpk--unpack"><a class="file" href="./sites.google.com/site/ibmmainframeassembly/Home/mnemonics/unpk--unpack"><img src="commands_files/a" alt="File:">unpk--unpack</a></td>
+ <td sortable-data="21654">22 KB</td>
+ <td sortable-data="1371475830000000">06/17/2013</td>
+ <td>09:30:30 AM</td>
+</tr><tr>
+ <td sortable-data="2xor-instructions"><a class="file" href="./sites.google.com/site/ibmmainframeassembly/Home/mnemonics/xor-instructions"><img src="commands_files/a" alt="File:">xor-instructions</a></td>
+ <td sortable-data="20169">20 KB</td>
+ <td sortable-data="1371475830000000">06/17/2013</td>
+ <td>09:30:30 AM</td>
+</tr><tr>
+ <td sortable-data="2zap--zero-and-add"><a class="file" href="./sites.google.com/site/ibmmainframeassembly/Home/mnemonics/zap--zero-and-add"><img src="commands_files/a" alt="File:">zap--zero-and-add</a></td>
+ <td sortable-data="22040">22 KB</td>
+ <td sortable-data="1371475830000000">06/17/2013</td>
+ <td>09:30:30 AM</td>
+</tr></tbody></table>
+</body></html>

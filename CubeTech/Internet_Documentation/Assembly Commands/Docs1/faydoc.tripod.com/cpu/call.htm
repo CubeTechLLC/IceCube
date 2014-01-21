@@ -1,0 +1,651 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>CALL - Call Procedure</title>
+</head>
+<body background="images/background_item.gif"><!--'"</title></head>-->
+<script type="text/javascript">
+////// Compete /////////////////////
+__compete_code = '667f89f26d96c30e99728fe6a608804d';
+(function () {
+    var s = document.createElement('script'),
+        d = document.getElementsByTagName('head')[0] ||
+            document.getElementsByTagName('body')[0],
+        t = 'https:' == document.location.protocol ? 
+            'https://c.compete.com/bootstrap/' : 
+            'http://c.compete.com/bootstrap/';
+    s.src = t + __compete_code + '/bootstrap.js';
+    s.type = 'text/javascript';
+    s.async = 'async'; 
+    if (d) { d.appendChild(s); }
+})();
+
+
+////// Quantcast  /////////////////////
+function channValidator(chann) {
+    return (typeof(chann) == 'string' && chann != '');
+}
+
+function lycosQuantcast(){
+    var lb = "";
+    if(typeof(cm_host) !== 'undefined' && channValidator(cm_host)){
+        lb += cm_host.split('.')[0] + '.';
+    }
+
+    if(typeof(cm_taxid) !== 'undefined' && channValidator(cm_taxid)){
+        lb += cm_taxid;
+        lb = lb.replace('/','');
+    } else {
+        lb = lb.replace('.','');
+    }
+    return lb;
+}
+
+var _qevents = _qevents || [];
+
+(function() {
+    var elem = document.createElement('script');
+    elem.src = (document.location.protocol == "https:" ? "https://secure" :"http://edge") + ".quantserve.com/quant.js";
+    elem.async = true;
+    elem.type = "text/javascript";
+    var scpt = document.getElementsByTagName('script')[0];
+    scpt.parentNode.insertBefore(elem, scpt);
+})();
+
+_qevents.push({
+    qacct:"p-6eQegedn62bSo",
+    labels:lycosQuantcast()
+});
+
+////// OwnerIQ  /////////////////////
+var __oiq_pct = 50;
+if( __oiq_pct>=100 || Math.floor(Math.random()*100/(100-__oiq_pct)) > 0 ) {
+    var _oiqq = _oiqq || [];
+    _oiqq.push(['oiq_addPageBrand', 'Lycos']);
+    _oiqq.push(['oiq_addPageCat', 'Internet > Websites']);
+    _oiqq.push(['oiq_addPageLifecycle', 'Intend']);
+    _oiqq.push(['oiq_doTag']);
+
+    (function() {
+        var oiq = document.createElement('script'); oiq.type = 'text/javascript'; oiq.async = true;
+        oiq.src = document.location.protocol + '//px.owneriq.net/stas/s/lycosn.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(oiq, s);
+    })();
+}
+
+
+
+/////// Google Analytics ////////////
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-21402695-19']);
+_gaq.push(['_setDomainName', 'tripod.com']);
+_gaq.push(['_setCustomVar', 1, 'member_name', 'faydoc', 3]);
+_gaq.push(['_trackPageview']);
+(function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+
+/////// Lycos Initialization ////////////
+function getReferrer() {
+    // Reads the referrer out of the cookie, if available.
+    var all= this.document.cookie;
+    if (all== '') return false;
+    var cookie_name = 'REFERRER=';
+    var start = all.lastIndexOf(cookie_name);
+    if (start == -1) return false;  // referrer URL not found.
+    start += cookie_name.length;
+    var end = all.indexOf(';', start);
+    if (end == -1) end = all.length;
+    return all.substring(start, end);
+}
+function getQuery() {
+    // Get the referrer search query from cookie, if available.
+    var rfr = getReferrer();
+    if (rfr == '') return false;
+    var q = extractQuery(rfr, 'yahoo.com', 'p=');
+    if (q) return q;
+    q = extractQuery(rfr, '', 'q=');
+    return q ? q : "";
+}
+function extractQuery(full, site, q_param) {
+    var start = full.lastIndexOf(site);
+    if (start == -1) return false;
+    start = full.lastIndexOf(q_param);
+    if (start == -1) return false;
+    start += q_param.length;
+    var end = full.indexOf('&', start);
+    if (end == -1) end = full.length;
+    return unescape(full.substring(start, end)).split(" ").join("+");
+}
+
+function generateHref(atag, template){
+    atag.href=template.replace('_MYURL_', window.location.href.replace('http://', '')).replace('_MYTITLE_', 'Check%20out%20this%20Tripod%20Member%20site!'); 
+}
+
+
+var lycos_ad = Array();
+var lycos_onload_timer;
+
+var cm_role = "live";
+var cm_host = "tripod.lycos.com";
+var cm_taxid = "/memberembedded";
+var tripod_member_name = "faydoc";
+var tripod_member_page = "faydoc/cpu/call.htm";
+var tripod_ratings_hash = "1372261291:83e6cac159f2583ab782e2698874fdcd";
+
+var lycos_ad_category = {"find_what":"reliv.com"};
+
+var lycos_ad_remote_addr = "99.159.74.223";
+var lycos_ad_www_server = "www.tripod.lycos.com";
+var lycos_ad_track_small = "http://members.tripod.com/adm/img/common/ot_smallframe.gif?rand=665394";
+var lycos_ad_track_served = "http://members.tripod.com/adm/img/common/ot_adserved.gif?rand=665394";
+var lycos_search_query = getQuery();
+
+
+////// Criteo /////////////////////
+var cto_conf = { a:true, i: "294", c:"img", kw: "" } ;
+(function (){
+    var c = document.createElement("script"); c.type = "text/javascript"; c.async = true;
+    c.src = "http://members.tripod.com/adm/partner/criteo_ld_kw.js";
+    var s = document.getElementsByTagName("body")[0]; s.appendChild(c);
+})(); 
+
+</script>
+
+<script type="text/javascript" src="http://scripts.lycos.com/catman/init.js"></script>
+<script type="text/javascript"> 
+
+(function(isV) {
+    if (!isV) {
+        return;
+    }
+
+    //this.lycos_search_query = lycos_get_search_referrer();
+    var adMgr = new AdManager();
+    var lycos_prod_set = adMgr.chooseProductSet();
+    var slots = ["leaderboard", "leaderboard2", "toolbar_image", "toolbar_text", "smallbox", "top_promo", "footer2"];
+    var adCat = this.lycos_ad_category;
+    adMgr.setForcedParam('page', (adCat && adCat.dmoz) ? adCat.dmoz : 'member');
+
+    if (this.lycos_search_query) {
+        adMgr.setForcedParam("keyword", this.lycos_search_query);
+    } 
+    else if (adCat && adCat.find_what) {
+        adMgr.setForcedParam('keyword', adCat.find_what);
+    }
+
+    for (var s in slots) {
+        var slot = slots[s];
+        if (adMgr.isSlotAvailable(slot)) {
+            this.lycos_ad[slot] = adMgr.getSlot(slot);
+        }
+    }
+
+    adMgr.renderHeader();
+    adMgr.renderFooter();
+}((function() {
+    var w = 0, h = 0, minimumThreshold = 300;
+    if (top == self) {
+        return true;
+    }
+
+    if (typeof(window.innerWidth) == 'number' ) {
+        w = window.innerWidth;
+        h = window.innerHeight;
+    }
+    else if (document.documentElement && (document.documentElement.clientWidth || document.documentElement.clientHeight)) {
+        w = document.documentElement.clientWidth;
+        h = document.documentElement.clientHeight;
+    }
+    else if (document.body && (document.body.clientWidth || document.body.clientHeight)) {
+        w = document.body.clientWidth;
+        h = document.body.clientHeight;
+    }
+
+    return ((w > minimumThreshold) && (h > minimumThreshold));
+}())));
+    
+window.onload = function() {
+    var f = document.getElementById("FooterAd");
+    var b = document.getElementsByTagName("body")[0];
+    b.appendChild(f);
+    f.style.display = "block";
+    document.getElementById('lycosFooterAdiFrame').src = '/adm/ad/footerAd.iframe.html';
+
+
+    // DOM Injection Ad
+    (function(isTrellix) {
+        var e = document.createElement('iframe');
+        e.style.border = '0';
+        e.style.margin = 0;
+        e.style.display = 'block';
+        e.style.cssFloat = 'right';
+        e.style.height = '254px';
+        e.style.overflow = 'hidden';
+        e.style.padding = 0;
+        e.style.width = '300px';
+
+        var getCommentNodes = function(regexPattern) {
+            var nodes = {};
+            var nodesA = [];
+            var preferredNodesList = ['a', 'c', 'b'];
+
+            (function getNodesThatHaveComments(n, pattern) {
+                if (n.hasChildNodes()) {
+                    if (n.tagName === 'IFRAME') {
+                        return false;
+                    }
+                    for (var i = 0; i < n.childNodes.length; i++) {
+                        if ((n.childNodes[i].nodeType === 8) && (pattern.test(n.childNodes[i].nodeValue))) {
+                            var areaName = pattern.exec(n.childNodes[i].nodeValue)[1];
+                            nodes[areaName] = n;
+                        }
+                        else if (n.childNodes[i].nodeType === 1) {
+                            getNodesThatHaveComments(n.childNodes[i], pattern);
+                        }
+                    }
+                }
+            }(document.body, regexPattern));
+
+            for (var i in preferredNodesList) {
+                if (nodes[preferredNodesList[i]]) {
+                    if (nodes[preferredNodesList[i]].parentNode.parentNode.parentNode.parentNode) {
+                        nodesA.push(nodes[preferredNodesList[i]].parentNode.parentNode.parentNode.parentNode);
+                    }
+                }
+            }
+
+            return nodesA;
+        }
+
+        var properNode = null;
+        var areaNodes = getCommentNodes(new RegExp('^area Type="area_(\\w+)"'));
+        for (var i = 0; i < areaNodes.length; i++) {
+            var a = parseInt(getComputedStyle(areaNodes[i]).width);
+            if ((a >= 300) && (a <= 400)) {
+                properNode = areaNodes[i];
+                break;
+            }
+        }
+
+        if ((isTrellix) && (properNode)) {
+            e.src = '/adm/ad/injectAd.iframe.html';
+            properNode.insertBefore(e, properNode.firstChild);
+        }
+        else {
+            e.src = '/adm/ad/sliderAd.iframe.html';
+            var sliderBlock = document.getElementById('lyslider-adblock-wrapper');
+            var sliderHolder = document.getElementById('lyslider-adblock-holder');
+            var sliderClose = document.getElementById('lyslider-adblock-close');
+            sliderBlock.style.display = 'block';
+
+            sliderClose.onclick = function() {
+                sliderBlock.parentNode.removeChild(sliderBlock);
+                return false;
+            }
+
+            var iframeOnload = function() {
+                setTimeout((function sliiide() {
+                    var s = (window.getComputedStyle) ? parseInt(getComputedStyle(sliderHolder).right) : parseInt(sliderHolder.currentStyle.right);
+                    if (s <= 0) {
+                        sliderHolder.style.right = (s + 6) + 'px';
+                        setTimeout(sliiide, 10);
+                    }
+                    else {
+                        sliderHolder.style.right = '0px';
+                        sliderClose.style.display = 'block';
+                    }
+                }), 1000);
+            }
+
+            if (e.attachEvent) {
+                e.attachEvent('onload', iframeOnload);
+            }
+            else {
+                e.addEventListener('load', iframeOnload, false);
+            }
+
+            sliderHolder.insertBefore(e, sliderHolder.firstChild);
+        }
+    }(document.isTrellix));
+
+}
+
+
+
+</script>
+<style>
+	#body .adCenterClass{margin:0 auto}
+</style>
+
+<div id="tb_container" style="background:#DFDCCF; border-bottom:1px solid #393939; position:relative; z-index:999999999!important">
+    <div id="tb_ad" class="adCenterClass" style="display:block!important; overflow:hidden; width:916px;">
+    <a href="http://adtrack.ministerial5.com/clicknew/?a=637394" title="build your own website at Tripod.com" style="float:left; width:186px; border:0">
+    	<img src="http://ly.lygo.com/ly/tpSite/images/freeAd2.jpg" alt="Make your own free website on Tripod.com" style="border:0; display:block" />
+    </a> 
+        <div id="ad_container" style="display:block!important; float:left; width:728px ">
+        <script type="text/javascript">document.write(lycos_ad['leaderboard']);</script>
+        </div>
+    </div>
+</div>
+
+<!-- ///////////////////////////////////// -->
+<div id="lyslider-adblock-wrapper" style="display:none; height:300px; overflow:hidden; position:absolute; right:0; top:150px; width:320px; z-index:99999999; ">
+<div id="lyslider-adblock-holder" style="background-color:#888; height:250px; margin-bottom:25px; padding:4px; position:absolute; right:-320px; top:10px; width:300px; ">
+<a id="lyslider-adblock-close" href="#" style="background-color:#222; bottom:-19px; color:#fff; display:block; font:10px Arial, Helvetica, Sans-serif; padding:4px; position:absolute; right:0; text-decoration:none; z-index:9999999999">Close Ad</a>
+</div>
+</div>
+
+
+<div id="FooterAd" style="background:#DFDCCF; border-top:1px solid #393939; clear:both; display:none; width:100%!important; position:relative; z-index:999999!important; height:90px!important"> 
+	<div class="adCenterClass" style="display:block!important; overflow:hidden; width:916px;">
+	<a href="http://adtrack.ministerial5.com/clicknew/?a=637394" title="build your own website at Tripod.com" style="float:left; display:block; width:186px; border:0">
+    	<img src="http://ly.lygo.com/ly/tpSite/images/freeAd2.jpg" alt="Make your own free website on Tripod.com" style="border:0; display:block; " />
+    </a> 
+        <div id="footerAd_container" style="display:block!important; float:left; width:728px">
+        <iframe id="lycosFooterAdiFrame" style="border:0; display:block; float:left; height:96px; overflow:hidden; padding:0; width:750px"></iframe>
+        <!-- <script type="text/javascript">document.write(lycos_ad['leaderboard2']);</script> -->
+        </div>
+	</div>
+</div>
+<noscript>
+ <img src="http://members.tripod.com/adm/img/common/ot_noscript.gif?rand=665394" alt="" width="1" height="1" />
+ <!-- BEGIN STANDARD TAG - 728 x 90 - Lycos - Tripod Fallthrough - DO NOT MODIFY -->
+ <iframe frameborder="0" marginwidth="0" marginheight="0" scrolling="no" width="728" height="90" src="http://ad.yieldmanager.com/st?ad_type=iframe&amp;ad_size=728x90&amp;section=209094"></iframe>
+ <!-- END TAG -->
+</noscript>
+
+<!-- Start Ybrant -->
+<img src="http://ad.yieldmanager.com/pixel?id=1901600&t=2" width="1" height="1" />
+<!--   End Ybrant -->
+
+<!-- Start Datonics -->
+<script type="text/javascript" src="http://ads.pro-market.net/ads/scripts/site-132783.js"></script>
+<!--   End Datonics -->
+
+<!-- Start Chango -->
+<script type="text/javascript">
+    var __cho__ = {"pid":1694};
+    (function() {
+        var c = document.createElement('script');
+        c.type = 'text/javascript';
+        c.async = true;
+        c.src = document.location.protocol + '//cc.chango.com/static/o.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(c, s);
+    })();
+</script>
+<!--   End Chango -->
+
+
+<table border=3 cellpadding=10 cellspacing=5>
+<tr>
+<td><!--webbot bot="Navigation" S-Type="global" S-Orientation="horizontal"
+  S-Rendering="graphics" B-Include-Home="FALSE" B-Include-Up="TRUE" U-Page="/W:/doc/cpu/call.htm"
+  S-Target startspan --><nobr>[&nbsp;<a href="index_c.htm" target="">Up</a>&nbsp;]</nobr> <nobr>[&nbsp;<a href="http://www.fay.naverex.kiev.ua/docs/index.htm" target="">Docs&nbsp;Home</a>&nbsp;]</nobr><!--webbot bot="Navigation" endspan i-checksum="26271" -->
+</td>
+<td>
+<h1 align="center"><!--webbot bot="Navigation" S-Type="banner"
+S-Rendering="graphics" S-Orientation B-Include-Home B-Include-Up U-Page="/W:/doc/cpu/call.htm" S-Target startspan
+-->CALL - Call Procedure<!--webbot bot="Navigation" endspan i-checksum="42687"
+-->
+</h1>
+</td>
+<td><!--webbot bot="Navigation" S-Type="arrows" S-Orientation="horizontal"
+  S-Rendering="graphics" B-Include-Home="FALSE" B-Include-Up="FALSE" U-Page="/W:/doc/cpu/call.htm"
+  S-Target startspan --><nobr>[&nbsp;<a href="cbw.htm" target="">Next</a>&nbsp;]</nobr><!--webbot bot="Navigation" endspan i-checksum="9336" -->
+</td>
+</tr>
+</table>
+<table border=1 cellpadding=3 cellspacing=3>
+<tr>
+<td align=center>
+<h2><a href="index.htm">*</a></h2>
+</td>
+<td align=center>
+<h2><a href="index_a.htm">A</a></h2>
+</td>
+<td align=center>
+<h2><a href="index_b.htm">B</a></h2>
+</td>
+<td align=center>
+<h2><a href="index_c.htm">C</a></h2>
+</td>
+<td align=center>
+<h2><a href="index_d.htm">D</a></h2>
+</td>
+<td align=center>
+<h2><a href="index_e.htm">E</a></h2>
+</td>
+<td align=center>
+<h2><a href="index_f.htm">F</a></h2>
+</td>
+<td align=center>
+<h2><a href="index_g.htm">G</a></h2>
+</td>
+<td align=center>
+<h2><a href="index_h.htm">H</a></h2>
+</td>
+<td align=center>
+<h2><a href="index_i.htm">I</a></h2>
+</td>
+<td align=center>
+<h2><a href="index_j.htm">J</a></h2>
+</td>
+<td align=center>
+<h2><a href="index_k.htm">K</a></h2>
+</td>
+<td align=center>
+<h2><a href="index_l.htm">L</a></h2>
+</td>
+<td align=center>
+<h2><a href="index_m.htm">M</a></h2>
+</td>
+<td align=center>
+<h2><a href="index_n.htm">N</a></h2>
+</td>
+<td align=center>
+<h2><a href="index_o.htm">O</a></h2>
+</td>
+<td align=center>
+<h2><a href="index_p.htm">P</a></h2>
+</td>
+<td align=center>
+<h2><a href="index_q.htm">Q</a></h2>
+</td>
+<td align=center>
+<h2><a href="index_r.htm">R</a></h2>
+</td>
+<td align=center>
+<h2><a href="index_s.htm">S</a></h2>
+</td>
+<td align=center>
+<h2><a href="index_t.htm">T</a></h2>
+</td>
+<td align=center>
+<h2><a href="index_u.htm">U</a></h2>
+</td>
+<td align=center>
+<h2><a href="index_v.htm">V</a></h2>
+</td>
+<td align=center>
+<h2><a href="index_w.htm">W</a></h2>
+</td>
+<td align=center>
+<h2><a href="index_x.htm">X</a></h2>
+</td>
+<td align=center>
+<h2><a href="index_y.htm">Y</a></h2>
+</td>
+<td align=center>
+<h2><a href="index_z.htm">Z</a></h2>
+</td>
+<td align=center>
+<h2><a href="conventions.htm">?</a></h2>
+</td>
+</tr>
+</table>
+<hr>
+<table border=1 cellpadding=5 cellspacing=0>
+<tr>
+<td><b>Code</b></td>
+<td><b>Mnemonic</b></td>
+<td><b>Description</b></td>
+</tr>
+<tr>
+<td nowrap>E8 cw </td>
+<td nowrap> 	CALL rel16 </td>
+<td> 	Call near, relative, displacement relative to next instruction</td>
+</tr>
+<tr>
+<td nowrap>E8 cd </td>
+<td nowrap> 	CALL rel32 </td>
+<td> 	Call near, relative, displacement relative to next instruction</td>
+</tr>
+<tr>
+<td nowrap>FF /2 </td>
+<td nowrap> 	CALL r/m16 </td>
+<td> 	Call near, absolute indirect, address given in r/m16</td>
+</tr>
+<tr>
+<td nowrap>FF /2 </td>
+<td nowrap> 	CALL r/m32 </td>
+<td> 	Call near, absolute indirect, address given in r/m32</td>
+</tr>
+<tr>
+<td nowrap>9A cd </td>
+<td nowrap> 	CALL ptr16:16 </td>
+<td> 	Call far, absolute, address given in operand</td>
+</tr>
+<tr>
+<td nowrap>9A cp </td>
+<td nowrap> 	CALL ptr16:32 </td>
+<td> 	Call far, absolute, address given in operand</td>
+</tr>
+<tr>
+<td nowrap>FF /3 </td>
+<td nowrap> 	CALL m16:16 </td>
+<td> 	Call far, absolute indirect, address given in m16:16</td>
+</tr>
+<tr>
+<td nowrap>FF /3 </td>
+<td nowrap> 	CALL m16:32 </td>
+<td> 	Call far, absolute indirect, address given in m16:32</td>
+</tr>
+</table>
+<br>
+<b>Description</b><br>
+Saves procedure linking information on the stack and branches to the procedure (called proce-dure) specified with the destination (target) operand. The target operand specifies the address of the first instruction in the called procedure. This operand can be an immediate value, a general-purpose register, or a memory location.<br>
+<br>
+This instruction can be used to execute four different types of calls:
+<ul>
+<li>Near call—A call to a procedure within the current code segment (the segment currently pointed to by the CS register), sometimes referred to as an intrasegment call.</li>
+<li>Far call—A call to a procedure located in a different segment than the current code segment, sometimes referred to as an intersegment call.</li>
+<li>Inter-privilege-level far call—A far call to a procedure in a segment at a different privilege level than that of the currently executing program or procedure.</li>
+<li>Task switch—A call to a procedure located in a different task.</li>
+</ul>
+The latter two call types (inter-privilege-level call and task switch) can only be executed in protected mode. See the section titled "Calling Procedures Using Call and RET" in Chapter 4 of the Intel Architecture Software Developer's Manual, Volume 1, for additional information on near, far, and inter-privilege-level calls. See Chapter 6, Task Management, in the Intel Architecture Software Developer's Manual, Volume 3, for information on performing task switches with the CALL instruction.<br>
+<br>
+<b>Near Call.</b> When executing a near call, the processor pushes the value of the EIP register (which contains the offset of the instruction following the CALL instruction) onto the stack (for use later as a return-instruction pointer). The processor then branches to the address in the current code segment specified with the target operand. The target operand specifies either an absolute offset in the code segment (that is an offset from the base of the code segment) or a relative offset (a signed displacement relative to the current value of the instruction pointer in the EIP register, which points to the instruction following the CALL instruction). The CS register is not changed on near calls.<br>
+<br>
+For a near call, an absolute offset is specified indirectly in a general-purpose register or a memory location (r/m16 or r/m32). The operand-size attribute determines the size of the target operand (16 or 32 bits). Absolute offsets are loaded directly into the EIP register. If the operand-size attribute is 16, the upper two bytes of the EIP register are cleared to 0s, resulting in a maximum instruction pointer size of 16 bits. (When accessing an absolute offset indirectly using the stack pointer [ESP] as a base register, the base value used is the value of the ESP before the instruction executes.)<br>
+<br>
+A relative offset (rel16 or rel32) is generally specified as a label in assembly code, but at the machine code level, it is encoded as a signed, 16- or 32-bit immediate value. This value is added to the value in the EIP register. As with absolute offsets, the operand-size attribute determines the size of the target operand (16 or 32 bits).<br>
+<br>
+<b>Far Calls in Real-Address or Virtual-8086 Mode.</b> When executing a far call in real-address or virtual-8086 mode, the processor pushes the current value of both the CS and EIP registers onto the stack for use as a return-instruction pointer. The processor then performs a "far branch" to the code segment and offset specified with the target operand for the called procedure. Here the target operand specifies an absolute far address either directly with a pointer (ptr16:16 or ptr16:32) or indirectly with a memory location (m16:16 or m16:32). With the pointer method, the segment and offset of the called procedure is encoded in the instruction, using a 4-byte (16-bit operand size) or 6-byte (32-bit operand size) far address immediate. With the indirect method, the target operand specifies a memory location that contains a 4-byte (16-bit operand size) or 6-byte (32-bit operand size) far address. The operand-size attribute determines the size of the offset (16 or 32 bits) in the far address. The far address is loaded directly into the CS and EIP registers. If the operand-size attribute is 16, the upper two bytes of the EIP register
+are cleared to 0s.<br>
+<br>
+<b>Far Calls in Protected Mode. </b> When the processor is operating in protected mode, the CALL instruction can be used to perform the following three types of far calls:
+<ul>
+<li>Far call to the same privilege level.</li>
+<li>Far call to a different privilege level (inter-privilege level call).</li>
+<li>Task switch (far call to another task).</li>
+</ul>
+<p>In protected mode, the processor always uses the segment selector part of the far address to access the corresponding descriptor in the GDT or LDT. The descriptor type (code segment, call gate, task gate, or TSS) and access rights determine the type of call operation to be performed.<br>
+<br>
+If the selected descriptor is for a code segment, a far call to a code segment at the same privilege level is performed. (If the selected code segment is at a different privilege level and the code segment is non-conforming, a general-protection exception is generated.) A far call to the same privilege level in protected mode is very similar to one carried out in real-address or virtual-8086 mode. The target operand specifies an absolute far address either directly with a pointer (ptr16:16 or ptr16:32) or indirectly with a memory location (m16:16 or m16:32). The operand-size attribute determines the size of the offset (16 or 32 bits) in the far address. The new code segment selector and its descriptor are loaded into CS register, and the offset from the instruction is loaded into the EIP register.<br>
+<br>
+Note that a call gate (described in the next paragraph) can also be used to perform far call to a code segment at the same privilege level. Using this mechanism provides an extra level of indi-rection and is the preferred method of making calls between 16-bit and 32-bit code segments.<br>
+<br>
+When executing an inter-privilege-level far call, the code segment for the procedure being called must be accessed through a call gate. The segment selector specified by the target operand identifies the call gate. Here again, the target operand can specify the call gate segment selector either directly with a pointer (ptr16:16 or ptr16:32) or indirectly with a memory location (m16:16 or m16:32). The processor obtains the segment selector for the new code segment and the new instruction pointer (offset) from the call gate descriptor. (The offset from the target operand is ignored when a call gate is used.) On inter-privilege-level calls, the processor switches to the stack for the privilege level of the called procedure. The segment selector for the new stack segment is specified in the TSS for the currently running task. The branch to the new code segment occurs after the stack switch. (Note that when using a call gate to perform a far call to a segment at the same privilege level, no stack switch occurs.) On the new stack, the processor pushes the segment selector and stack pointer for the calling procedure's stack, an (optional) set of parameters from the calling procedures stack, and the segment selector and instruction pointer for the calling procedure's code segment. (A value in the call gate descriptor determines how many parameters to copy to the new stack.) Finally, the processor branches to the address of the procedure being called within the new code segment.<br>
+<br>
+Executing a task switch with the CALL instruction, is somewhat similar to executing a call through a call gate. Here the target operand specifies the segment selector of the task gate for the task being switched to (and the offset in the target operand is ignored.) The task gate in turn points to the TSS for the task, which contains the segment selectors for the task's code and stack segments. The TSS also contains the EIP value for the next instruction that was to be executed before the task was suspended. This instruction pointer value is loaded into EIP register so that the task begins executing again at this next instruction.<br>
+<br>
+The CALL instruction can also specify the segment selector of the TSS directly, which elimi-nates the indirection of the task gate. See Chapter 6, Task Management, in the Intel Architecture Software Developer's Manual, Volume 3, for detailed information on the mechanics of a task switch.<br>
+<br>
+Note that when you execute at task switch with a CALL instruction, the nested task flag (NT) is set in the EFLAGS register and the new TSS's previous task link field is loaded with the old tasks TSS selector. Code is expected to suspend this nested task by executing an IRET instruction, which, because the NT flag is set, will automatically use the previous task link to return to the calling task. (See "Task Linking" in Chapter 6 of the Intel Architecture Software Developer's Manual, Volume 3, for more information on nested tasks.) Switching tasks with the CALL instruction differs in this regard from the JMP instruction which does not set the NT flag and therefore does not expect an IRET instruction to suspend the task.<br>
+<br>
+<b>
+Mixing 16-Bit and 32-Bit Calls.</b> When making far calls between 16-bit and 32-bit code segments, the calls should be made through a call gate. If the far call is from a 32-bit code segment to a 16-bit code segment, the call should be made from the first 64 KBytes of the 32-bit code segment. This is because the operand-size attribute of the instruction is set to 16, so only a 16-bit return address offset is saved. Also, the call should be made using a 16-bit call gate so that 16-bit values will be pushed on the stack. See Chapter 16, Mixing 16-Bit and 32-Bit Code, in the Intel Architecture Software Developer's Manual, Volume 3, for more information on making calls between 16-bit and 32-bit code segments.
+</p>
+<table border=1 cellpadding=5 cellspacing=0>
+<tr>
+<td><b>Operands</b></td>
+<td><b>Bytes</b></td>
+<td colspan="2"><b>Clocks</b></td>
+</tr>
+<tr>
+<td> near </td>
+<td> 	3</td>
+<td>1</td>
+<td> PV</td>
+</tr>
+<tr>
+<td>reg </td>
+<td> 	2</td>
+<td>2</td>
+<td> NP</td>
+</tr>
+<tr>
+<td>mem16 </td>
+<td>2 + d(0 - 2)</td>
+<td>2</td>
+<td> NP</td>
+</tr>
+<tr>
+<td>far </td>
+<td> 	5</td>
+<td>4</td>
+<td> NP</td>
+</tr>
+<tr>
+<td>mem32 </td>
+<td>2 + d(0 - 2)</td>
+<td>4</td>
+<td> NP</td>
+</tr>
+</table>
+<br>
+<b>Protected Mode</b>
+<table border=1 cellpadding=5 cellspacing=0>
+<tr>
+<td><b>Operands</b></td>
+<td><b>Bytes</b></td>
+<td colspan="2"><b>Clocks</b></td>
+</tr>
+<tr>
+<td> far </td>
+<td> 	5 </td>
+<td>4 - 13 </td>
+<td> NP</td>
+</tr>
+<tr>
+<td>mem32 </td>
+<td>2 + d(0 - 2) </td>
+<td>5 - 14 </td>
+<td> NP</td>
+</tr>
+</table>
+Cycles not shown for calls through call and task gates<br>
+<br>
+<b>Flags<br>
+</b>
+All flags are affected if a task switch occurs; no flags are affected if a task switch does not occur.
+</body>
+</html>

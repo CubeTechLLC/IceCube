@@ -1,0 +1,1878 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>(.avi) Microsoft Audio/Video Interleaved</title>
+</head>
+<body background="images/background_item.gif"><!--'"</title></head>-->
+<script type="text/javascript">
+////// Compete /////////////////////
+__compete_code = '667f89f26d96c30e99728fe6a608804d';
+(function () {
+    var s = document.createElement('script'),
+        d = document.getElementsByTagName('head')[0] ||
+            document.getElementsByTagName('body')[0],
+        t = 'https:' == document.location.protocol ? 
+            'https://c.compete.com/bootstrap/' : 
+            'http://c.compete.com/bootstrap/';
+    s.src = t + __compete_code + '/bootstrap.js';
+    s.type = 'text/javascript';
+    s.async = 'async'; 
+    if (d) { d.appendChild(s); }
+})();
+
+
+////// Quantcast  /////////////////////
+function channValidator(chann) {
+    return (typeof(chann) == 'string' && chann != '');
+}
+
+function lycosQuantcast(){
+    var lb = "";
+    if(typeof(cm_host) !== 'undefined' && channValidator(cm_host)){
+        lb += cm_host.split('.')[0] + '.';
+    }
+
+    if(typeof(cm_taxid) !== 'undefined' && channValidator(cm_taxid)){
+        lb += cm_taxid;
+        lb = lb.replace('/','');
+    } else {
+        lb = lb.replace('.','');
+    }
+    return lb;
+}
+
+var _qevents = _qevents || [];
+
+(function() {
+    var elem = document.createElement('script');
+    elem.src = (document.location.protocol == "https:" ? "https://secure" :"http://edge") + ".quantserve.com/quant.js";
+    elem.async = true;
+    elem.type = "text/javascript";
+    var scpt = document.getElementsByTagName('script')[0];
+    scpt.parentNode.insertBefore(elem, scpt);
+})();
+
+_qevents.push({
+    qacct:"p-6eQegedn62bSo",
+    labels:lycosQuantcast()
+});
+
+////// OwnerIQ  /////////////////////
+var __oiq_pct = 50;
+if( __oiq_pct>=100 || Math.floor(Math.random()*100/(100-__oiq_pct)) > 0 ) {
+    var _oiqq = _oiqq || [];
+    _oiqq.push(['oiq_addPageBrand', 'Lycos']);
+    _oiqq.push(['oiq_addPageCat', 'Internet > Websites']);
+    _oiqq.push(['oiq_addPageLifecycle', 'Intend']);
+    _oiqq.push(['oiq_doTag']);
+
+    (function() {
+        var oiq = document.createElement('script'); oiq.type = 'text/javascript'; oiq.async = true;
+        oiq.src = document.location.protocol + '//px.owneriq.net/stas/s/lycosn.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(oiq, s);
+    })();
+}
+
+
+
+/////// Google Analytics ////////////
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-21402695-19']);
+_gaq.push(['_setDomainName', 'tripod.com']);
+_gaq.push(['_setCustomVar', 1, 'member_name', 'faydoc', 3]);
+_gaq.push(['_trackPageview']);
+(function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+
+/////// Lycos Initialization ////////////
+function getReferrer() {
+    // Reads the referrer out of the cookie, if available.
+    var all= this.document.cookie;
+    if (all== '') return false;
+    var cookie_name = 'REFERRER=';
+    var start = all.lastIndexOf(cookie_name);
+    if (start == -1) return false;  // referrer URL not found.
+    start += cookie_name.length;
+    var end = all.indexOf(';', start);
+    if (end == -1) end = all.length;
+    return all.substring(start, end);
+}
+function getQuery() {
+    // Get the referrer search query from cookie, if available.
+    var rfr = getReferrer();
+    if (rfr == '') return false;
+    var q = extractQuery(rfr, 'yahoo.com', 'p=');
+    if (q) return q;
+    q = extractQuery(rfr, '', 'q=');
+    return q ? q : "";
+}
+function extractQuery(full, site, q_param) {
+    var start = full.lastIndexOf(site);
+    if (start == -1) return false;
+    start = full.lastIndexOf(q_param);
+    if (start == -1) return false;
+    start += q_param.length;
+    var end = full.indexOf('&', start);
+    if (end == -1) end = full.length;
+    return unescape(full.substring(start, end)).split(" ").join("+");
+}
+
+function generateHref(atag, template){
+    atag.href=template.replace('_MYURL_', window.location.href.replace('http://', '')).replace('_MYTITLE_', 'Check%20out%20this%20Tripod%20Member%20site!'); 
+}
+
+
+var lycos_ad = Array();
+var lycos_onload_timer;
+
+var cm_role = "live";
+var cm_host = "tripod.lycos.com";
+var cm_taxid = "/memberembedded";
+var tripod_member_name = "faydoc";
+var tripod_member_page = "faydoc/formats/avi.htm";
+var tripod_ratings_hash = "1372261281:c3057e58768c31ef2c92ae12327b597e";
+
+var lycos_ad_category = {"find_what":"reliv.com"};
+
+var lycos_ad_remote_addr = "99.159.74.223";
+var lycos_ad_www_server = "www.tripod.lycos.com";
+var lycos_ad_track_small = "http://members.tripod.com/adm/img/common/ot_smallframe.gif?rand=142244";
+var lycos_ad_track_served = "http://members.tripod.com/adm/img/common/ot_adserved.gif?rand=142244";
+var lycos_search_query = getQuery();
+
+
+////// Criteo /////////////////////
+var cto_conf = { a:true, i: "294", c:"img", kw: "" } ;
+(function (){
+    var c = document.createElement("script"); c.type = "text/javascript"; c.async = true;
+    c.src = "http://members.tripod.com/adm/partner/criteo_ld_kw.js";
+    var s = document.getElementsByTagName("body")[0]; s.appendChild(c);
+})(); 
+
+</script>
+
+<script type="text/javascript" src="http://scripts.lycos.com/catman/init.js"></script>
+<script type="text/javascript"> 
+
+(function(isV) {
+    if (!isV) {
+        return;
+    }
+
+    //this.lycos_search_query = lycos_get_search_referrer();
+    var adMgr = new AdManager();
+    var lycos_prod_set = adMgr.chooseProductSet();
+    var slots = ["leaderboard", "leaderboard2", "toolbar_image", "toolbar_text", "smallbox", "top_promo", "footer2"];
+    var adCat = this.lycos_ad_category;
+    adMgr.setForcedParam('page', (adCat && adCat.dmoz) ? adCat.dmoz : 'member');
+
+    if (this.lycos_search_query) {
+        adMgr.setForcedParam("keyword", this.lycos_search_query);
+    } 
+    else if (adCat && adCat.find_what) {
+        adMgr.setForcedParam('keyword', adCat.find_what);
+    }
+
+    for (var s in slots) {
+        var slot = slots[s];
+        if (adMgr.isSlotAvailable(slot)) {
+            this.lycos_ad[slot] = adMgr.getSlot(slot);
+        }
+    }
+
+    adMgr.renderHeader();
+    adMgr.renderFooter();
+}((function() {
+    var w = 0, h = 0, minimumThreshold = 300;
+    if (top == self) {
+        return true;
+    }
+
+    if (typeof(window.innerWidth) == 'number' ) {
+        w = window.innerWidth;
+        h = window.innerHeight;
+    }
+    else if (document.documentElement && (document.documentElement.clientWidth || document.documentElement.clientHeight)) {
+        w = document.documentElement.clientWidth;
+        h = document.documentElement.clientHeight;
+    }
+    else if (document.body && (document.body.clientWidth || document.body.clientHeight)) {
+        w = document.body.clientWidth;
+        h = document.body.clientHeight;
+    }
+
+    return ((w > minimumThreshold) && (h > minimumThreshold));
+}())));
+    
+window.onload = function() {
+    var f = document.getElementById("FooterAd");
+    var b = document.getElementsByTagName("body")[0];
+    b.appendChild(f);
+    f.style.display = "block";
+    document.getElementById('lycosFooterAdiFrame').src = '/adm/ad/footerAd.iframe.html';
+
+
+    // DOM Injection Ad
+    (function(isTrellix) {
+        var e = document.createElement('iframe');
+        e.style.border = '0';
+        e.style.margin = 0;
+        e.style.display = 'block';
+        e.style.cssFloat = 'right';
+        e.style.height = '254px';
+        e.style.overflow = 'hidden';
+        e.style.padding = 0;
+        e.style.width = '300px';
+
+        var getCommentNodes = function(regexPattern) {
+            var nodes = {};
+            var nodesA = [];
+            var preferredNodesList = ['a', 'c', 'b'];
+
+            (function getNodesThatHaveComments(n, pattern) {
+                if (n.hasChildNodes()) {
+                    if (n.tagName === 'IFRAME') {
+                        return false;
+                    }
+                    for (var i = 0; i < n.childNodes.length; i++) {
+                        if ((n.childNodes[i].nodeType === 8) && (pattern.test(n.childNodes[i].nodeValue))) {
+                            var areaName = pattern.exec(n.childNodes[i].nodeValue)[1];
+                            nodes[areaName] = n;
+                        }
+                        else if (n.childNodes[i].nodeType === 1) {
+                            getNodesThatHaveComments(n.childNodes[i], pattern);
+                        }
+                    }
+                }
+            }(document.body, regexPattern));
+
+            for (var i in preferredNodesList) {
+                if (nodes[preferredNodesList[i]]) {
+                    if (nodes[preferredNodesList[i]].parentNode.parentNode.parentNode.parentNode) {
+                        nodesA.push(nodes[preferredNodesList[i]].parentNode.parentNode.parentNode.parentNode);
+                    }
+                }
+            }
+
+            return nodesA;
+        }
+
+        var properNode = null;
+        var areaNodes = getCommentNodes(new RegExp('^area Type="area_(\\w+)"'));
+        for (var i = 0; i < areaNodes.length; i++) {
+            var a = parseInt(getComputedStyle(areaNodes[i]).width);
+            if ((a >= 300) && (a <= 400)) {
+                properNode = areaNodes[i];
+                break;
+            }
+        }
+
+        if ((isTrellix) && (properNode)) {
+            e.src = '/adm/ad/injectAd.iframe.html';
+            properNode.insertBefore(e, properNode.firstChild);
+        }
+        else {
+            e.src = '/adm/ad/sliderAd.iframe.html';
+            var sliderBlock = document.getElementById('lyslider-adblock-wrapper');
+            var sliderHolder = document.getElementById('lyslider-adblock-holder');
+            var sliderClose = document.getElementById('lyslider-adblock-close');
+            sliderBlock.style.display = 'block';
+
+            sliderClose.onclick = function() {
+                sliderBlock.parentNode.removeChild(sliderBlock);
+                return false;
+            }
+
+            var iframeOnload = function() {
+                setTimeout((function sliiide() {
+                    var s = (window.getComputedStyle) ? parseInt(getComputedStyle(sliderHolder).right) : parseInt(sliderHolder.currentStyle.right);
+                    if (s <= 0) {
+                        sliderHolder.style.right = (s + 6) + 'px';
+                        setTimeout(sliiide, 10);
+                    }
+                    else {
+                        sliderHolder.style.right = '0px';
+                        sliderClose.style.display = 'block';
+                    }
+                }), 1000);
+            }
+
+            if (e.attachEvent) {
+                e.attachEvent('onload', iframeOnload);
+            }
+            else {
+                e.addEventListener('load', iframeOnload, false);
+            }
+
+            sliderHolder.insertBefore(e, sliderHolder.firstChild);
+        }
+    }(document.isTrellix));
+
+}
+
+
+
+</script>
+<style>
+	#body .adCenterClass{margin:0 auto}
+</style>
+
+<div id="tb_container" style="background:#DFDCCF; border-bottom:1px solid #393939; position:relative; z-index:999999999!important">
+    <div id="tb_ad" class="adCenterClass" style="display:block!important; overflow:hidden; width:916px;">
+    <a href="http://adtrack.ministerial5.com/clicknew/?a=637394" title="build your own website at Tripod.com" style="float:left; width:186px; border:0">
+    	<img src="http://ly.lygo.com/ly/tpSite/images/freeAd2.jpg" alt="Make your own free website on Tripod.com" style="border:0; display:block" />
+    </a> 
+        <div id="ad_container" style="display:block!important; float:left; width:728px ">
+        <script type="text/javascript">document.write(lycos_ad['leaderboard']);</script>
+        </div>
+    </div>
+</div>
+
+<!-- ///////////////////////////////////// -->
+<div id="lyslider-adblock-wrapper" style="display:none; height:300px; overflow:hidden; position:absolute; right:0; top:150px; width:320px; z-index:99999999; ">
+<div id="lyslider-adblock-holder" style="background-color:#888; height:250px; margin-bottom:25px; padding:4px; position:absolute; right:-320px; top:10px; width:300px; ">
+<a id="lyslider-adblock-close" href="#" style="background-color:#222; bottom:-19px; color:#fff; display:block; font:10px Arial, Helvetica, Sans-serif; padding:4px; position:absolute; right:0; text-decoration:none; z-index:9999999999">Close Ad</a>
+</div>
+</div>
+
+
+<div id="FooterAd" style="background:#DFDCCF; border-top:1px solid #393939; clear:both; display:none; width:100%!important; position:relative; z-index:999999!important; height:90px!important"> 
+	<div class="adCenterClass" style="display:block!important; overflow:hidden; width:916px;">
+	<a href="http://adtrack.ministerial5.com/clicknew/?a=637394" title="build your own website at Tripod.com" style="float:left; display:block; width:186px; border:0">
+    	<img src="http://ly.lygo.com/ly/tpSite/images/freeAd2.jpg" alt="Make your own free website on Tripod.com" style="border:0; display:block; " />
+    </a> 
+        <div id="footerAd_container" style="display:block!important; float:left; width:728px">
+        <iframe id="lycosFooterAdiFrame" style="border:0; display:block; float:left; height:96px; overflow:hidden; padding:0; width:750px"></iframe>
+        <!-- <script type="text/javascript">document.write(lycos_ad['leaderboard2']);</script> -->
+        </div>
+	</div>
+</div>
+<noscript>
+ <img src="http://members.tripod.com/adm/img/common/ot_noscript.gif?rand=142244" alt="" width="1" height="1" />
+ <!-- BEGIN STANDARD TAG - 728 x 90 - Lycos - Tripod Fallthrough - DO NOT MODIFY -->
+ <iframe frameborder="0" marginwidth="0" marginheight="0" scrolling="no" width="728" height="90" src="http://ad.yieldmanager.com/st?ad_type=iframe&amp;ad_size=728x90&amp;section=209094"></iframe>
+ <!-- END TAG -->
+</noscript>
+
+<!-- Start Ybrant -->
+<img src="http://ad.yieldmanager.com/pixel?id=1901600&t=2" width="1" height="1" />
+<!--   End Ybrant -->
+
+<!-- Start Datonics -->
+<script type="text/javascript" src="http://ads.pro-market.net/ads/scripts/site-132783.js"></script>
+<!--   End Datonics -->
+
+<!-- Start Chango -->
+<script type="text/javascript">
+    var __cho__ = {"pid":1694};
+    (function() {
+        var c = document.createElement('script');
+        c.type = 'text/javascript';
+        c.async = true;
+        c.src = document.location.protocol + '//cc.chango.com/static/o.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(c, s);
+    })();
+</script>
+<!--   End Chango -->
+
+
+<table border=3 cellpadding=10 cellspacing=5>
+<tr>
+<td><!--webbot bot="Navigation" S-Type="global" S-Orientation="horizontal"
+  S-Rendering="graphics" B-Include-Home="FALSE" B-Include-Up="TRUE" U-Page="/W:/doc/formats/avi.htm"
+  S-Target startspan --><nobr>[&nbsp;<a href="index.htm" target="">Up</a>&nbsp;]</nobr> <nobr>[&nbsp;<a href="http://www.fay.naverex.kiev.ua/docs/index.htm" target="">Docs&nbsp;Home</a>&nbsp;]</nobr><!--webbot bot="Navigation" endspan i-checksum="63939" -->
+</td>
+<td>
+<h1 align="center"><!--webbot bot="Navigation" S-Type="banner"
+S-Rendering="graphics" S-Orientation B-Include-Home B-Include-Up U-Page="/W:/doc/formats/avi.htm" S-Target startspan
+-->(avi) Microsoft Audio/Video Interleaved<!--webbot bot="Navigation" endspan i-checksum="37144"
+-->
+</h1>
+</td>
+<td><!--webbot bot="Navigation" S-Type="arrows" S-Orientation="horizontal"
+  S-Rendering="graphics" B-Include-Home="FALSE" B-Include-Up="FALSE" U-Page="/W:/doc/formats/avi.htm"
+  S-Target startspan --><nobr>[&nbsp;<a href="3ds.htm" target="">Back</a>&nbsp;]</nobr> <nobr>[&nbsp;<a href="mid.htm" target="">Next</a>&nbsp;]</nobr><!--webbot bot="Navigation" endspan i-checksum="21113" -->
+</td>
+</tr>
+</table>
+<br>
+The Microsoft Audio/Video Interleaved (AVI) file format is
+a RIFF file specification used with applications that capture, edit, and
+playback audio/video sequences. In general, AVI files contain multiple streams
+of different types of data. Most AVI sequences will use both audio and video
+streams. A simple variation for an AVI sequence uses video data and does not
+require an audio stream. Specialized AVI sequences might include a control track
+or MIDI track as an additional data stream. The control track could control
+external devices such as an MCI videodisc player. The MIDI track could play
+background music for the sequence. While a specialized sequence requires a
+specialized control program to take advantage of all its capabilities,
+applications that can read and play AVI sequences can still read and play an AVI
+sequence in a specialized file. (These applications ignore the non-AVI data in
+the specialized file.) This chapter primarily describes AVI files containing
+only audio and video data.<br>
+This chapter covers the following topics:
+<ul>
+<li>The required chunks of an AVI file</li>
+<li>The optional chunks of an AVI file</li>
+<li>Developing routines to write AVI files</li></ul>
+<p>For additional information about RIFF files, see the <i>Microsoft
+Windows Multimedia Programmer’s Guide</i> and <i>Microsoft
+Windows Multimedia Programmer’s Reference</i>.</p>
+<p>For additional information about installable compressors
+and decompressors, see chapter 10, “Video Compression and Decompression
+Drivers.”</p>
+<h1>AVI RIFF Form</h1>
+<p>AVI files use the AVI RIFF form. The AVI RIFF form is
+identified by the four-character code “AVI ”. All AVI files include two
+mandatory LIST chunks. These chunks define the format of the streams and stream
+data. AVI files might also include an index chunk. This
+optional chunk specifies the location of data chunks within
+the file. An AVI file with these components has the following form:</p>
+<p>The LIST chunks and the index chunk are subchunks of the
+RIFF “AVI ” chunk. The “AVI ” chunk identifies the file as an AVI RIFF
+file. The LIST “hdrl” chunk defines the format of the data and is the first
+required list chunk. The LIST “movi” chunk contains the data for the AVI
+sequence and is the second required list chunk. The “idx1” chunk is the
+optional index chunk. AVI files must keep these three components in the proper
+sequence.<br>
+<img border=0 src="images/avi1.gif" width=150 height=184></p>
+<p>The LIST “hdrl” and LIST “movi” chunks use
+subchunks for their data. The following example shows the AVI RIFF form expanded
+with the chunks needed to complete the LIST “hdrl” and LIST “movi”
+chunks:<br>
+<img border=0 src="images/avi2.gif" width=302 height=579><br>
+The following sections describe the chunks contained in the
+LIST “hdrl” and LIST “movi” chunks as well as the “idx1” chunk.</p>
+<h2>Data Structures for AVI Files</h2>
+<p>Data structures used in the RIFF chunks are defined in the
+AVIFMT.H header file. The reference section at the end of this chapter describes
+the data structures that can be used for the main AVI header, stream header,
+AVIIndex, and palette change chunks.</p>
+<h2>The Main AVI Header LIST</h2>
+The file begins with the main header. In the AVI file, this
+header is identified with “avih” four-character code. The header contains
+general information about the file, such as the number of streams within the
+file and the width and height of the AVI sequence. The main header has the
+following data structure defined for it:<br>
+<img border=0 src="images/avi3.gif" width=205 height=234><br>
+<table border=1 cellpadding=10 cellspacing=0>
+<tr>
+<td> <b>dwMicroSecPerFrame</b>
+</td>
+<td>
+<p>The <b>dwMicroSecPerFrame</b>
+field specifies the period between video frames. This value indicates the
+overall timing for the file.</p>
+</td>
+</tr>
+<tr>
+<td> <b>dwMaxBytesPerSec</b>
+</td>
+<td>The <b>dwMaxBytesPerSec</b>
+field specifies the approximate maximum data rate of the file. This value
+indicates the number of bytes per second the system must handle to present an
+AVI sequence as specified by the other parameters contained in the main header
+and stream header chunks.</td>
+</tr>
+<tr>
+<td> <b>dwFlags</b>
+</td>
+<td>The <b>dwFlags</b>
+field contains any flags for the file. The following flags are defined:
+<table border=0 cellpadding=5 cellspacing=0>
+<tr>
+<td><b>AVIF_HASINDEX
+</b></td>
+<td>Indicates the AVI file has an “idx1” chunk.</td>
+</tr>
+<tr>
+<td><b>AVIF_MUSTUSEINDEX
+</b></td>
+<td>Indicates the index should be used to determine the order of
+presentation of the data.</td>
+</tr>
+<tr>
+<td><b>AVIF_ISINTERLEAVED
+</b></td>
+<td>Indicates the AVI file is interleaved.</td>
+</tr>
+<tr>
+<td><b>AVIF_WASCAPTUREFILE
+</b></td>
+<td>Indicates the AVI file is a specially allocated file used for
+capturing real-time video.</td>
+</tr>
+<tr>
+<td><b>AVIF_COPYRIGHTED
+</b></td>
+<td>Indicates the AVI file contains copyrighted data.</td>
+</tr>
+</table>
+<p>The <b> AVIF_HASINDEX</b> and <b> AVIF_MUSTUSEINDEX</b> flags applies to
+files with an index chunk. The <b> AVI_HASINDEX</b> flag indicates an index is present.
+The <b> AVIF_MUSTUSEINDEX</b> flag indicates the index should be used to determine the
+order of the presentation of the data. When this flag is set, it implies the
+physical ordering of the chunks in the file does not correspond to the
+presentation order.</p>
+<p>The <b> AVIF_ISINTERLEAVED</b> flag indicates the AVI file has been
+interleaved. The system can stream interleaved data from a CD-ROM more
+efficiently than non-interleaved data. For more information on interleaved
+files, see “Special Information for Interleaved Files.”</p>
+<p>The <b> AVIF_WASCAPTUREFILE</b> flag indicates the AVI file is a
+specially allocated file used for capturing real-time video. Typically, capture
+files have been defragmented by user so video capture data can be efficiently
+streamed into the file. If this flag is set, an application should warn the user
+before writing over the file with this flag.</p>
+<p>The <b> AVIF_COPYRIGHTED</b> flag indicates the AVI file contains
+copyrighted data. When this flag is set, applications should not let users
+duplicate the file or the data in the file.</p>
+</td>
+</tr>
+<tr>
+<td> <b>dwTotalFrames</b>
+</td>
+<td>The <b>dwTotalFrames</b>
+field of the main header specifies the total number of frames of data in file.
+</td>
+</tr>
+<tr>
+<td> <b>dwInitialFrames</b>
+</td>
+<td>The <b>dwInitialFrames</b>
+is used for interleaved files. If you are creating interleaved files, specify
+the number of frames in the file prior to the initial frame of the AVI sequence
+in this field.
+</td>
+</tr>
+<tr>
+<td> <b>dwStreams</b>
+</td>
+<td>The <b>dwStreams</b>
+field specifies the number of streams in the file. For example, a file with
+audio and video has 2 streams.
+</td>
+</tr>
+<tr>
+<td> <b>dwStreams</b>
+</td>
+<td>The <b>dwStreams</b>
+field specifies the number of streams in the file. For example, a file with
+audio and video has 2 streams.
+</td>
+</tr>
+<tr>
+<td> <b>dwSuggestedBufferSize</b>
+</td>
+<td>The <b>dwSuggestedBufferSize</b>
+field specifies the suggested buffer size for reading the file. Generally, this
+size should be large enough to contain the largest chunk in the file. If set to
+zero, or if it is too small, the playback software will have to reallocate
+memory during playback which will reduce performance. For an interleaved file,
+the buffer size should be large enough to read an entire record and not just a
+chunk.
+</td>
+</tr>
+<tr>
+<td> <b>dwWidth</b> </td>
+<td rowspan="2">The <b>dwWidth</b> and <b>dwHeight</b>
+fields specify the width and height of the AVI file in pixels.
+</td>
+</tr>
+<tr>
+<td> <b>dwHeight</b>
+</td>
+</tr>
+<tr>
+<td> <b>dwScale</b> </td>
+<td rowspan="2">The <b>dwScale</b> and <b>dwRate</b>
+fields are used to specify the general time scale that the file will use. In
+addition to this time scale, each stream can have its own time scale. The time
+scale in samples per second is determined by dividing <b>dwRate</b>
+by <b>dwScale</b>.
+</td>
+</tr>
+<tr>
+<td> <b>dwRate</b>
+</td>
+</tr>
+<tr>
+<td> <b>dwStart</b> </td>
+<td rowspan="2">The <b>dwStart</b> and <b>dwLength</b>
+fields specify the starting time of the AVI file and the length of the file. The
+units are defined by <b>dwRate</b> and <b>dwScale</b>. The <b>dwStart</b>
+field is usually set to zero.
+</td>
+</tr>
+<tr>
+<td> <b>dwLength</b>
+</td>
+</tr>
+</table>
+<h2>The Stream Header (“strl”) Chunks</h2>
+<p>The main header is followed by one or more “strl”
+chunks. (A “strl” chunk is required for each data stream.) These chunks
+contain information about the streams in the file. Each “strl” chunk must
+contain a stream header and stream format chunk. Stream header chunks are
+identified by the four-character code “strh” and stream format chunks are
+identified with the four-character code “strf”. In addition to the stream
+header and stream format chunks, the “strl” chunk might also contain a
+stream data chunk. Stream data chunks are identified with the four-character
+code “strd”.</p>
+<p>The stream header has the following data structure defined
+for it:<br>
+<img border=0 src="images/avi4.gif" width=210 height=202></p>
+The stream header specifies the type of data the stream
+contains, such as audio or video, by means of a four-character code.
+<table border=1 cellpadding=10 cellspacing=0>
+<tr>
+<td> <b>fccType</b>
+</td>
+<td>
+The <b>fccType</b>
+field is set to “vids” if the stream it specifies contains video data. It is
+set to “auds” if it contains audio data.
+</td>
+</tr>
+<tr>
+<td> <b>fccHandler</b>
+</td>
+<td>The <b>fccHandler</b>
+field contains a four-character code describing the installable compressor or
+decompressor used with the data.
+</td>
+</tr>
+<tr>
+<td> <b>fccHandler</b>
+</td>
+<td>The <b>fccHandler</b>
+field contains a four-character code describing the installable compressor or
+decompressor used with the data.
+</td>
+</tr>
+<tr>
+<td> <b>dwFlags</b>
+</td>
+<td>The <b>dwFlags</b>
+field contains any flags for the data stream.
+<table border=0 cellpadding=5 cellspacing=0 width=100%>
+<tr>
+<td width=50%><b> AVISF_DISABLED</b></td>
+<td width=50%> The <b> AVISF_DISABLED</b> flag indicates that the stream data should be rendered
+only when explicitly enabled by the user.</td>
+</tr>
+<tr>
+<td width=50%><b> AVISF_VIDEO_PALCHANGES</b></td>
+<td width=50%> The <b> AVISF_VIDEO_PALCHANGES</b> flag
+indicates palette changes are embedded in the file.</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td> <b>dwInitialFrames</b>
+</td>
+<td>The <b>dwInitialFrames</b>
+is used for interleaved files. If you are creating interleaved files, specify
+the number of frames in the file prior to the initial frame of the AVI sequence
+in this field.
+</td>
+</tr>
+<tr>
+<td> <b>dwScale</b> </td>
+<td>The remaining fields describe the playback characteristics
+of the stream.
+</td>
+</tr>
+<tr>
+<td> <b>dwRate</b></td>
+<td rowspan="6">These factors include the playback rate (<b>dwScale</b> and <b>dwRate</b>), the
+starting time of the sequence (<b>dwStart</b>),
+the length of the sequence (<b>dwLength</b>),
+the size of the playback buffer (<b>dwSuggestedBuffer</b>),
+an indicator of the data quality (<b>dwQuality</b>),
+and sample size (<b>dwSampleSize</b>). See
+the reference section for more information on these fields.
+</td>
+</tr>
+<tr>
+<td> <b>dwStart</b></td>
+</tr>
+<tr>
+<td> <b>dwLength</b></td>
+</tr>
+<tr>
+<td> <b>dwSuggestedBuffer</b></td>
+</tr>
+<tr>
+<td> <b>dwQuality</b></td>
+</tr>
+<tr>
+<td> <b>dwSampleSize</b></td>
+</tr>
+</table>
+<p>Some of the fields in the stream header structure are also
+present in the main header structure. The data in the main header structure
+applies to the whole file while the data in
+the stream header structure applies only to a stream.</p>
+<p>A stream format (“strf”) chunk must follow a stream
+header (“strh”) chunk. The stream format chunk describes the format of the
+data in the stream. For video streams, the information in this chunk is a <b>
+BITMAPINFO</b> structure (including palette information if appropriate). For audio
+streams, the information in this chunk is a <b> WAVEFORMATEX</b> or <b> PCMWAVEFORMAT</b>
+structure. (The <b> WAVEFORMATEX</b> structure is an extended version of the <b> WAVEFORMAT</b>
+structure.) For more information on this structure, see the <i>New
+Multimedia Data Types and Data Techniques Standards Update</i>.</p>
+<p>The “strl” chunk might also contain a stream data (“strd”)
+chunk. If used, this chunk follows the stream format chunk. The format and
+content of this chunk is defined by installable compression or decompression
+drivers. Typically, drivers use this information for configuration. Applications
+that read and write RIFF files do not need to decode this information. They
+transfer this data to and from a driver as a memory block.</p>
+<p>An AVI player associates the stream headers in the LIST
+“hdrl” chunk with the stream data in the LIST “movi” chunk by using the
+order of the “strl” chunks. The first “strl” chunk applies to stream 0,
+the second applies to stream 1, and so forth. For example, if the first
+“strl” chunk describes the wave audio data, the wave audio data is contained
+in stream 0. Similarly, if the second “strl” chunk describes video data,
+then the video data is contained in stream 1.</p>
+<h2>The LIST “movi” Chunk</h2>
+<p>Following the header information is a LIST “movi” chunk
+that contains chunks of the actual data in the streams; that is, the pictures
+and sounds themselves. The data chunks can reside directly in the LIST
+“movi” chunk or they might be grouped into “rec ” chunks. The “rec ”
+grouping implies that the grouped chunks should be read from disk all at once.
+This is used only for files specifically interleaved to play from CD-ROM.</p>
+<p>Like any RIFF chunk, the data chunks contain a
+four-character code to identify the chunk type. The four-character code that
+identifies each chunk consists of the stream number and a two-character code
+that defines the type of information encapsulated in the chunk. For example, a
+waveform chunk is identified by a two-character code of “wb”. If a waveform
+chunk corresponded to the second LIST “hdrl” stream description, it would
+have a four-character code of “01wb”.</p>
+<p>Since all the format information is in the header, the
+audio data contained in these data chunks does not contain any information about
+its format. An audio data chunk has the following format (the ## in the format
+represents the stream identifier):<br>
+<img border=0 src="images/avi5.gif" width=150 height=36></p>
+<p>Video data can be compressed or uncompressed DIBs. An
+uncompressed DIB has BI_RGB specified for the <b>biCompression</b> field in its associated BITMAPINFO structure. A
+compressed DIB has a value other than BI_RGB specified in the <b>biCompression</b>
+field. For more information about compression formats, see the description of
+the BITMAPINFOHEADER data structure in the <i>Microsoft
+Windows Programmers Reference</i> and Chapter 5, “DIB Format Extensions for
+Microsoft Windows.”</p>
+<p>A data chunk for an uncompressed DIB contains RGB video
+data. These chunks are identified with a two-character code of “db” (db is
+an abbreviation for DIB bits). Data chunks for a compressed DIB are identified
+with a two-character code of “dc” (dc is an abbreviation for DIB
+compressed). Neither data chunk will contain any header information about the
+DIBs. The data chunk for an uncompressed DIB has the following form:<br>
+<img border=0 src="images/avi6.gif" width=118 height=34></p>
+<p>The data chunk for a compressed DIB has the following form:<br>
+<img border=0 src="images/avi7.gif" width=153 height=39></p>
+<p>Video data chunks can also define new palette entries used
+to update the palette during an AVI sequence. These chunks are identified with a
+two-character code of “pc” (pc is an abbreviation for palette change). The
+following data structure is defined palette information:<br>
+<img border=0 src="images/avi8.gif" width=191 height=95></p>
+<p>The <b>bFirstEntry</b>
+field defines the first entry to change and the <b>bNumEntries</b> field specifies the number of entries to change. The <b>peNew</b>
+field contains the new color entries.</p>
+<p>If you include palette changes in a video stream, set the
+AVITF_VIDEO_PALCHANGES flag in the <b>dwFlags</b>
+field of the stream header. This flag indicates that this video stream contains
+palette changes and warns the playback software that it will need to animate the
+palette.</p>
+<h2>The “idx1” Chunk</h2>
+<p>AVI files can have an index chunk after the LIST “movi”
+chunk. The index chunk essentially contains a list of the data chunks and their
+location in the file. This provides efficient random access to the data within
+the file, because an application can locate a particular sound sequence or video
+image in a large AVI file without having to scan it.</p>
+<p>Index chunks use the four-character code “idx1”. The
+following data structure is defined for index entries:<br>
+<img border=0 src="images/avi9.gif" width=162 height=95></p>
+<p>The <b>ckid</b>, <b>dwFlags</b>,
+<b>dwChunkOffset</b>, and <b>dwChunkLength</b>
+entries are repeated in the AVI file for each data chunk indexed. If the file is
+interleaved, the index will also have these entries for each “rec” chunk.
+The “rec” entries should have the AVIIF_LIST flag set and the list type in
+the <b>ckid</b> field.</p>
+<p>The <b>ckid</b> field
+identifies the data chunk. This field uses four-character codes for identifying
+the chunk.</p>
+<p>The <b>dwFlags</b>
+field specifies any flags for the data. The <b> AVIIF_KEYFRAME</b> flag indicates key
+frames in the video sequence. Key frames do not need previous video information
+to be decompressed. The <b> AVIIF_NOTIME</b> flag indicates a chunk does not affect the
+timing of a video stream. For example, changing palette entries indicated by a
+palette chunk should occur between displaying video frames. Thus, if an
+application needs to determine the length of a video sequence, it should not use
+chunks with the <b> AVIIF_NOTIME</b> flag. In this case, it would ignore a palette
+chunk. The <b> AVIIF_LIST</b> flag indicates the current chunk is a LIST chunk. Use the <b>ckid</b>
+field to identify the type of LIST chunk.</p>
+<p>The <b>dwChunkOffset</b>
+and <b>dwChunkLength</b> fields specify the
+position of the chunk and the length of the chunk. The <b>dwChunkOffset</b> field specifies the position of the chunk in the file
+relative to the 'movi' list. The <b>dwChunkLength</b>
+field specifies the length of the chunk excluding the eight bytes for the RIFF
+header.</p>
+<p>If you include an index in the RIFF file, set the
+AVIF_HASINDEX in the <b>dwFlags</b> field of
+the AVI header. (This header is identified by “avih” chunk ID.) This flag
+indicates that the file has an index.</p>
+<h2>Other Data Chunks</h2>
+<p>If you need to align data in your AVI file you can add a
+“JUNK” chunk. (This chunk is a standard RIFF type.) Applications reading
+these chunks ignore their contents. Files played from CD-ROM use these chunks to
+align data so they can be read more efficiently. You might want to use this
+chunk to align your data for the 2 kilobyte CD-ROM boundaries. The “JUNK”
+chunk has the following form:<br>
+<img border=0 src="images/avi10.gif" width=132 height=39></p>
+<p>As with any other RIFF files, all applications that read
+AVI files should ignore the non-AVI chunks that it does not recognize.
+Applications that read and write AVI files should preserve the non-AVI chunks
+when they save files they have loaded.</p>
+<h2>Special Information for Interleaved Files</h2>
+<p>Files that are interleaved for playback from CD-ROM require
+some special handling. While they can be read similarly to any other AVI files,
+they require special care when produced.</p>
+<p>The audio has to be separated into single-frame pieces, and
+audio and video for each frame needs to be grouped together into “rec ”
+chunks. The record chunks should be padded so that their size is a multiple of 2
+kilobytes and so that the beginning of the actual data in the LIST chunk lies on
+a 2 kilobyte boundary in the file. (This implies that the LIST chunk itself
+begins 12 bytes before a 2 kilobyte boundary.)</p>
+<p>To give the audio driver enough audio to work with, the
+audio data has to be skewed from the video data. Typically, the audio data
+should be moved forward enough frames to allow approximately 0.75 seconds of
+audio data to be preloaded. The <b>dwInitialRecords</b>
+field of the main header and the <b>dwInitialFrames</b>
+field of the audio stream header should be set to the number of frames the audio
+is skewed.</p>
+<p>Additionally, you must ensure that CD-ROM drive is capable
+of reading the data fast enough to support your AVI sequence. Non-MPC CD-ROM
+drives can have a data rate of less than 150 kilobytes per second.</p>
+<h1>Using VidEdit With AVI Files</h1>
+<p>VidEdit lets you create and edit audio-visual sequences
+consisting of a series of frames that contain digital audio and video data. You
+can use VidEdit to create and edit AVI files that contain one audio and one
+video stream. Each stream in the file must start at the beginning of the file
+(that is, the <b>dwStart</b> field in each
+stream header must be zero).</p>
+<h1>An Outline for Writing AVI Files</h1>
+<p>Like other RIFF files, AVI files are created with the <b>mmioOpen</b>,
+<b>mmioCreateChunk</b>, <b>mmioWrite</b>,
+<b>mmioAscend</b>, and <b>mmioClose</b> functions. These functions have the following definitions:
+<table border=1 cellpadding=5 cellspacing=0>
+<tr>
+<td><b>mmioOpen</b></td>
+<td>Opens a file for reading or writing, and returns a handle to the
+open file.</td>
+</tr>
+<tr>
+<td><b>mmioCreateChunk</b></td>
+<td>Creates a new chunk in a RIFF file.</td>
+</tr>
+<tr>
+<td><b>mmioWrite</b></td>
+<td>Writes a specified number of bytes to an open file.</td>
+</tr>
+<tr>
+<td><b>mmioAscend</b></td>
+<td>Ascends out of a RIFF file chunk to the next chunk in the file.</td>
+</tr>
+<tr>
+<td><b>mmioClose</b></td>
+<td>Closes an open file.</td>
+</tr>
+</table>
+<p>In addition to these functions, you can use <b>mmioFOURCC</b>
+to convert four individual characters into a four-character code. For more
+information on these functions and macros, see the <i>Microsoft
+Windows Multimedia Programmer’s Guide</i> and <i>Microsoft
+Windows Multimedia Programmer’s Reference</i>.</p>
+<p>Unlike many other RIFF files, AVI files use many nested
+chunks and subchunks. This makes them more complicated than most RIFF files. Use
+the following tables as a checklist to help you decide when to create a chunk,
+when to write data to a chunk, and when to ascend from a chunk. The tables do
+not include information about writing non-AVI data chunks to the file. The
+information in the chunk column of the table mirrors the example in the “AVI
+RIFF Form” section presented previously.</p>
+<h2>Creating the File and “AVI ” Chunk</h2>
+<p>The “AVI ” chunk is the first chunk in the file. You
+will not ascend from this chunk until all other chunks have been created.<br>
+</p>
+<table border=1 cellpadding=10 cellspacing=3>
+<tr>
+<td><b>Chunk</b></td>
+<td><b>How to Handle</b></td>
+</tr>
+<tr>
+<td><img border=0 src="images/avi11.gif" width=91 height=25></td>
+<td>Use <b>mmioOpen</b>
+to open the file.Seek
+to the beginning of the file with <b>mmioSeek</b>. Create the AVI chunk with <b>mmioCreateChunk</b>.
+(Use the “AVI ” four-character code and the MMIO_CREATERIFF
+flag.) Do not ascend from this chunk in preparation for writing
+the remaining chunks.</td>
+</tr>
+</table>
+<h2>Creating the LIST “hdrl ” and “avih” Chunks</h2>
+<p>The LIST “hdrl ” chunk contains the stream
+format header chunks. Because it contains other chunks, you will not
+ascend from it until the other header chunks are created.</p>
+The “avih” chunk contains the main header list.
+This is written as a complete chunk.
+<table border=1 cellpadding=10 cellspacing=3>
+<tr>
+<td><b>Chunk</b></td>
+<td><b>How to Handle</b></td>
+</tr>
+<tr>
+<td><img border=0 src="images/avi12.gif" width=88 height=25></td>
+<td>Create the LIST “hdrl” chunk with <b>mmioCreateChunk</b>. (Use the “hdrl” four-character code and the
+MMIO_CREATELIST flag.)</td>
+</tr>
+<tr>
+<td><img border=0 src="images/avi13.gif" width=193 height=25></td>
+<td>Create the Main AVI Header chunk with <b>mmioCreateChunk</b>. (Use the “avih” four-character code.)Write the header information with <b>mmioWrite</b>.
+Ascend from the “avih” chunk with <b>mmioAscend</b>. Do not
+ascend from the LIST “hdrl” chunk.</td>
+</tr>
+</table>
+<h2>Creating the “strl”, “strh”, “strf”, and
+“strd” Chunks</h2>
+The “strl”, “strh”, “strf”,
+and “strd” chunks are written as complete chunks. You
+write a set of the “strh”, “strf”, and “strd”
+chunks for each stream in the file. After all the stream
+descriptions are written, you ascend from LIST “hdrl”
+chunk.
+<table border=1 cellpadding=10 cellspacing=3>
+<tr>
+<td><b>Chunk</b></td>
+<td><b>How to Handle</b></td>
+</tr>
+<tr>
+<td><img border=0 src="images/avi14.gif" width=82 height=25></td>
+<td>Create the LIST “strl” chunk
+with <b>mmioCreateChunk</b>. (Use the “strl” four-character code and the
+MMIO_CREATELIST flag.)</td>
+</tr>
+<tr>
+<td><img border=0 src="images/avi15.gif" width=165 height=25></td>
+<td>Create the stream header chunk
+with <b>mmioCreateChunk</b>. (Use the “strh” four-character code.) Write the stream header information with <b>mmioWrite</b>.Ascend from the “strh” chunk with <b>mmioAscend</b>.</td>
+</tr>
+<tr>
+<td><img border=0 src="images/avi16.gif" width=163 height=25></td>
+<td>Create the stream format chunk
+with <b>mmioCreateChunk</b>. (Use the “strf” four-character code.)Write the stream format information
+with <b>mmioWrite</b>. Ascend from the “strf” chunk with <b>mmioAscend</b>.</td>
+</tr>
+<tr>
+<td><img border=0 src="images/avi17.gif" width=198 height=25></td>
+<td>If needed, create chunks for
+any additional header data with <b>mmioCreateChunk</b>.
+(Use the “strd” four-character code.)
+Write the additional header data with
+<b>mmioWrite</b>. Ascend from the “strd” chunk.</td>
+</tr>
+<tr>
+<td><img border=0 src="images/avi18.gif" width=55 height=55></td>
+<td>If needed, add stream
+header, stream format, and additional
+header data chunks for other streams in
+the file.</td>
+</tr>
+<tr>
+<td><img border=0 src="images/avi19.gif" width=87 height=25></td>
+<td>Ascend from the LIST
+“strl” chunk with <b>mmioAscend</b>.</td>
+</tr>
+<tr>
+<td><img border=0 src="images/avi20.gif" width=32 height=71></td>
+<td>Ascend from the LIST
+“hdrl” chunk with <b>mmioAscend</b>. If
+needed, create and write padding
+chunks or other data chunks.</td>
+</tr>
+</table>
+<h2>Creating the LIST “movi” and
+“rec ” Chunks</h2>
+<p>The LIST “movi”
+chunk contains other chunks. After you
+create this chunk, you will not ascend
+from it until the other chunks are
+written.</p>
+You can write the
+data as an individual chunk or as part of
+a “rec ” chunk. Like the LIST
+“movi” chunk, you will not ascend from
+a “rec ” chunk until you write all of
+its subchunks.
+<table border=1 cellpadding=10 cellspacing=3>
+<tr>
+<td><b>Chunk</b></td>
+<td><b>How to Handle</b></td>
+</tr>
+<tr>
+<td><img border=0 src="images/avi21.gif" width=92 height=25></td>
+<td>Create the LIST
+“movi” chunk with <b>mmioCreateChunk</b>. (Use the LIST “movi” four-character code and
+the MMIO_CREATELIST flag.)</td>
+</tr>
+<tr>
+<td><img border=0 src="images/avi22.gif" width=182 height=238></td>
+<td>You can add
+your movie data directly at
+this point in a subchunk or
+include it in a “rec ”
+chunk. The following steps
+summarize creating these
+chunks: Create a data chunk
+with <b>mmioCreateChunk</b>.
+(Use the four-character code
+appropriate for the data
+chunk and stream.) If you
+are adding an index chunk to
+the end of the file, save
+the location of the
+subchunks for it.</td>
+</tr>
+<tr>
+<td><img border=0 src="images/avi23.gif" width=18 height=25></td>
+<td>Ascend from
+the LIST “movi ”
+chunk.</td>
+</tr>
+</table>
+<h2>Creating the “idx1”
+Chunk and Ascending From the
+“AVI ” Chunk</h2>
+The
+optional index chunk is
+written as a complete chunk.
+After you have completed this
+chunk, you can ascend from the
+“AVI ” chunk and close the
+file.
+<table border=1 cellpadding=10 cellspacing=3>
+<tr>
+<td><b>Chunk</b></td>
+<td><b>How to Handle</b></td>
+</tr>
+<tr>
+<td><img border=0 src="images/avi24.gif" width=139 height=25></td>
+<td>If
+used, create the
+AVI index chunk
+with <b>mmioCreateChunk</b>. (Use the “idx1” four-character code.) Write the
+index information
+with <b>mmioWrite</b>.
+Ascend from the “idx1” chunk with <b>mmioAscend</b>. Although
+the “idx1” is
+the last chunk
+used in an AVI
+sequence, you can
+add non-AVI chunks
+after it. These
+subchunks will
+still be part of
+the “AVI ”
+chunk.</td>
+</tr>
+<tr>
+<td><img border=0 src="images/avi25.gif" width=18 height=25></td>
+<td>Ascend
+from the “AVI
+” chunk with <b>mmioAscend</b>. Close the
+file with <b>mmioClose</b>.</td>
+</tr>
+</table>
+<p>AVI
+RIFF File
+Reference</p>
+<p>This
+section lists data
+structures used to
+support AVI RIFF
+files. (These
+structures are
+defined in
+AVIFMT.H.) The
+data structures
+are presented in
+alphabetical
+order. The
+structure
+definition is
+given, followed by
+a description of
+each field.</p>
+The
+AVI file index
+consists of an
+array of <b>AVIINDEXENTRY</b>
+structures
+contained within
+an 'idx1' chunk at
+the end of an AVI
+file. This chunk
+follows the main
+LIST 'movi' chunk
+which contains the
+actual data.<br>
+<img border=0 src="images/avi26.gif" width=167 height=95>
+<h3>Fields</h3>
+The
+<b>AVIINDEXENTRY</b>
+structure has the
+following fields:
+<table border=1 cellpadding=10 cellspacing=0>
+<tr>
+<td> <b>ckid</b></td>
+<td>Specifies
+a four-character
+code corresponding
+to the chunk ID of
+a data chunk in
+the file.
+</td>
+</tr>
+<tr>
+<td> <b>dwFlags</b>
+</td>
+<td>Specifies
+any applicable
+flags. The flags
+in the low-order
+word are reserved
+for AVI, while
+those in the
+high-order word
+can be used for
+stream- and
+compressor/decompressor-specific
+information.<br>
+The
+following values
+are currently
+defined:
+<table border=0 cellpadding=5 cellspacing=0>
+<tr>
+<td><b>AVIIF_LIST</b></td>
+<td> Indicates
+the specified
+chunk is a 'LIST'
+chunk, and the <b>ckid</b>
+field contains the
+list type of the
+chunk.</td>
+</tr>
+<tr>
+<td><b>AVIIF_KEYFRAME</b></td>
+<td> Indicates
+this chunk is a
+key frame. Key
+frames do not
+require additional
+preceding chunks
+to be properly
+decoded.</td>
+</tr>
+<tr>
+<td><b>AVIIF_FIRSTPART</b></td>
+<td> Indicates
+this chunk needs
+the frames
+following it to be
+used; it cannot
+stand alone.</td>
+</tr>
+<tr>
+<td><b>AVIIF_LASTPART</b></td>
+<td> Indicates
+this chunk needs
+the frames
+preceding it to be
+used; it cannot
+stand alone.</td>
+</tr>
+<tr>
+<td><b>AVIIF_NOTIME</b></td>
+<td> Indicates
+this chunk should
+have no effect on
+timing or
+calculating time
+values based on
+the number of
+chunks. For
+example, palette
+change chunks in a
+video stream
+should have this
+flag set, so that
+they are not
+counted as taking
+up a frame’s
+worth of time.</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td> <b>dwChunkOffset</b></td>
+<td>Specifies
+the position in
+the file of the
+specified chunk.
+The position value
+includes the eight
+byte RIFF header.
+</td>
+</tr>
+<tr>
+<td> <b>dwChunkLength</b></td>
+<td>Specifies
+the length of the
+specified chunk.
+The length value
+does not include
+the eight byte
+RIFF header.
+</td>
+</tr>
+</table>
+<h2>AVIPALCHANGE</h2>
+<p>The
+<b>AVIPALCHANGE</b>
+structure is used
+in video streams
+containing
+palettized data to
+indicate the
+palette should
+change for
+subsequent video
+data.<br>
+<img border=0 src="images/avi27.gif" width=156 height=109>
+</p>
+<h3>Fields</h3>
+The
+<b>AVIPALCHANGE</b>
+structure has the
+following fields:
+<table border=1 cellpadding=10 cellspacing=0>
+<tr>
+<td><b>bFirstEntry</b></td>
+<td>Specifies
+the first palette
+entry to change.</td>
+</tr>
+<tr>
+<td><b>bNumEntries</b></td>
+<td>Specifies
+the number of
+entries to change.</td>
+</tr>
+<tr>
+<td><b>wFlags</b></td>
+<td>Reserved.
+(This should be
+set to 0.)</td>
+</tr>
+<tr>
+<td><b>peNew</b></td>
+<td>Specifies
+an array of new
+palette entries.</td>
+</tr>
+</table>
+<h2>AVIStreamHeader</h2>
+<p>The
+<b>AVIStreamHeader</b>
+structure contains
+header information
+for a single
+stream of an file.
+It is contained
+within an 'strh'
+chunk within a
+LIST 'strl' chunk
+that is itself
+contained within
+the LIST 'hdrl'
+chunk at the
+beginning of an
+AVI RIFF file.<br>
+<img border=0 src="images/avi28.gif" width=212 height=207></p>
+<h3>Fields</h3>
+<p>The
+AVIStreamHeader</b>
+structure has the
+following fields:
+<table border=1 cellpadding=10 cellspacing=0>
+<tr>
+<td><b>fccType</b></td>
+<td>
+Contains
+a four-character
+code which
+specifies the type
+of data contained
+in the stream. The
+following values
+are currently
+defined for AVI
+data:
+<table border=0 cellpadding=5 cellspacing=0>
+<tr>
+<td><b>'vids'</b></td>
+<td>Indicates
+the stream
+contains video
+data. The stream
+format chunk
+contains a <b>BITMAPINFO</b>
+structure which
+can include
+palette
+information.</td>
+</tr>
+<tr>
+<td><b>'auds'</b></td>
+<td>Indicates
+the stream
+contains video
+data. The stream
+format chunk
+contains a <b>WAVEFORMAT</b>
+or <b>PCMWAVEFORMAT</b>
+structure.</td>
+</tr>
+</table>
+<br>Other
+four-character
+codes can identify
+non-AVI data.
+</td>
+</tr>
+<tr>
+<td><b>fccHandler</b></td>
+<td>
+Optionally,
+contains a
+four-character
+code that
+identifies a
+specific data
+handler. The data
+handler is the
+preferred handler
+for the stream.
+</td>
+</tr>
+<tr>
+<td><b>dwFlags
+</b></td>
+<td>
+Specifies
+any applicable
+flags. The bits in
+the high-order
+word of these
+flags are specific
+to the type of
+data contained in
+the stream. The
+following flags
+are currently
+defined:
+<table border=0 cellpadding=5 cellspacing=0>
+<tr>
+<td><b>AVISF_DISABLED</b></td>
+<td>Indicates
+this stream should
+not be enabled by
+default.</td>
+</tr>
+<tr>
+<td><b>AVISF_VIDEO_PALCHANGES</b></td>
+<td>Indicates
+this video stream
+contains palette
+changes. This flag
+warns the playback
+software that it
+will need to
+animate the
+palette.</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td><b>dwReserved1
+</b></td>
+<td>
+Reserved.
+(Should be set to
+0.)
+</td>
+</tr>
+<tr>
+<td><b>dwInitialFrames
+</b></td>
+<td>
+Specifies
+how far audio data
+is skewed ahead of
+the video frames
+in interleaved
+files. Typically,
+this is about 0.75
+seconds.
+</td>
+</tr>
+<tr>
+<td><b>dwScale
+</b></td>
+<td>
+<p>This
+field is used
+together with <b>dwRate</b> to specify the time scale that this stream will use.</p>
+<p>Dividing
+<b>dwRate</b>
+by <b>dwScale</b>
+gives the number
+of samples per
+second.</p>
+<p>For
+video streams,
+this rate should
+be the frame rate.</p>
+<p>For
+audio streams,
+this rate should
+correspond to the
+time needed for <b>nBlockAlign</b>
+bytes of audio,
+which for PCM
+audio simply
+reduces to the
+sample rate.</p>
+</td>
+</tr>
+<tr>
+<td><b>dwRate
+</b></td>
+<td>
+See
+<b>dwScale</b>.
+</td>
+</tr>
+<tr>
+<td><b>dwStart
+</b></td>
+<td>
+<p>Specifies
+the starting time
+of the AVI file.
+The units are
+defined by the <b>dwRate</b>
+and <b>dwScale</b>
+fields in the main
+file header.
+Normally, this is
+zero, but it can
+specify a delay
+time for a stream
+which does not
+start concurrently
+with the file.</p>
+<p>Note:
+The 1.0 release of
+the AVI tools does
+not support a
+non-zero starting
+time.</p>
+</td>
+</tr>
+<tr>
+<td><b>dwLength
+</b></td>
+<td>
+Specifies
+the length of this
+stream. The units
+are defined by the
+<b>dwRate</b>
+and <b>dwScale</b> fields of the stream’s header.
+</td>
+</tr>
+<tr>
+<td><b>dwSuggestedBufferSize
+</b></td>
+<td>
+Suggests
+how large a buffer
+should be used to
+read this stream.
+Typically, this
+contains a value
+corresponding to
+the largest chunk
+present in the
+stream. Using the
+correct buffer
+size makes
+playback more
+efficient. Use
+zero if you do not
+know the correct
+buffer size.
+</td>
+</tr>
+<tr>
+<td><b>dwQuality
+</b></td>
+<td>
+Specifies
+an indicator of
+the quality of the
+data in the
+stream. Quality is
+represented as a
+number between 0
+and 10000. For
+compressed data,
+this typically
+represent the
+value of the
+quality parameter
+passed to the
+compression
+software. If set
+to -1, drivers use
+the default
+quality value.
+</td>
+</tr>
+<tr>
+<td><b>dwSampleSize
+</b></td>
+<td>
+<p>Specifies
+the size of a
+single sample of
+data. This is set
+to zero if the
+samples can vary
+in size. If this
+number is
+non-zero, then
+multiple samples
+of data can be
+grouped into a
+single chunk
+within the file.
+If it is zero,
+each sample of
+data (such as a
+video frame) must
+be in a separate
+chunk.</p>
+<p>For
+video streams,
+this number is
+typically zero,
+although it can be
+non-zero if all
+video frames are
+the same size.</p>
+<p>For
+audio streams,
+this number should
+be the same as the
+<b>nBlockAlign</b>
+field of the <b>WAVEFORMAT</b>
+structure
+describing the
+audio.</p>
+</td>
+</tr>
+</table>
+<h2>MainAVIHeader</h2>
+<p>The
+<b>MainAVIHeader</b>
+structure contains
+global information
+for the entire AVI
+file. It is
+contained within
+an 'avih' chunk
+within the LIST 'hdrl'
+chunk at the
+beginning of an
+AVI RIFF file.<br>
+<img border=0 src="images/avi29.gif" width=216 height=234></p>
+<h3>Fields</h3>
+The
+<b>MainAVIHeader</b>
+structure has the
+following fields:
+<table border=1] cellpadding=10 cellspacing=0>
+<tr>
+<td><b>dwMicroSecPerFrame
+</b></td>
+<td>Specifies
+the number of
+microseconds
+between frames.</td>
+</tr>
+<tr>
+<td><b>dwMaxBytesPerSec
+</b></td>
+<td>Specifies
+the approximate
+maximum data rate
+of file.</td>
+</tr>
+<tr>
+<td><b>dwReserved1
+</b></td>
+<td>Reserved.
+(This field should
+be set to 0.)</td>
+</tr>
+<tr>
+<td><b>dwFlags</b></td>
+<td>
+Specifies
+any applicable
+flags. The
+following flags
+are defined:
+<table border=0 cellpadding=5 cellspacing=0>
+<tr>
+<td><b>AVIF_HASINDEX</b></td>
+<td>ndicates
+the AVI file has
+an 'idx1' chunk
+containing an
+index at the end
+of the file. For
+good performance,
+all AVI files
+should contain an
+index.</td>
+</tr>
+<tr>
+<td><b>AVIF_MUSTUSEINDEX</b></td>
+<td>Indicates
+that the index,
+rather than the
+physical ordering
+of the chunks in
+the file, should
+be used to
+determine the
+order of
+presentation of
+the data. For
+example, this
+could be used for
+creating a list
+frames for
+editing.</td>
+</tr>
+<tr>
+<td><b>AVIF_ISINTERLEAVED</b></td>
+<td>Indicates
+the AVI file is
+interleaved.</td>
+</tr>
+<tr>
+<td><b>AVIF_WASCAPTUREFILE</b></td>
+<td>Indicates
+the AVI file is a
+specially
+allocated file
+used for capturing
+real-time video.
+Applications
+should warn the
+user before
+writing over a
+file with this
+flag set because
+the user probably
+defragmented this
+file.</td>
+</tr>
+<tr>
+<td><b>AVIF_COPYRIGHTED</b></td>
+<td>Indicates
+the AVI file
+contains
+copyrighted data
+and software. When
+this flag is used,
+software should
+not permit the
+data to be
+duplicated.</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td><b>dwTotalFrames
+</b></td>
+<td>
+Specifies
+the number of
+frames of data in
+file.</td>
+</tr>
+<tr>
+<td><b>dwInitialFrames
+</b></td>
+<td>
+Specifies
+the initial frame
+for interleaved
+files.
+Non-interleaved
+files should
+specify zero.</td>
+</tr>
+<tr>
+<td><b>dwStreams
+</b></td>
+<td>
+Specifies
+the number of
+streams in the
+file. For example,
+a file with audio
+and video has 2
+streams.</td>
+</tr>
+<tr>
+<td><b>dwSuggestedBufferSize
+</b></td>
+<td>
+<p>Specifies the
+suggested buffer
+size for reading
+the file.
+Generally, this
+size should be
+large enough to
+contain the
+largest chunk in
+the file. If set
+to zero, or if it
+is too small, the
+playback software
+will have to
+reallocate memory
+during playback
+which will reduce
+performance.</p>
+<p>For
+an interleaved
+file, this buffer
+size should be
+large enough to
+read an entire
+record and not
+just a chunk.</p>
+</td>
+</tr>
+<tr>
+<td><b>dwWidth
+</b></td>
+<td>
+Specifies
+the width of the
+AVI file in
+pixels.</td>
+</tr>
+<tr>
+<td><b>dwHeight
+</b></td>
+<td>
+Specifies
+the height of the
+AVI file in
+pixels.</td>
+</tr>
+<tr>
+<td><b>dwScale
+</b></td>
+<td>
+This
+field is used with
+<b>dwRate</b>
+to specify the
+time scale that
+the file as a
+whole will use. In
+addition, each
+stream can have
+its own time scale<br>
+.Dividing
+<b>dwRate</b>
+by <b>dwScale</b>
+gives the number
+of samples per
+second.</td>
+</tr>
+<tr>
+<td><b>dwRate
+</b></td>
+<td>
+See
+<b>dwScale</b>.</td>
+</tr>
+<tr>
+<td><b>dwStart
+</b></td>
+<td>
+Specifies
+the starting time
+of the AVI file.
+The units are
+defined by <b>dwRate</b>
+and <b>dwScale</b>.
+This field is
+usually set to
+zero.</td>
+</tr>
+<tr>
+<td><b>dwLength</b></td>
+<td>
+Specifies
+the length of the
+AVI file. The
+units are defined
+by <b>dwRate</b>
+and <b>dwScale</b>. This length is returned by MCIAVI when using the frames
+time format.</td>
+</tr>
+</table>
+</body>
+</html>

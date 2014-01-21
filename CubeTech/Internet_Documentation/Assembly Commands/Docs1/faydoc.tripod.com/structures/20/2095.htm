@@ -1,0 +1,3195 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Values for NetWare Core Protocol functions</title>
+</head>
+<body background="../images/background_item.gif"><!--'"</title></head>-->
+<script type="text/javascript">
+////// Compete /////////////////////
+__compete_code = '667f89f26d96c30e99728fe6a608804d';
+(function () {
+    var s = document.createElement('script'),
+        d = document.getElementsByTagName('head')[0] ||
+            document.getElementsByTagName('body')[0],
+        t = 'https:' == document.location.protocol ? 
+            'https://c.compete.com/bootstrap/' : 
+            'http://c.compete.com/bootstrap/';
+    s.src = t + __compete_code + '/bootstrap.js';
+    s.type = 'text/javascript';
+    s.async = 'async'; 
+    if (d) { d.appendChild(s); }
+})();
+
+
+////// Quantcast  /////////////////////
+function channValidator(chann) {
+    return (typeof(chann) == 'string' && chann != '');
+}
+
+function lycosQuantcast(){
+    var lb = "";
+    if(typeof(cm_host) !== 'undefined' && channValidator(cm_host)){
+        lb += cm_host.split('.')[0] + '.';
+    }
+
+    if(typeof(cm_taxid) !== 'undefined' && channValidator(cm_taxid)){
+        lb += cm_taxid;
+        lb = lb.replace('/','');
+    } else {
+        lb = lb.replace('.','');
+    }
+    return lb;
+}
+
+var _qevents = _qevents || [];
+
+(function() {
+    var elem = document.createElement('script');
+    elem.src = (document.location.protocol == "https:" ? "https://secure" :"http://edge") + ".quantserve.com/quant.js";
+    elem.async = true;
+    elem.type = "text/javascript";
+    var scpt = document.getElementsByTagName('script')[0];
+    scpt.parentNode.insertBefore(elem, scpt);
+})();
+
+_qevents.push({
+    qacct:"p-6eQegedn62bSo",
+    labels:lycosQuantcast()
+});
+
+////// OwnerIQ  /////////////////////
+var __oiq_pct = 50;
+if( __oiq_pct>=100 || Math.floor(Math.random()*100/(100-__oiq_pct)) > 0 ) {
+    var _oiqq = _oiqq || [];
+    _oiqq.push(['oiq_addPageBrand', 'Lycos']);
+    _oiqq.push(['oiq_addPageCat', 'Internet > Websites']);
+    _oiqq.push(['oiq_addPageLifecycle', 'Intend']);
+    _oiqq.push(['oiq_doTag']);
+
+    (function() {
+        var oiq = document.createElement('script'); oiq.type = 'text/javascript'; oiq.async = true;
+        oiq.src = document.location.protocol + '//px.owneriq.net/stas/s/lycosn.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(oiq, s);
+    })();
+}
+
+
+
+/////// Google Analytics ////////////
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-21402695-19']);
+_gaq.push(['_setDomainName', 'tripod.com']);
+_gaq.push(['_setCustomVar', 1, 'member_name', 'faydoc', 3]);
+_gaq.push(['_trackPageview']);
+(function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+
+/////// Lycos Initialization ////////////
+function getReferrer() {
+    // Reads the referrer out of the cookie, if available.
+    var all= this.document.cookie;
+    if (all== '') return false;
+    var cookie_name = 'REFERRER=';
+    var start = all.lastIndexOf(cookie_name);
+    if (start == -1) return false;  // referrer URL not found.
+    start += cookie_name.length;
+    var end = all.indexOf(';', start);
+    if (end == -1) end = all.length;
+    return all.substring(start, end);
+}
+function getQuery() {
+    // Get the referrer search query from cookie, if available.
+    var rfr = getReferrer();
+    if (rfr == '') return false;
+    var q = extractQuery(rfr, 'yahoo.com', 'p=');
+    if (q) return q;
+    q = extractQuery(rfr, '', 'q=');
+    return q ? q : "";
+}
+function extractQuery(full, site, q_param) {
+    var start = full.lastIndexOf(site);
+    if (start == -1) return false;
+    start = full.lastIndexOf(q_param);
+    if (start == -1) return false;
+    start += q_param.length;
+    var end = full.indexOf('&', start);
+    if (end == -1) end = full.length;
+    return unescape(full.substring(start, end)).split(" ").join("+");
+}
+
+function generateHref(atag, template){
+    atag.href=template.replace('_MYURL_', window.location.href.replace('http://', '')).replace('_MYTITLE_', 'Check%20out%20this%20Tripod%20Member%20site!'); 
+}
+
+
+var lycos_ad = Array();
+var lycos_onload_timer;
+
+var cm_role = "live";
+var cm_host = "tripod.lycos.com";
+var cm_taxid = "/memberembedded";
+var tripod_member_name = "faydoc";
+var tripod_member_page = "faydoc/structures/20/2095.htm";
+var tripod_ratings_hash = "1372261933:74a594ef617ea5774c692e890f27d126";
+
+var lycos_ad_category = {"find_what":"reliv.com"};
+
+var lycos_ad_remote_addr = "99.159.74.223";
+var lycos_ad_www_server = "www.tripod.lycos.com";
+var lycos_ad_track_small = "http://members.tripod.com/adm/img/common/ot_smallframe.gif?rand=465009";
+var lycos_ad_track_served = "http://members.tripod.com/adm/img/common/ot_adserved.gif?rand=465009";
+var lycos_search_query = getQuery();
+
+
+////// Criteo /////////////////////
+var cto_conf = { a:true, i: "294", c:"img", kw: "" } ;
+(function (){
+    var c = document.createElement("script"); c.type = "text/javascript"; c.async = true;
+    c.src = "http://members.tripod.com/adm/partner/criteo_ld_kw.js";
+    var s = document.getElementsByTagName("body")[0]; s.appendChild(c);
+})(); 
+
+</script>
+
+<script type="text/javascript" src="http://scripts.lycos.com/catman/init.js"></script>
+<script type="text/javascript"> 
+
+(function(isV) {
+    if (!isV) {
+        return;
+    }
+
+    //this.lycos_search_query = lycos_get_search_referrer();
+    var adMgr = new AdManager();
+    var lycos_prod_set = adMgr.chooseProductSet();
+    var slots = ["leaderboard", "leaderboard2", "toolbar_image", "toolbar_text", "smallbox", "top_promo", "footer2"];
+    var adCat = this.lycos_ad_category;
+    adMgr.setForcedParam('page', (adCat && adCat.dmoz) ? adCat.dmoz : 'member');
+
+    if (this.lycos_search_query) {
+        adMgr.setForcedParam("keyword", this.lycos_search_query);
+    } 
+    else if (adCat && adCat.find_what) {
+        adMgr.setForcedParam('keyword', adCat.find_what);
+    }
+
+    for (var s in slots) {
+        var slot = slots[s];
+        if (adMgr.isSlotAvailable(slot)) {
+            this.lycos_ad[slot] = adMgr.getSlot(slot);
+        }
+    }
+
+    adMgr.renderHeader();
+    adMgr.renderFooter();
+}((function() {
+    var w = 0, h = 0, minimumThreshold = 300;
+    if (top == self) {
+        return true;
+    }
+
+    if (typeof(window.innerWidth) == 'number' ) {
+        w = window.innerWidth;
+        h = window.innerHeight;
+    }
+    else if (document.documentElement && (document.documentElement.clientWidth || document.documentElement.clientHeight)) {
+        w = document.documentElement.clientWidth;
+        h = document.documentElement.clientHeight;
+    }
+    else if (document.body && (document.body.clientWidth || document.body.clientHeight)) {
+        w = document.body.clientWidth;
+        h = document.body.clientHeight;
+    }
+
+    return ((w > minimumThreshold) && (h > minimumThreshold));
+}())));
+    
+window.onload = function() {
+    var f = document.getElementById("FooterAd");
+    var b = document.getElementsByTagName("body")[0];
+    b.appendChild(f);
+    f.style.display = "block";
+    document.getElementById('lycosFooterAdiFrame').src = '/adm/ad/footerAd.iframe.html';
+
+
+    // DOM Injection Ad
+    (function(isTrellix) {
+        var e = document.createElement('iframe');
+        e.style.border = '0';
+        e.style.margin = 0;
+        e.style.display = 'block';
+        e.style.cssFloat = 'right';
+        e.style.height = '254px';
+        e.style.overflow = 'hidden';
+        e.style.padding = 0;
+        e.style.width = '300px';
+
+        var getCommentNodes = function(regexPattern) {
+            var nodes = {};
+            var nodesA = [];
+            var preferredNodesList = ['a', 'c', 'b'];
+
+            (function getNodesThatHaveComments(n, pattern) {
+                if (n.hasChildNodes()) {
+                    if (n.tagName === 'IFRAME') {
+                        return false;
+                    }
+                    for (var i = 0; i < n.childNodes.length; i++) {
+                        if ((n.childNodes[i].nodeType === 8) && (pattern.test(n.childNodes[i].nodeValue))) {
+                            var areaName = pattern.exec(n.childNodes[i].nodeValue)[1];
+                            nodes[areaName] = n;
+                        }
+                        else if (n.childNodes[i].nodeType === 1) {
+                            getNodesThatHaveComments(n.childNodes[i], pattern);
+                        }
+                    }
+                }
+            }(document.body, regexPattern));
+
+            for (var i in preferredNodesList) {
+                if (nodes[preferredNodesList[i]]) {
+                    if (nodes[preferredNodesList[i]].parentNode.parentNode.parentNode.parentNode) {
+                        nodesA.push(nodes[preferredNodesList[i]].parentNode.parentNode.parentNode.parentNode);
+                    }
+                }
+            }
+
+            return nodesA;
+        }
+
+        var properNode = null;
+        var areaNodes = getCommentNodes(new RegExp('^area Type="area_(\\w+)"'));
+        for (var i = 0; i < areaNodes.length; i++) {
+            var a = parseInt(getComputedStyle(areaNodes[i]).width);
+            if ((a >= 300) && (a <= 400)) {
+                properNode = areaNodes[i];
+                break;
+            }
+        }
+
+        if ((isTrellix) && (properNode)) {
+            e.src = '/adm/ad/injectAd.iframe.html';
+            properNode.insertBefore(e, properNode.firstChild);
+        }
+        else {
+            e.src = '/adm/ad/sliderAd.iframe.html';
+            var sliderBlock = document.getElementById('lyslider-adblock-wrapper');
+            var sliderHolder = document.getElementById('lyslider-adblock-holder');
+            var sliderClose = document.getElementById('lyslider-adblock-close');
+            sliderBlock.style.display = 'block';
+
+            sliderClose.onclick = function() {
+                sliderBlock.parentNode.removeChild(sliderBlock);
+                return false;
+            }
+
+            var iframeOnload = function() {
+                setTimeout((function sliiide() {
+                    var s = (window.getComputedStyle) ? parseInt(getComputedStyle(sliderHolder).right) : parseInt(sliderHolder.currentStyle.right);
+                    if (s <= 0) {
+                        sliderHolder.style.right = (s + 6) + 'px';
+                        setTimeout(sliiide, 10);
+                    }
+                    else {
+                        sliderHolder.style.right = '0px';
+                        sliderClose.style.display = 'block';
+                    }
+                }), 1000);
+            }
+
+            if (e.attachEvent) {
+                e.attachEvent('onload', iframeOnload);
+            }
+            else {
+                e.addEventListener('load', iframeOnload, false);
+            }
+
+            sliderHolder.insertBefore(e, sliderHolder.firstChild);
+        }
+    }(document.isTrellix));
+
+}
+
+
+
+</script>
+<style>
+	#body .adCenterClass{margin:0 auto}
+</style>
+
+<div id="tb_container" style="background:#DFDCCF; border-bottom:1px solid #393939; position:relative; z-index:999999999!important">
+    <div id="tb_ad" class="adCenterClass" style="display:block!important; overflow:hidden; width:916px;">
+    <a href="http://adtrack.ministerial5.com/clicknew/?a=637394" title="build your own website at Tripod.com" style="float:left; width:186px; border:0">
+    	<img src="http://ly.lygo.com/ly/tpSite/images/freeAd2.jpg" alt="Make your own free website on Tripod.com" style="border:0; display:block" />
+    </a> 
+        <div id="ad_container" style="display:block!important; float:left; width:728px ">
+        <script type="text/javascript">document.write(lycos_ad['leaderboard']);</script>
+        </div>
+    </div>
+</div>
+
+<!-- ///////////////////////////////////// -->
+<div id="lyslider-adblock-wrapper" style="display:none; height:300px; overflow:hidden; position:absolute; right:0; top:150px; width:320px; z-index:99999999; ">
+<div id="lyslider-adblock-holder" style="background-color:#888; height:250px; margin-bottom:25px; padding:4px; position:absolute; right:-320px; top:10px; width:300px; ">
+<a id="lyslider-adblock-close" href="#" style="background-color:#222; bottom:-19px; color:#fff; display:block; font:10px Arial, Helvetica, Sans-serif; padding:4px; position:absolute; right:0; text-decoration:none; z-index:9999999999">Close Ad</a>
+</div>
+</div>
+
+
+<div id="FooterAd" style="background:#DFDCCF; border-top:1px solid #393939; clear:both; display:none; width:100%!important; position:relative; z-index:999999!important; height:90px!important"> 
+	<div class="adCenterClass" style="display:block!important; overflow:hidden; width:916px;">
+	<a href="http://adtrack.ministerial5.com/clicknew/?a=637394" title="build your own website at Tripod.com" style="float:left; display:block; width:186px; border:0">
+    	<img src="http://ly.lygo.com/ly/tpSite/images/freeAd2.jpg" alt="Make your own free website on Tripod.com" style="border:0; display:block; " />
+    </a> 
+        <div id="footerAd_container" style="display:block!important; float:left; width:728px">
+        <iframe id="lycosFooterAdiFrame" style="border:0; display:block; float:left; height:96px; overflow:hidden; padding:0; width:750px"></iframe>
+        <!-- <script type="text/javascript">document.write(lycos_ad['leaderboard2']);</script> -->
+        </div>
+	</div>
+</div>
+<noscript>
+ <img src="http://members.tripod.com/adm/img/common/ot_noscript.gif?rand=465009" alt="" width="1" height="1" />
+ <!-- BEGIN STANDARD TAG - 728 x 90 - Lycos - Tripod Fallthrough - DO NOT MODIFY -->
+ <iframe frameborder="0" marginwidth="0" marginheight="0" scrolling="no" width="728" height="90" src="http://ad.yieldmanager.com/st?ad_type=iframe&amp;ad_size=728x90&amp;section=209094"></iframe>
+ <!-- END TAG -->
+</noscript>
+
+<!-- Start Ybrant -->
+<img src="http://ad.yieldmanager.com/pixel?id=1901600&t=2" width="1" height="1" />
+<!--   End Ybrant -->
+
+<!-- Start Datonics -->
+<script type="text/javascript" src="http://ads.pro-market.net/ads/scripts/site-132783.js"></script>
+<!--   End Datonics -->
+
+<!-- Start Chango -->
+<script type="text/javascript">
+    var __cho__ = {"pid":1694};
+    (function() {
+        var c = document.createElement('script');
+        c.type = 'text/javascript';
+        c.async = true;
+        c.src = document.location.protocol + '//cc.chango.com/static/o.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(c, s);
+    })();
+</script>
+<!--   End Chango -->
+
+
+<center>
+<table border="3" cellpadding="10" cellspacing="5">
+<tr>
+<td><!--webbot bot="Navigation" S-Type="global"
+S-Orientation="horizontal" S-Rendering="graphics" B-Include-Home="FALSE"
+B-Include-Up="TRUE" U-Page="/W:/doc/structures/20/2095.htm" S-Target startspan --><nobr>[&nbsp;<a href="../../rfc/index.htm" target="">Up</a>&nbsp;]</nobr> <nobr>[&nbsp;<a href="http://www.fay.naverex.kiev.ua/docs/index.htm" target="">Docs&nbsp;Home</a>&nbsp;]</nobr><!--webbot bot="Navigation" endspan i-checksum="32769" -->
+</td>
+<td>
+<h1 align="center"><font color="#FF00FF"><!--webbot bot="Navigation" S-Type="banner"
+S-Rendering S-Orientation B-Include-Home B-Include-Up U-Page="/W:/doc/structures/20/2095.htm" S-Target startspan -->Values for NetWare Core Protocol functions<!--webbot bot="Navigation" endspan i-checksum="53579" --></font></h1>
+</td>
+<td><!--webbot bot="Navigation" S-Type="arrows"
+S-Orientation="horizontal" S-Rendering="graphics" B-Include-Home="FALSE"
+B-Include-Up="FALSE" U-Page="/W:/doc/structures/20/2095.htm" S-Target startspan --><nobr>[&nbsp;<a href="2094.htm" target="">Back</a>&nbsp;]</nobr> <nobr>[&nbsp;<a href="2096.htm" target="">Next</a>&nbsp;]</nobr><!--webbot bot="Navigation" endspan i-checksum="40951" -->
+</td>
+</tr>
+</table>
+</center>
+<hr>
+<table border="3" cellpadding="3" cellspacing="3">
+<tr>
+<th valign="top" align="center" nowrap>
+  <p align="center"><b>Function<br>
+  /<br>
+  Subfunction</b></p>
+  </th>
+<th valign="middle" align="center" nowrap><b>Description</b></th>
+<th valign="middle" align="center" nowrap><b>See Also</b></th>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>00h</b> </p>
+</td>
+<td valign="top"> File Set Lock </td>
+<td valign="top"> </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>01h</b> </p>
+</td>
+<td valign="top"> File Release Lock </td>
+<td valign="top"> </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>02h</b> </p>
+</td>
+<td valign="top"> Log File (old) </td>
+<td valign="top"> </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>03h</b> </p>
+</td>
+<td valign="top"> Lock File Set (old) </td>
+<td valign="top"> (see AX=F203h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>04h</b> </p>
+</td>
+<td valign="top"> Release File </td>
+<td valign="top"> (see AX=F204h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>05h</b> </p>
+</td>
+<td valign="top"> Release File Set </td>
+<td valign="top"> (see AH=CCh,AH=ECh&quot;NetWare&quot;) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>06h</b> </p>
+</td>
+<td valign="top"> Clear File </td>
+<td valign="top"> (see AH=CDh&quot;NetWare&quot;) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>07h</b> </p>
+</td>
+<td valign="top"> Clear File Set </td>
+<td valign="top"> (see AH=CEh,AX=F207h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>08h</b> </p>
+</td>
+<td valign="top"> Log Logical Record (old) </td>
+<td valign="top"> (see AX=F208h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>09h</b> </p>
+</td>
+<td valign="top"> Lock Logical Record Set (old) </td>
+<td valign="top"> (see AH=D0h&quot;NetWare&quot;) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>0Ah</b> </p>
+</td>
+<td valign="top"> Clear Logical Record </td>
+<td valign="top"> (see AX=F20Ah) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>0Bh</b> </p>
+</td>
+<td valign="top"> Release Logical Record </td>
+<td valign="top"> (see AX=F20Bh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>0Ch</b> </p>
+</td>
+<td valign="top"> Release Logical Record Set </td>
+<td valign="top"> (see AH=D2h&quot;NetWare&quot;) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>0Dh</b> </p>
+</td>
+<td valign="top"> Clear Logical Record Set </td>
+<td valign="top"> (see AH=D3h&quot;NetWare&quot;) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>0Eh</b> </p>
+</td>
+<td valign="top"> Allocate Resource </td>
+<td valign="top"> (see AX=F20Eh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>0Fh</b> </p>
+</td>
+<td valign="top"> Deallocate Resource </td>
+<td valign="top"> (see AH=D8h&quot;NetWare&quot;) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>11h / xxh</b> </p>
+</td>
+<td valign="top"> print spooling </td>
+<td valign="top"> (see AH=D9h&quot;NetWare&quot;) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>11h / 06h</b> </p>
+</td>
+<td valign="top"> Get Printer Status </td>
+<td valign="top"> (see AH=E0h&quot;NetWare&quot;) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>11h / 0Ah</b> </p>
+</td>
+<td valign="top"> Get Printer Queue </td>
+<td valign="top"> </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>12h</b> </p>
+</td>
+<td valign="top"> Get Volume Info with Number </td>
+<td valign="top"> (see AH=DAh&quot;NetWare&quot;) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>13h</b> </p>
+</td>
+<td valign="top"> Get Station Number </td>
+<td valign="top"> (see AH=DCh&quot;NetWare&quot;) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>14h</b> </p>
+</td>
+<td valign="top"> Get File Server Date and Time (NW v2.2+) </td>
+<td valign="top"> (see AH=E7h&quot;NetWare&quot;) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>15h / 01h</b> </p>
+</td>
+<td valign="top"> Get Broadcast Message (old) </td>
+<td valign="top"> (see AX=F215h/SF=01h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>15h / 02h</b> </p>
+</td>
+<td valign="top"> Disable Broadcasts </td>
+<td valign="top"> (see AX=F215h/SF=02h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>15h / 03h</b> </p>
+</td>
+<td valign="top"> Enable Broadcasts </td>
+<td valign="top"> (see AX=F215h/SF=03h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>15h / 08h</b> </p>
+</td>
+<td valign="top"> Check Pipe Status </td>
+<td valign="top"> (see AH=E1h/SF=08h,AX=F215h/SF=08h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>15h / 09h</b> </p>
+</td>
+<td valign="top"> Broadcast to Console </td>
+<td valign="top"> (see AH=E1h/SF=09h,AX=F215h/SF=09h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>15h / 0Bh</b> </p>
+</td>
+<td valign="top"> Get Broadcast Message </td>
+<td valign="top"> (see AX=F215h/SF=0Bh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>16h / 00h</b> </p>
+</td>
+<td valign="top"> Set Directory Handle </td>
+<td valign="top"> (see AX=F216h/SF=00h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>16h / 01h</b> </p>
+</td>
+<td valign="top"> Get Directory Path </td>
+<td valign="top"> (see AX=F216h/SF=01h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>16h / 02h</b> </p>
+</td>
+<td valign="top"> Scan Directory Information </td>
+<td valign="top"> (see AX=F216h/SF=02h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>16h / 03h</b> </p>
+</td>
+<td valign="top"> Get Effective Directory Rights (old) </td>
+<td valign="top"> (see AX=F216h/SF=03h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>16h / 04h</b> </p>
+</td>
+<td valign="top"> Modify Maximum Rights Mask </td>
+<td valign="top"> (see AX=F216h/SF=04h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>16h / 05h</b> </p>
+</td>
+<td valign="top"> Get Volume Number </td>
+<td valign="top"> (see AX=F216h/SF=05h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>16h / 06h</b> </p>
+</td>
+<td valign="top"> Get Volume Name </td>
+<td valign="top"> (see AX=F216h/SF=06h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>16h / 0Ah</b> </p>
+</td>
+<td valign="top"> Create Directory </td>
+<td valign="top"> (see AX=F216h/SF=0Ah) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>16h / 0Bh</b> </p>
+</td>
+<td valign="top"> Delete Directory </td>
+<td valign="top"> (see AX=F216h/SF=0Bh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>16h / 0Ch</b> </p>
+</td>
+<td valign="top"> Scan Directory for Trustees </td>
+<td valign="top"> (see AX=F216h/SF=0Ch) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>16h / 0Dh</b> </p>
+</td>
+<td valign="top"> Add Trustee to Directory </td>
+<td valign="top"> (see AX=F216h/SF=0Dh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>16h / 0Eh</b> </p>
+</td>
+<td valign="top"> Delete Trustee from Directory </td>
+<td valign="top"> (see AX=F216h/SF=0Eh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>16h / 0Fh</b> </p>
+</td>
+<td valign="top"> Rename Directory </td>
+<td valign="top"> (see AX=F216h/SF=0Fh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>16h / 10h</b> </p>
+</td>
+<td valign="top"> Purge Erased Files (old) </td>
+<td valign="top"> (see AX=F216h/SF=10h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>16h / 11h</b> </p>
+</td>
+<td valign="top"> Recover Erased File (old) </td>
+<td valign="top"> (see AX=F216h/SF=11h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>16h / 12h</b> </p>
+</td>
+<td valign="top"> Alloc Permanent Directory Handle </td>
+<td valign="top"> (see AX=F216h/SF=12h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>16h / 13h</b> </p>
+</td>
+<td valign="top"> Alloc Temporary Directory Handle </td>
+<td valign="top"> (see AX=F216h/SF=13h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>16h / 14h</b> </p>
+</td>
+<td valign="top"> Deallocate Directory Handle </td>
+<td valign="top"> (see AX=F216h/SF=14h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>16h / 15h</b> </p>
+</td>
+<td valign="top"> Get Volume Info with Handle </td>
+<td valign="top"> (see AX=F216h/SF=15h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>16h / 16h</b> </p>
+</td>
+<td valign="top"> Alloc Special Temporary Directory Handle </td>
+<td valign="top"> (see AX=F216h/SF=16h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>16h / 19h</b> </p>
+</td>
+<td valign="top"> Set Directory Information </td>
+<td valign="top"> (see AX=F216h/SF=19h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>16h / 1Ah</b> </p>
+</td>
+<td valign="top"> Get Path Name of Volume-Directory Number Pair </td>
+<td valign="top"> (see AX=F216h/SF=1Ah) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>16h / 1Bh</b> </p>
+</td>
+<td valign="top"> Scan Salvageable Files (old) </td>
+<td valign="top"> (see AX=F216h/SF=1Bh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>16h / 1Ch</b> </p>
+</td>
+<td valign="top"> Recover Salvageable File (old) </td>
+<td valign="top"> (see AX=F216h/SF=1Ch) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>16h / 1Dh</b> </p>
+</td>
+<td valign="top"> Purge Salvageable File (old) </td>
+<td valign="top"> (see AX=F216h/SF=1Dh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>16h / 1Eh</b> </p>
+</td>
+<td valign="top"> Scan a Directory </td>
+<td valign="top"> (see AX=F216h/SF=1Eh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>16h / 1Fh</b> </p>
+</td>
+<td valign="top"> Get Directory Entry </td>
+<td valign="top"> (see AX=F216h/SF=1Fh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>16h / 20h</b> </p>
+</td>
+<td valign="top"> Scan Volume's User Disk Restrictions </td>
+<td valign="top"> (see AX=F216h/SF=20h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>16h / 21h</b> </p>
+</td>
+<td valign="top"> Add User Disk Space Restriction </td>
+<td valign="top"> (see AX=F216h/SF=21h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>16h / 22h</b> </p>
+</td>
+<td valign="top"> Remove User Disk Space Restrictions </td>
+<td valign="top"> (see AX=F216h/SF=22h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>16h / 23h</b> </p>
+</td>
+<td valign="top"> Scan Directory Space Restrictions </td>
+<td valign="top"> (see AX=F216h/SF=23h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>16h / 24h</b> </p>
+</td>
+<td valign="top"> Set Directory Disk Space Restriction </td>
+<td valign="top"> (see AX=F216h/SF=24h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>16h / 25h</b> </p>
+</td>
+<td valign="top"> Set Directory File Information </td>
+<td valign="top"> (see AX=F216h/SF=25h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>16h / 26h</b> </p>
+</td>
+<td valign="top"> Scan File or Directory For Extended Trustees </td>
+<td valign="top"> (see AX=F216h/SF=26h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>16h / 27h</b> </p>
+</td>
+<td valign="top"> Add Extended Trustee to Directory or File </td>
+<td valign="top"> (see AX=F216h/SF=27h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>16h / 28h</b> </p>
+</td>
+<td valign="top"> Scan Directory Disk Space </td>
+<td valign="top"> (see AX=F216h/SF=28h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>16h / 29h</b> </p>
+</td>
+<td valign="top"> Get Object Disk Usage and Restrictions </td>
+<td valign="top"> (see AX=F216h/SF=29h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>16h / 2Ah</b> </p>
+</td>
+<td valign="top"> Get Effective Rights </td>
+<td valign="top"> (see AX=F216h/SF=2Ah) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>16h / 2Bh</b> </p>
+</td>
+<td valign="top"> Remove Extended Trustee from Dir or File </td>
+<td valign="top"> (see AX=F216h/SF=2Bh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>16h / 2Ch</b> </p>
+</td>
+<td valign="top"> Get Volume Usage </td>
+<td valign="top"> (see AX=F216h/SF=2Ch) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>16h / 2Dh</b> </p>
+</td>
+<td valign="top"> Get Directory Information </td>
+<td valign="top"> (see AX=F216h/SF=2Dh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>16h / 2Eh</b> </p>
+</td>
+<td valign="top"> Rename or Move </td>
+<td valign="top"> (see AX=F216h/SF=2Eh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>16h / 2Fh</b> </p>
+</td>
+<td valign="top"> Get Name Space Information </td>
+<td valign="top"> (see AX=F216h/SF=2Fh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>16h / 30h</b> </p>
+</td>
+<td valign="top"> Get Name Space Directory Entry </td>
+<td valign="top"> (see AX=F216h/SF=30h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>16h / 31h</b> </p>
+</td>
+<td valign="top"> Open Data Stream </td>
+<td valign="top"> (see AX=F216h/SF=31h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>16h / 32h</b> </p>
+</td>
+<td valign="top"> Get Object Effective Rights </td>
+<td valign="top"> (see AX=F216h/SF=32h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>16h / 33h</b> </p>
+</td>
+<td valign="top"> Get Extended Volume Info </td>
+<td valign="top"> (see AX=F216h/SF=33h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 01h</b> </p>
+</td>
+<td valign="top"> Change User Password (old) </td>
+<td valign="top"> (see AX=F217h/SF=01h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 02h</b> </p>
+</td>
+<td valign="top"> Get User Connection List (old) </td>
+<td valign="top"> (see AX=F217h/SF=02h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 0Ch</b> </p>
+</td>
+<td valign="top"> Verify Serialization </td>
+<td valign="top"> (see AX=F217h/SF=0Ch) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 0Eh</b> </p>
+</td>
+<td valign="top"> Get Disk Utilization </td>
+<td valign="top"> (see AX=F217h/SF=0Eh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 0Fh</b> </p>
+</td>
+<td valign="top"> Scan File Information </td>
+<td valign="top"> (see AX=F217h/SF=0Fh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 10h</b> </p>
+</td>
+<td valign="top"> Set File Information </td>
+<td valign="top"> (see AX=F217h/SF=10h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 11h</b> </p>
+</td>
+<td valign="top"> Get File Server Information </td>
+<td valign="top"> (see AX=F217h/SF=11h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 12h</b> </p>
+</td>
+<td valign="top"> Get Network Serial Number </td>
+<td valign="top"> (see AX=F217h/SF=12h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 13h</b> </p>
+</td>
+<td valign="top"> Get Internet Address (old) </td>
+<td valign="top"> (see AX=F217h/SF=13h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 14h</b> </p>
+</td>
+<td valign="top"> Login Object </td>
+<td valign="top"> (see AX=F217h/SF=14h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 15h</b> </p>
+</td>
+<td valign="top"> Get Object Connection List (old) </td>
+<td valign="top"> (see AX=F217h/SF=15h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 16h</b> </p>
+</td>
+<td valign="top"> Get Connection Information (old) </td>
+<td valign="top"> (see AX=F217h/SF=1Ch) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 17h</b> </p>
+</td>
+<td valign="top"> Get Encryption Key </td>
+<td valign="top"> (see AX=F217h/SF=17h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 18h</b> </p>
+</td>
+<td valign="top"> Login Object Encrypted </td>
+<td valign="top"> (see AX=F217h/SF=18h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 1Ah</b> </p>
+</td>
+<td valign="top"> Get Internet Address </td>
+<td valign="top"> (see AX=F217h/SF=1Ah) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 1Bh</b> </p>
+</td>
+<td valign="top"> Get Object Connection List </td>
+<td valign="top"> (see AX=F217h/SF=1Bh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 1Ch</b> </p>
+</td>
+<td valign="top"> Get Connection Information </td>
+<td valign="top"> (see AX=F217h/SF=1Ch) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 1Fh</b> </p>
+</td>
+<td valign="top"> Get Connection List from Object </td>
+<td valign="top"> (see AX=F217h/SF=1Fh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 32h</b> </p>
+</td>
+<td valign="top"> Create Bindery Object </td>
+<td valign="top"> (see AX=F217h/SF=32h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 33h</b> </p>
+</td>
+<td valign="top"> Delete Bindery Object </td>
+<td valign="top"> (see AX=F217h/SF=33h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 34h</b> </p>
+</td>
+<td valign="top"> Rename Bindery Object </td>
+<td valign="top"> (see AX=F217h/SF=34h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 35h</b> </p>
+</td>
+<td valign="top"> Get Bindery Object ID </td>
+<td valign="top"> (see AX=F217h/SF=35h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 36h</b> </p>
+</td>
+<td valign="top"> Get Bindery Object Name </td>
+<td valign="top"> (see AX=F217h/SF=36h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 37h</b> </p>
+</td>
+<td valign="top"> Scan Bindery Object </td>
+<td valign="top"> (see AX=F217h/SF=37h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 38h</b> </p>
+</td>
+<td valign="top"> Change Bindery Object Security </td>
+<td valign="top"> (see AX=F217h/SF=38h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 39h</b> </p>
+</td>
+<td valign="top"> Create Property </td>
+<td valign="top"> (see AX=F217h/SF=39h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 3Ah</b> </p>
+</td>
+<td valign="top"> Delete Property </td>
+<td valign="top"> (see AX=F217h/SF=3Ah) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 3Bh</b> </p>
+</td>
+<td valign="top"> Change Property Security </td>
+<td valign="top"> (see AX=F217h/SF=3Bh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 3Ch</b> </p>
+</td>
+<td valign="top"> Scan Property </td>
+<td valign="top"> (see AX=F217h/SF=3Ch) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 3Dh</b> </p>
+</td>
+<td valign="top"> Read Property Value </td>
+<td valign="top"> (see AX=F217h/SF=3Dh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 3Eh</b> </p>
+</td>
+<td valign="top"> Write Property Value </td>
+<td valign="top"> (see AX=F217h/SF=3Eh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 3Fh</b> </p>
+</td>
+<td valign="top"> Verify Bindery Object Password </td>
+<td valign="top"> (see AX=F217h/SF=3Fh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 40h</b> </p>
+</td>
+<td valign="top"> Change Bindery Object Password </td>
+<td valign="top"> (see AX=F217h/SF=40h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 41h</b> </p>
+</td>
+<td valign="top"> Add Bindery Object to Set </td>
+<td valign="top"> (see AX=F217h/SF=41h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 42h</b> </p>
+</td>
+<td valign="top"> Delete Bindery Object from Set </td>
+<td valign="top"> (see AX=F217h/SF=42h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 43h</b> </p>
+</td>
+<td valign="top"> Is Bindery Object in Set </td>
+<td valign="top"> (see AX=F217h/SF=43h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 44h</b> </p>
+</td>
+<td valign="top"> Close Bindery </td>
+<td valign="top"> (see AX=F217h/SF=44h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 45h</b> </p>
+</td>
+<td valign="top"> Open Bindery </td>
+<td valign="top"> (see AX=F217h/SF=45h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 46h</b> </p>
+</td>
+<td valign="top"> Get Bindery Access Level </td>
+<td valign="top"> (see AX=F217h/SF=46h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 47h</b> </p>
+</td>
+<td valign="top"> Scan Bindery Object Trustee Paths </td>
+<td valign="top"> (see AX=F217h/SF=47h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 48h</b> </p>
+</td>
+<td valign="top"> Get Bindery Object Access Level </td>
+<td valign="top"> (see AX=F217h/SF=48h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 49h</b> </p>
+</td>
+<td valign="top"> Is Station a Manager? </td>
+<td valign="top"> (see AX=F217h/SF=49h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 4Ah</b> </p>
+</td>
+<td valign="top"> Keyed Verify Bindery Object Password </td>
+<td valign="top"> (see AX=F217h/SF=4Ah) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 4Bh</b> </p>
+</td>
+<td valign="top"> Keyed Change Bindery Object Password </td>
+<td valign="top"> (see AX=F217h/SF=4Bh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 4Ch</b> </p>
+</td>
+<td valign="top"> List Relations of an Object </td>
+<td valign="top"> (see AX=F217h/SF=4Ch) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 64h</b> </p>
+</td>
+<td valign="top"> Create Queue </td>
+<td valign="top"> (see AX=F217h/SF=64h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 65h</b> </p>
+</td>
+<td valign="top"> Destroy Queue </td>
+<td valign="top"> (see AX=F217h/SF=65h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 66h</b> </p>
+</td>
+<td valign="top"> Read Queue Current Status (old) </td>
+<td valign="top"> (see AX=F217h/SF=66h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 67h</b> </p>
+</td>
+<td valign="top"> Set Queue Current Status (old) </td>
+<td valign="top"> (see AX=F217h/SF=67h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 68h</b> </p>
+</td>
+<td valign="top"> Create Queue Job and File (old) </td>
+<td valign="top"> (see AX=F217h/SF=68h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 69h</b> </p>
+</td>
+<td valign="top"> Close File and Start Queue Job (old) </td>
+<td valign="top"> (see AX=F217h/SF=69h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 6Ah</b> </p>
+</td>
+<td valign="top"> Remove Job From Queue (old) </td>
+<td valign="top"> (see AX=F217h/SF=6Ah) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 6Bh</b> </p>
+</td>
+<td valign="top"> Get Queue Job List (old) </td>
+<td valign="top"> (see AX=F217h/SF=6Bh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 6Ch</b> </p>
+</td>
+<td valign="top"> Read Queue Job Entry (old) </td>
+<td valign="top"> (see AX=F217h/SF=6Ch) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 6Dh</b> </p>
+</td>
+<td valign="top"> Change Queue Job Entry (old) </td>
+<td valign="top"> (see AX=F217h/SF=6Dh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 6Eh</b> </p>
+</td>
+<td valign="top"> Change Queue Job Position </td>
+<td valign="top"> (see AX=F217h/SF=6Eh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 6Fh</b> </p>
+</td>
+<td valign="top"> Attach Queue Server to Queue </td>
+<td valign="top"> (see AX=F217h/SF=6Fh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 70h</b> </p>
+</td>
+<td valign="top"> Detach Queue Server from Queue </td>
+<td valign="top"> (see AX=F217h/SF=70h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 72h</b> </p>
+</td>
+<td valign="top"> Finish Servicing Queue Job (old) </td>
+<td valign="top"> (see AX=F217h/SF=72h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 74h</b> </p>
+</td>
+<td valign="top"> Change to Client Rights (old) </td>
+<td valign="top"> (see AX=F217h/SF=74h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 75h</b> </p>
+</td>
+<td valign="top"> Restore Queue Server Rights </td>
+<td valign="top"> (see AX=F217h/SF=75h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 76h</b> </p>
+</td>
+<td valign="top"> Read Queue Server Current Status (old) </td>
+<td valign="top"> (see AX=F217h/SF=76h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 77h</b> </p>
+</td>
+<td valign="top"> Set Queue Server Current Status </td>
+<td valign="top"> (see AX=F217h/SF=77h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 78h</b> </p>
+</td>
+<td valign="top"> Get Queue Job File Size (old) </td>
+<td valign="top"> (see AX=F217h/SF=78h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 79h</b> </p>
+</td>
+<td valign="top"> Create Queue Job and File </td>
+<td valign="top"> (see AX=F217h/SF=79h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 7Ah</b> </p>
+</td>
+<td valign="top"> Read Queue Job Entry </td>
+<td valign="top"> (see AX=F217h/SF=7Ah) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 7Bh</b> </p>
+</td>
+<td valign="top"> Change Queue Job Entry </td>
+<td valign="top"> (see AX=F217h/SF=7Bh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 7Dh</b> </p>
+</td>
+<td valign="top"> Read Queue Current Status </td>
+<td valign="top"> (see AX=F217h/SF=7Dh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 7Eh</b> </p>
+</td>
+<td valign="top"> Set Queue Current Status </td>
+<td valign="top"> (see AX=F217h/SF=7Eh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 7Fh</b> </p>
+</td>
+<td valign="top"> Close File and Start Queue Job </td>
+<td valign="top"> (see AX=F217h/SF=7Fh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 80h</b> </p>
+</td>
+<td valign="top"> Remove Job From Queue </td>
+<td valign="top"> (see AX=F217h/SF=80h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 81h</b> </p>
+</td>
+<td valign="top"> Get Queue Job List </td>
+<td valign="top"> (see AX=F217h/SF=81h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 82h</b> </p>
+</td>
+<td valign="top"> Change Job Priority </td>
+<td valign="top"> (see AX=F217h/SF=82h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 83h</b> </p>
+</td>
+<td valign="top"> Finish Servicing Queue Job </td>
+<td valign="top"> (see AX=F217h/SF=83h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 85h</b> </p>
+</td>
+<td valign="top"> Change to Client Rights </td>
+<td valign="top"> (see AX=F217h/SF=85h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 86h</b> </p>
+</td>
+<td valign="top"> Read Queue Server Current Status </td>
+<td valign="top"> (see AX=F217h/SF=86h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 87h</b> </p>
+</td>
+<td valign="top"> Get Queue Job File Size </td>
+<td valign="top"> (see AX=F217h/SF=87h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 96h</b> </p>
+</td>
+<td valign="top"> Get Account Status </td>
+<td valign="top"> (see AX=F217h/SF=96h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 97h</b> </p>
+</td>
+<td valign="top"> Submit Account Charge </td>
+<td valign="top"> (see AX=F217h/SF=97h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 98h</b> </p>
+</td>
+<td valign="top"> Submit Account Hold </td>
+<td valign="top"> (see AX=F217h/SF=98h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / 99h</b> </p>
+</td>
+<td valign="top"> Submit Account Note </td>
+<td valign="top"> (see AX=F217h/SF=99h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / C8h</b> </p>
+</td>
+<td valign="top"> Check Console Privileges </td>
+<td valign="top"> (see AX=F217h/SF=C8h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / C9h</b> </p>
+</td>
+<td valign="top"> Get File Server Description Strings </td>
+<td valign="top"> (see AX=F217h/SF=C9h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / CAh</b> </p>
+</td>
+<td valign="top"> Set File Server Date and Time </td>
+<td valign="top"> (see AX=F217h/SF=CAh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / CBh</b> </p>
+</td>
+<td valign="top"> Disable File Server Login </td>
+<td valign="top"> (see AX=F217h/SF=CBh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / CCh</b> </p>
+</td>
+<td valign="top"> Enable File Server Login </td>
+<td valign="top"> (see AX=F217h/SF=CCh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / CDh</b> </p>
+</td>
+<td valign="top"> Get File Server Login Status </td>
+<td valign="top"> (see AX=F217h/SF=CDh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / CEh</b> </p>
+</td>
+<td valign="top"> Purge All Erased Files </td>
+<td valign="top"> (see AX=F217h/SF=CEh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / CFh</b> </p>
+</td>
+<td valign="top"> Disable Transaction Tracking </td>
+<td valign="top"> (see AX=F217h/SF=CFh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / D0h</b> </p>
+</td>
+<td valign="top"> Enable Transaction Tracking </td>
+<td valign="top"> (see AX=F217h/SF=D0h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / D2h</b> </p>
+</td>
+<td valign="top"> Clear Connection Number (Logout Station) </td>
+<td valign="top"> (see AX=F217h/SF=D2h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / D3h</b> </p>
+</td>
+<td valign="top"> Down File Server </td>
+<td valign="top"> (see AX=F217h/SF=D3h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / D4h</b> </p>
+</td>
+<td valign="top"> Get File System Statistics </td>
+<td valign="top"> (see AX=F217h/SF=D4h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / D5h</b> </p>
+</td>
+<td valign="top"> Get Transaction Tracking Statistics </td>
+<td valign="top"> (see AX=F217h/SF=D5h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / D6h</b> </p>
+</td>
+<td valign="top"> Get Disk Cache Statistics </td>
+<td valign="top"> (see AX=F217h/SF=D6h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / D7h</b> </p>
+</td>
+<td valign="top"> Get Drive Mapping Table </td>
+<td valign="top"> (see AX=F217h/SF=D7h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / D8h</b> </p>
+</td>
+<td valign="top"> Get Physical Disk Statistics </td>
+<td valign="top"> (see AX=F217h/SF=D8h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / D9h</b> </p>
+</td>
+<td valign="top"> Get Disk Channel Statistics </td>
+<td valign="top"> (see AX=F217h/SF=D9h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / DAh</b> </p>
+</td>
+<td valign="top"> Get Connection's Task Information (NW v2.2) </td>
+<td valign="top"> (see AX=F217h/SF=DAh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / DBh</b> </p>
+</td>
+<td valign="top"> Get Connection's Open Files (old) (NW v2.2) </td>
+<td valign="top"> (see AX=F217h/SF=DBh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / DCh</b> </p>
+</td>
+<td valign="top"> Get Connections Using a File (NW v2.2) </td>
+<td valign="top"> (see AX=F217h/SF=DCh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / DDh</b> </p>
+</td>
+<td valign="top"> Get Physical Record Locks by Connection and File (old) </td>
+<td valign="top"> </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / DEh</b> </p>
+</td>
+<td valign="top"> Get Physical Record Locks by File (old) </td>
+<td valign="top"> (see AX=F217h/SF=DEh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / DFh</b> </p>
+</td>
+<td valign="top"> Get Logical Records by Connection (old) </td>
+<td valign="top"> (see AX=F217h/SF=DFh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / E0h</b> </p>
+</td>
+<td valign="top"> Get Logical Record Information (old) </td>
+<td valign="top"> (see AX=F217h/SF=E0h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / E1h</b> </p>
+</td>
+<td valign="top"> Get Connection's Semaphores (old) </td>
+<td valign="top"> (see AX=F217h/SF=E1h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / E2h</b> </p>
+</td>
+<td valign="top"> Get Semaphore Information (old) </td>
+<td valign="top"> (see AX=F217h/SF=E2h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / E3h</b> </p>
+</td>
+<td valign="top"> Get LAN Driver's Configuration Information </td>
+<td valign="top"> (see AX=F217h/SF=E3h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / E5h</b> </p>
+</td>
+<td valign="top"> Get Connection's Usage Statistics (NW v2.2) </td>
+<td valign="top"> (see AX=F217h/SF=E5h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / E6h</b> </p>
+</td>
+<td valign="top"> Get Object's Remaining Disk Space </td>
+<td valign="top"> (see AX=F217h/SF=E6h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / E7h</b> </p>
+</td>
+<td valign="top"> Get File Server LAN I/O Statistics </td>
+<td valign="top"> (see AX=F217h/SF=E7h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / E8h</b> </p>
+</td>
+<td valign="top"> Get File Server Misc Information </td>
+<td valign="top"> (see AX=F217h/SF=E8h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / E9h</b> </p>
+</td>
+<td valign="top"> Get Volume Information </td>
+<td valign="top"> (see AX=F217h/SF=E9h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / EAh</b> </p>
+</td>
+<td valign="top"> Get Connection's Task Information (NW v3.11+) </td>
+<td valign="top"> (see AX=F217h/SF=EAh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / EBh</b> </p>
+</td>
+<td valign="top"> Get Connection's Open Files (NW v3.11+) </td>
+<td valign="top"> (see AX=F217h/SF=EBh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / ECh</b> </p>
+</td>
+<td valign="top"> Get Connections Using a File (NW v3.11+) </td>
+<td valign="top"> (see AX=F217h/SF=ECh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / EDh</b> </p>
+</td>
+<td valign="top"> Get Physical Record Locks by Connection and File </td>
+<td valign="top"> (see AX=F217h/SF=EDh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / EEh</b> </p>
+</td>
+<td valign="top"> Get Physical Record Locks by File </td>
+<td valign="top"> (see AX=F217h/SF=EEh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / EFh</b> </p>
+</td>
+<td valign="top"> Get Logical Records by Connection </td>
+<td valign="top"> (see AX=F217h/SF=EFh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / F0h</b> </p>
+</td>
+<td valign="top"> Get Logical Record Information </td>
+<td valign="top"> (see AX=F217h/SF=F0h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / F1h</b> </p>
+</td>
+<td valign="top"> Get Connection's Semaphores </td>
+<td valign="top"> (see AX=F217h/SF=F1h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / F2h</b> </p>
+</td>
+<td valign="top"> Get Semaphore Information </td>
+<td valign="top"> (see AX=F217h/SF=F2h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / F3h</b> </p>
+</td>
+<td valign="top"> Map Directory Number to Path </td>
+<td valign="top"> (see AX=F217h/SF=F3h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / F4h</b> </p>
+</td>
+<td valign="top"> Convert Path to Directory Entry </td>
+<td valign="top"> (see AX=F217h/SF=F4h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / F5h</b> </p>
+</td>
+<td valign="top"> Get File Server Extended Misc Information </td>
+<td valign="top"> (see AX=F217h/SF=F5h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / F6h</b> </p>
+</td>
+<td valign="top"> Get Volume Extended Information </td>
+<td valign="top"> (see AX=F217h/SF=F6h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>17h / FEh</b> </p>
+</td>
+<td valign="top"> Clear Connection Number Greater than 250 </td>
+<td valign="top"> (see AX=F217h/SF=FEh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>18h</b> </p>
+</td>
+<td valign="top"> End of Job </td>
+<td valign="top"> (see AH=D6h&quot;NetWare&quot;) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>19h</b> </p>
+</td>
+<td valign="top"> Logout (old) </td>
+<td valign="top"> (see AH=D7h&quot;NetWare&quot;) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>1Ah</b> </p>
+</td>
+<td valign="top"> Log Physical Record (old) </td>
+<td valign="top"> (see AH=BCh&quot;NetWare&quot;) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>1Bh</b> </p>
+</td>
+<td valign="top"> Lock Physical Record Set (old) </td>
+<td valign="top"> (see AX=F21Bh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>1Ch</b> </p>
+</td>
+<td valign="top"> Release Physical Record </td>
+<td valign="top"> (see AH=BDh&quot;NetWare&quot;) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>1Dh</b> </p>
+</td>
+<td valign="top"> Release Physical Record Set </td>
+<td valign="top"> (see AH=C3h&quot;NetWare&quot;) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>1Eh</b> </p>
+</td>
+<td valign="top"> Clear Physical Record </td>
+<td valign="top"> (see AX=F21Eh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>1Fh</b> </p>
+</td>
+<td valign="top"> Clear Physical Record Set </td>
+<td valign="top"> (see AX=F21Fh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>20h / xxh</b> </p>
+</td>
+<td valign="top"> semaphore services </td>
+<td valign="top"> (see AX=C501h&quot;NetWare&quot;) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>20h / 00h</b> </p>
+</td>
+<td valign="top"> Open Semaphore (old) </td>
+<td valign="top"> (see AX=C500h&quot;NetWare&quot;) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>20h / 01h</b> </p>
+</td>
+<td valign="top"> Examine Semaphore (old) </td>
+<td valign="top"> (see AX=C501h&quot;NetWare&quot;) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>20h / 02h</b> </p>
+</td>
+<td valign="top"> Wait on Semaphore (old) </td>
+<td valign="top"> (see AX=C502h&quot;NetWare&quot;) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>20h / 03h</b> </p>
+</td>
+<td valign="top"> Signal Semaphore (old) </td>
+<td valign="top"> (see AX=C503h&quot;NetWare&quot;) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>20h / 04h</b> </p>
+</td>
+<td valign="top"> Close Semaphore (old) </td>
+<td valign="top"> (see AX=C504h&quot;NetWare&quot;) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>21h</b> </p>
+</td>
+<td valign="top"> Negotiate Buffer Size </td>
+<td valign="top"> </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>22h / 00h</b> </p>
+</td>
+<td valign="top"> TTS Is Available </td>
+<td valign="top"> (see AX=C702h&quot;NetWare&quot;) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>22h / 01h</b> </p>
+</td>
+<td valign="top"> TTS Begin Transaction </td>
+<td valign="top"> (see AX=C700h&quot;NetWare&quot;) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>22h / 02h</b> </p>
+</td>
+<td valign="top"> TTS End Transaction </td>
+<td valign="top"> (see AX=C701h&quot;NetWare&quot;) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>22h / 03h</b> </p>
+</td>
+<td valign="top"> TTS Abort Transaction </td>
+<td valign="top"> (see AX=C703h&quot;NetWare&quot;) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>22h / 04h</b> </p>
+</td>
+<td valign="top"> TTS Transaction Status </td>
+<td valign="top"> (see AX=C704h&quot;NetWare&quot;) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>22h / 05h</b> </p>
+</td>
+<td valign="top"> TTS Get Application Thresholds </td>
+<td valign="top"> (see AX=C705h&quot;NetWare&quot;) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>22h / 06h</b> </p>
+</td>
+<td valign="top"> TTS Set Application Thresholds </td>
+<td valign="top"> (see AX=C706h&quot;NetWare&quot;) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>22h / 07h</b> </p>
+</td>
+<td valign="top"> TTS Get Workstation Thresholds </td>
+<td valign="top"> (see AX=C707h&quot;NetWare&quot;) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>22h / 08h</b> </p>
+</td>
+<td valign="top"> TTS Set Workstation Thresholds </td>
+<td valign="top"> (see AX=C708h&quot;NetWare&quot;) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>22h / 09h</b> </p>
+</td>
+<td valign="top"> TTS Get Control Flags </td>
+<td valign="top"> </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>22h / 0Ah</b> </p>
+</td>
+<td valign="top"> TTS Set Control Flags </td>
+<td valign="top"> </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>23h / 01h</b> </p>
+</td>
+<td valign="top"> AFP Create Directory </td>
+<td valign="top"> (see AX=F223h/SF=01h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>23h / 02h</b> </p>
+</td>
+<td valign="top"> AFP Create File </td>
+<td valign="top"> (see AX=F223h/SF=02h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>23h / 03h</b> </p>
+</td>
+<td valign="top"> AFP Delete </td>
+<td valign="top"> (see AX=F223h/SF=03h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>23h / 04h</b> </p>
+</td>
+<td valign="top"> AFP Get Entry ID From Name </td>
+<td valign="top"> (see AX=F223h/SF=04h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>23h / 05h</b> </p>
+</td>
+<td valign="top"> AFP Get File Information </td>
+<td valign="top"> (see AX=F223h/SF=05h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>23h / 06h</b> </p>
+</td>
+<td valign="top"> AFP Get Entry ID From NetWare Handle </td>
+<td valign="top"> (see AX=F223h/SF=06h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>23h / 07h</b> </p>
+</td>
+<td valign="top"> AFP Rename </td>
+<td valign="top"> (see AX=F223h/SF=07h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>23h / 08h</b> </p>
+</td>
+<td valign="top"> AFP Open File Fork </td>
+<td valign="top"> (see AX=F223h/SF=08h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>23h / 09h</b> </p>
+</td>
+<td valign="top"> AFP Set File Information </td>
+<td valign="top"> (see AX=F223h/SF=09h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>23h / 0Ah</b> </p>
+</td>
+<td valign="top"> AFP Scan File Information </td>
+<td valign="top"> (see AX=F223h/SF=0Ah) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>23h / 0Bh</b> </p>
+</td>
+<td valign="top"> AFP Alloc Temporary Dir Handle </td>
+<td valign="top"> (see AX=F223h/SF=0Bh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>23h / 0Ch</b> </p>
+</td>
+<td valign="top"> AFP Get Entry ID From Path Name </td>
+<td valign="top"> (see AX=F223h/SF=0Ch) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>23h / 0Dh</b> </p>
+</td>
+<td valign="top"> AFP 2.0 Create Directory </td>
+<td valign="top"> (see AX=F223h/SF=0Dh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>23h / 0Eh</b> </p>
+</td>
+<td valign="top"> AFP 2.0 Create File </td>
+<td valign="top"> (see AX=F223h/SF=0Eh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>23h / 10h</b> </p>
+</td>
+<td valign="top"> AFP 2.0 Set File Information </td>
+<td valign="top"> (see AX=F223h/SF=10h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>23h / 11h</b> </p>
+</td>
+<td valign="top"> AFP 2.0 Scan File Information </td>
+<td valign="top"> (see AX=F223h/SF=11h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>23h / 12h</b> </p>
+</td>
+<td valign="top"> AFP Get DOS Name from Entry ID </td>
+<td valign="top"> (see AX=F223h/SF=12h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>23h / 13h</b> </p>
+</td>
+<td valign="top"> AFP Get Macintosh Info on Deleted File </td>
+<td valign="top"> (see AX=F223h/SF=13h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>3Dh</b> </p>
+</td>
+<td valign="top"> Commit File </td>
+<td valign="top"> </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>3Eh</b> </p>
+</td>
+<td valign="top"> File Search Initialize (FindFirst) </td>
+<td valign="top"> (see AX=F23Eh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>3Fh</b> </p>
+</td>
+<td valign="top"> File Search Continue (FindNext) </td>
+<td valign="top"> (see AX=F23Fh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>40h</b> </p>
+</td>
+<td valign="top"> Search File </td>
+<td valign="top"> </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>42h</b> </p>
+</td>
+<td valign="top"> Close File </td>
+<td valign="top"> (see AX=F242h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>43h</b> </p>
+</td>
+<td valign="top"> File Create </td>
+<td valign="top"> (see AX=F243h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>44h</b> </p>
+</td>
+<td valign="top"> File Erase </td>
+<td valign="top"> (see AX=F244h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>45h</b> </p>
+</td>
+<td valign="top"> File Rename </td>
+<td valign="top"> </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>46h</b> </p>
+</td>
+<td valign="top"> Set File Attributes </td>
+<td valign="top"> </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>47h</b> </p>
+</td>
+<td valign="top"> Get File Size </td>
+<td valign="top"> (see AX=F247h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>48h</b> </p>
+</td>
+<td valign="top"> File Read </td>
+<td valign="top"> </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>49h</b> </p>
+</td>
+<td valign="top"> File Write </td>
+<td valign="top"> </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>4Ah</b> </p>
+</td>
+<td valign="top"> File Server Copy </td>
+<td valign="top"> (see AX=F24Ah) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>4Bh</b> </p>
+</td>
+<td valign="top"> Set File Time and Date </td>
+<td valign="top"> </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>4Ch</b> </p>
+</td>
+<td valign="top"> File Open </td>
+<td valign="top"> </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>4Dh</b> </p>
+</td>
+<td valign="top"> Create New File </td>
+<td valign="top"> (see AX=F24Dh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>4Eh</b> </p>
+</td>
+<td valign="top"> Allow Task Access to File </td>
+<td valign="top"> (see AX=F24Eh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>4Fh</b> </p>
+</td>
+<td valign="top"> Set Extended File Attributes </td>
+<td valign="top"> (see AH=B6h&quot;NetWare&quot;) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>54h</b> </p>
+</td>
+<td valign="top"> Open Create File </td>
+<td valign="top"> (see also AX=6C00h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>55h</b> </p>
+</td>
+<td valign="top"> Get Sparse File Data Block Bit Map </td>
+<td valign="top"> </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>56h / xx</b> </p>
+</td>
+<td valign="top"> extended attribute services (OS/2) </td>
+<td valign="top"> </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>56h / 01h</b> </p>
+</td>
+<td valign="top"> Close Extended Attribute Handle </td>
+<td valign="top"> (see AX=F256h/SF=01h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>56h / 02h</b> </p>
+</td>
+<td valign="top"> Write Extended Attribute </td>
+<td valign="top"> (see AX=F256h/SF=02h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>56h / 03h</b> </p>
+</td>
+<td valign="top"> Read Extended Attribute </td>
+<td valign="top"> (see AX=F256h/SF=03h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>56h / 04h</b> </p>
+</td>
+<td valign="top"> Enumerate Extended Attributes </td>
+<td valign="top"> (see AX=F256h/SF=04h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>56h / 05h</b> </p>
+</td>
+<td valign="top"> Duplicate Extended Attributes </td>
+<td valign="top"> (see AX=F256h/SF=05h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>57h / 01h</b> </p>
+</td>
+<td valign="top"> Open/Create File or Subdirectory </td>
+<td valign="top"> (see AX=F257h/SF=01h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>57h / 02h</b> </p>
+</td>
+<td valign="top"> Initialize Search, continue with 57h/03h </td>
+<td valign="top"> (see AX=F257h/SF=02h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>57h / 03h</b> </p>
+</td>
+<td valign="top"> Scan NS Entry Info </td>
+<td valign="top"> (see AX=F257h/SF=03h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>57h / 04h</b> </p>
+</td>
+<td valign="top"> Rename or Move File or Subdirectory </td>
+<td valign="top"> (see AX=F257h/SF=04h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>57h / 05h</b> </p>
+</td>
+<td valign="top"> Scan File or Subdirectory for Trustees </td>
+<td valign="top"> (see AX=F257h/SF=05h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>57h / 06h</b> </p>
+</td>
+<td valign="top"> Obtain File or Subdirectory Information </td>
+<td valign="top"> (see AX=F257h/SF=06h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>57h / 07h</b> </p>
+</td>
+<td valign="top"> Modify File or Subdirectory DOS Information </td>
+<td valign="top"> (see AX=F257h/SF=07h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>57h / 08h</b> </p>
+</td>
+<td valign="top"> Delete File/Directory </td>
+<td valign="top"> (see AX=F257h/SF=08h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>57h / 09h</b> </p>
+</td>
+<td valign="top"> Set Short Directory Handle </td>
+<td valign="top"> (see AX=F257h/SF=09h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>57h / 0Ah</b> </p>
+</td>
+<td valign="top"> Add Trustee Set </td>
+<td valign="top"> (see AX=F257h/SF=0Ah) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>57h / 0Bh</b> </p>
+</td>
+<td valign="top"> Delete Trustee </td>
+<td valign="top"> (see AX=F257h/SF=0Bh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>57h / 0Ch</b> </p>
+</td>
+<td valign="top"> Allocate Short Directory Handle </td>
+<td valign="top"> (see AX=F257h/SF=0Ch) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>57h / 10h</b> </p>
+</td>
+<td valign="top"> Scan Salvageable Files </td>
+<td valign="top"> (see AX=F257h/SF=10h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>57h / 11h</b> </p>
+</td>
+<td valign="top"> Recover Salvageable File </td>
+<td valign="top"> (see AX=F257h/SF=11h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>57h / 12h</b> </p>
+</td>
+<td valign="top"> Purge Salvageable File </td>
+<td valign="top"> (see AX=F257h/SF=12h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>57h / 13h</b> </p>
+</td>
+<td valign="top"> Get NS Information </td>
+<td valign="top"> (see AX=F257h/SF=13h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>57h / 15h</b> </p>
+</td>
+<td valign="top"> Get Path String from Short Directory Handle </td>
+<td valign="top"> (see AX=F257h/SF=15h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>57h / 16h</b> </p>
+</td>
+<td valign="top"> Generate Directory Base and Volume Number </td>
+<td valign="top"> (see AX=F257h/SF=16h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>57h / 17h</b> </p>
+</td>
+<td valign="top"> Get Name Space Info </td>
+<td valign="top"> (see AX=F257h/SF=17h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>57h / 18h</b> </p>
+</td>
+<td valign="top"> Get Name Spaces Loaded </td>
+<td valign="top"> (see AX=F257h/SF=18h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>57h / 19h</b> </p>
+</td>
+<td valign="top"> Write Name Space Info </td>
+<td valign="top"> (see AX=F257h/SF=19h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>57h / 1Ah</b> </p>
+</td>
+<td valign="top"> Read Extended Name Space Info </td>
+<td valign="top"> (see AX=F257h/SF=1Ah) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>57h / 1Bh</b> </p>
+</td>
+<td valign="top"> Write Extended Name Space Info </td>
+<td valign="top"> (see AX=F257h/SF=1Bh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>57h / 1Ch</b> </p>
+</td>
+<td valign="top"> Get NS Full Path String </td>
+<td valign="top"> (see AX=F257h/SF=1Ch) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>57h / 1Dh</b> </p>
+</td>
+<td valign="top"> Get Effective Directory Rights </td>
+<td valign="top"> (see AX=F257h/SF=1Dh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>58h / 01h</b> </p>
+</td>
+<td valign="top"> Get Volume Audit Statistics </td>
+<td valign="top"> (see AX=F258h/SF=01h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>58h / 02h</b> </p>
+</td>
+<td valign="top"> Add Audit Property </td>
+<td valign="top"> (see AX=F258h/SF=02h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>58h / 03h</b> </p>
+</td>
+<td valign="top"> Login as Volume Auditor </td>
+<td valign="top"> (see AX=F258h/SF=03h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>58h / 04h</b> </p>
+</td>
+<td valign="top"> Change Auditor Password </td>
+<td valign="top"> (see AX=F258h/SF=04h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>58h / 05h</b> </p>
+</td>
+<td valign="top"> Check Audit Access </td>
+<td valign="top"> (see AX=F258h/SF=05h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>58h / 06h</b> </p>
+</td>
+<td valign="top"> Remove Audit Property </td>
+<td valign="top"> (see AX=F258h/SF=06h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>58h / 07h</b> </p>
+</td>
+<td valign="top"> Disable Auditing on Volume </td>
+<td valign="top"> (see AX=F258h/SF=07h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>58h / 08h</b> </p>
+</td>
+<td valign="top"> Enable Auditing on Volume </td>
+<td valign="top"> (see AX=F258h/SF=08h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>58h / 09h</b> </p>
+</td>
+<td valign="top"> Is User Audited? </td>
+<td valign="top"> (see AX=F258h/SF=09h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>58h / 0Ah</b> </p>
+</td>
+<td valign="top"> Read Auditing Bit Map </td>
+<td valign="top"> (see AX=F258h/SF=0Ah) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>58h / 0Bh</b> </p>
+</td>
+<td valign="top"> Read Audit Config Header </td>
+<td valign="top"> (see AX=F258h/SF=0Bh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>58h / 0Dh</b> </p>
+</td>
+<td valign="top"> Logout as Volume Auditor </td>
+<td valign="top"> (see AX=F258h/SF=0Dh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>58h / 0Eh</b> </p>
+</td>
+<td valign="top"> Reset Auditing File </td>
+<td valign="top"> (see AX=F258h/SF=0Eh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>58h / 0Fh</b> </p>
+</td>
+<td valign="top"> Reset Audit History File </td>
+<td valign="top"> (see AX=F258h/SF=0Fh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>58h / 10h</b> </p>
+</td>
+<td valign="top"> Write Auditing Bit Map </td>
+<td valign="top"> (see AX=F258h/SF=10h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>58h / 11h</b> </p>
+</td>
+<td valign="top"> Write Audit Config Header </td>
+<td valign="top"> (see AX=F258h/SF=11h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>58h / 13h</b> </p>
+</td>
+<td valign="top"> Get Auditing Flags </td>
+<td valign="top"> (see AX=F258h/SF=13h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>58h / 14h</b> </p>
+</td>
+<td valign="top"> Close Old Auditing File </td>
+<td valign="top"> (see AX=F258h/SF=14h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>58h / 15h</b> </p>
+</td>
+<td valign="top"> Delete Old Auditing File </td>
+<td valign="top"> (see AX=F258h/SF=15h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>58h / 16h</b> </p>
+</td>
+<td valign="top"> Check Audit Level Two Access </td>
+<td valign="top"> (see AX=F258h/SF=16h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>5Ah / 01h</b> </p>
+</td>
+<td valign="top"> Get DM (Data Migration) Info </td>
+<td valign="top"> (see AX=F25Ah/SF=01h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>5Ah / 80h</b> </p>
+</td>
+<td valign="top"> Move File Data to DM </td>
+<td valign="top"> (see AX=F25Ah/SF=80h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>5Ah / 81h</b> </p>
+</td>
+<td valign="top"> DM File Information </td>
+<td valign="top"> (see AX=F25Ah/SF=81h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>5Ah / 82h</b> </p>
+</td>
+<td valign="top"> Volume DM Status </td>
+<td valign="top"> (see AX=F25Ah/SF=82h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>5Ah / 83h</b> </p>
+</td>
+<td valign="top"> Get Migration or Status Information </td>
+<td valign="top"> (see AX=F25Ah/SF=83h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>5Ah / 84h</b> </p>
+</td>
+<td valign="top"> DM Support Module Information </td>
+<td valign="top"> (see AX=F25Ah/SF=84h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>5Ah / 85h</b> </p>
+</td>
+<td valign="top"> Move File Data from DM </td>
+<td valign="top"> (see AX=F25Ah/SF=85h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>5Ah / 86h</b> </p>
+</td>
+<td valign="top"> Get or Set Default Support Module </td>
+<td valign="top"> (see AX=F25Ah/SF=86h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>61h</b> </p>
+</td>
+<td valign="top"> Negotiate LIP Buffer, packet signing, and IPX checksums </td>
+<td valign="top"> </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>65h</b> </p>
+</td>
+<td valign="top"> Packet Burst Connection </td>
+<td valign="top"> </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>68h / xxh</b> </p>
+</td>
+<td valign="top"> NetWare 4.x directory services (subfn at DS:[SI+11h]) </td>
+<td valign="top"> </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>68h / 01h</b> </p>
+</td>
+<td valign="top"> NDS resolve name </td>
+<td valign="top"> (see AX=F268h/SF=01h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>68h / 03h</b> </p>
+</td>
+<td valign="top"> NDS read property </td>
+<td valign="top"> </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>68h / 04h</b> </p>
+</td>
+<td valign="top"> NDS Get Bindery Context </td>
+<td valign="top"> (see AX=F268h/SF=04h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>68h / 05h</b> </p>
+</td>
+<td valign="top"> NDS Monitor Connection </td>
+<td valign="top"> (see AX=F268h/SF=05h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>68h / 16h</b> </p>
+</td>
+<td valign="top"> NDS List Partitions </td>
+<td valign="top"> (see AX=F268h/SF=16h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>68h / 35h</b> </p>
+</td>
+<td valign="top"> NDS get server address </td>
+<td valign="top"> (see AX=F268h/SF=35h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>68h / 36h</b> </p>
+</td>
+<td valign="top"> NDS set keys </td>
+<td valign="top"> </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>68h / 39h</b> </p>
+</td>
+<td valign="top"> NDS begin login </td>
+<td valign="top"> </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>68h / 3Ah</b> </p>
+</td>
+<td valign="top"> NDS finish login </td>
+<td valign="top"> </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>68h / 3Bh</b> </p>
+</td>
+<td valign="top"> NDS begin authenticate </td>
+<td valign="top"> </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>68h / 3Ch</b> </p>
+</td>
+<td valign="top"> NDS finish authenticate </td>
+<td valign="top"> </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>68h / 3Dh</b> </p>
+</td>
+<td valign="top"> NDS Logout </td>
+<td valign="top"> (see AX=F268h/SF=3Dh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>68h / C8h</b> </p>
+</td>
+<td valign="top"> Get DS Auditing Statistics </td>
+<td valign="top"> (see AX=F268h/SF=C8h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>69h</b> </p>
+</td>
+<td valign="top"> Log File </td>
+<td valign="top"> (see AX=F269h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>6Ah</b> </p>
+</td>
+<td valign="top"> Lock File Set </td>
+<td valign="top"> (see AX=F26Ah) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>6Bh</b> </p>
+</td>
+<td valign="top"> Log Logical Record </td>
+<td valign="top"> </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>6Ch</b> </p>
+</td>
+<td valign="top"> Lock Logical Record Set </td>
+<td valign="top"> (see AX=F26Ch) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>6Dh</b> </p>
+</td>
+<td valign="top"> Log Physical Record </td>
+<td valign="top"> </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>6Eh</b> </p>
+</td>
+<td valign="top"> Lock Physical Record Set </td>
+<td valign="top"> (see AX=F26Eh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>6Fh / 00h</b> </p>
+</td>
+<td valign="top"> Open Semaphore </td>
+<td valign="top"> (see AX=F26Fh/SF=00h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>6Fh / 01h</b> </p>
+</td>
+<td valign="top"> Close Semaphore </td>
+<td valign="top"> (see AX=F26Fh/SF=01h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>6Fh / 02h</b> </p>
+</td>
+<td valign="top"> Wait on Semaphore </td>
+<td valign="top"> (see AX=F26Fh/SF=02h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>6Fh / 03h</b> </p>
+</td>
+<td valign="top"> Signal Semaphore </td>
+<td valign="top"> (see AX=F26Fh/SF=03h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>6Fh / 04h</b> </p>
+</td>
+<td valign="top"> Examine Semaphore </td>
+<td valign="top"> (see AX=F26Fh/SF=04h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>72h</b> </p>
+</td>
+<td valign="top"> NetWare 4.x Time Services </td>
+<td valign="top"> (see AX=F272h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>7Bh / 01h</b> </p>
+</td>
+<td valign="top"> Get Cache Information </td>
+<td valign="top"> (see AX=F27Bh/SF=01h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>7Bh / 02h</b> </p>
+</td>
+<td valign="top"> Get File Server Information </td>
+<td valign="top"> (see AX=F27Bh/SF=02h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>7Bh / 03h</b> </p>
+</td>
+<td valign="top"> Get NetWare File Systems Information </td>
+<td valign="top"> </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>7Bh / 04h</b> </p>
+</td>
+<td valign="top"> Get User Information </td>
+<td valign="top"> (see AX=F27Bh/SF=04h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>7Bh / 05h</b> </p>
+</td>
+<td valign="top"> Get Packet Burst Information </td>
+<td valign="top"> </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>7Bh / 06h</b> </p>
+</td>
+<td valign="top"> Get IPX/SPX Information </td>
+<td valign="top"> (see AX=F27Bh/SF=06h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>7Bh / 07h</b> </p>
+</td>
+<td valign="top"> Get Garbage Collection Information </td>
+<td valign="top"> </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>7Bh / 08h</b> </p>
+</td>
+<td valign="top"> Get CPU Information </td>
+<td valign="top"> (see AX=F27Bh/SF=08h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>7Bh / 09h</b> </p>
+</td>
+<td valign="top"> Get Volume Switch Information </td>
+<td valign="top"> (see AX=F27Bh/SF=09h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>7Bh / 0Ah</b> </p>
+</td>
+<td valign="top"> Get NLM Loaded List </td>
+<td valign="top"> (see AX=F27Bh/SF=0Ah) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>7Bh / 0Bh</b> </p>
+</td>
+<td valign="top"> Get NLM Information </td>
+<td valign="top"> (see AX=F27Bh/SF=0Bh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>7Bh / 0Ch</b> </p>
+</td>
+<td valign="top"> Get Directory Cache Information </td>
+<td valign="top"> </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>7Bh / 0Dh</b> </p>
+</td>
+<td valign="top"> Get OS Version Information </td>
+<td valign="top"> (see AX=F27Bh/SF=0Dh) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>7Bh / 0Eh</b> </p>
+</td>
+<td valign="top"> Get Active Connection List by Type </td>
+<td valign="top"> </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>7Bh / 0Fh</b> </p>
+</td>
+<td valign="top"> Get NLM's Resource Tag List </td>
+<td valign="top"> </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>7Bh / 14h</b> </p>
+</td>
+<td valign="top"> Get Active LAN Board List </td>
+<td valign="top"> (see AX=F27Bh/SF=14h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>7Bh / 15h</b> </p>
+</td>
+<td valign="top"> Get LAN Configuration Information </td>
+<td valign="top"> (see AX=F27Bh/SF=15h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>7Bh / 16h</b> </p>
+</td>
+<td valign="top"> Get LAN Common Counters Information </td>
+<td valign="top"> (see AX=F27Bh/SF=16h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>7Bh / 17h</b> </p>
+</td>
+<td valign="top"> Get LAN Custom Counters Information </td>
+<td valign="top"> </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>7Bh / 18h</b> </p>
+</td>
+<td valign="top"> Get LAN Config Strings </td>
+<td valign="top"> </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>7Bh / 19h</b> </p>
+</td>
+<td valign="top"> Get LSL Information </td>
+<td valign="top"> </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>7Bh / 1Ah</b> </p>
+</td>
+<td valign="top"> Get LSL Logical Board Statistics </td>
+<td valign="top"> </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>7Bh / 1Eh</b> </p>
+</td>
+<td valign="top"> Get Media Manager Object Information </td>
+<td valign="top"> </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>7Bh / 1Fh</b> </p>
+</td>
+<td valign="top"> Get Media Manager Object List </td>
+<td valign="top"> </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>7Bh / 20h</b> </p>
+</td>
+<td valign="top"> Get Media Manager Object Children List </td>
+<td valign="top"> </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>7Bh / 21h</b> </p>
+</td>
+<td valign="top"> Get Volume Segment List </td>
+<td valign="top"> </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>7Bh / 28h</b> </p>
+</td>
+<td valign="top"> Get Active Protocol Stacks </td>
+<td valign="top"> </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>7Bh / 29h</b> </p>
+</td>
+<td valign="top"> Get Protocol Stack Configuration Information </td>
+<td valign="top"> (see AX=F27Bh/SF=29h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>7Bh / 2Ah</b> </p>
+</td>
+<td valign="top"> Get Protocol Stack Statistics Information </td>
+<td valign="top"> </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>7Bh / 2Bh</b> </p>
+</td>
+<td valign="top"> Get Protocol Stack Custom Information </td>
+<td valign="top"> </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>7Bh / 2Ch</b> </p>
+</td>
+<td valign="top"> Get Protocol Stack Numbers By Media Number </td>
+<td valign="top"> </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>7Bh / 2Dh</b> </p>
+</td>
+<td valign="top"> Get Protocol Stack Numbers By LAN Board Number </td>
+<td valign="top"> </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>7Bh / 2Eh</b> </p>
+</td>
+<td valign="top"> Get Media Name by Media Number </td>
+<td valign="top"> </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>7Bh / 2Fh</b> </p>
+</td>
+<td valign="top"> Get Loaded Media Number List </td>
+<td valign="top"> </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>7Bh / 32h</b> </p>
+</td>
+<td valign="top"> Get General Router and SAP Information </td>
+<td valign="top"> </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>7Bh / 33h</b> </p>
+</td>
+<td valign="top"> Get Network Router Information </td>
+<td valign="top"> (see AX=F27Bh/SF=33h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>7Bh / 34h</b> </p>
+</td>
+<td valign="top"> Get Network Routers Information </td>
+<td valign="top"> </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>7Bh / 35h</b> </p>
+</td>
+<td valign="top"> Get Known Networks Information </td>
+<td valign="top"> (see AX=F27Bh/SF=35h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>7Bh / 36h</b> </p>
+</td>
+<td valign="top"> Get Server Information </td>
+<td valign="top"> </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>7Bh / 38h</b> </p>
+</td>
+<td valign="top"> Get Known Servers Information </td>
+<td valign="top"> (see AX=F27Bh/SF=38h) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"> <b>7Bh / 3Ch</b> </p>
+</td>
+<td valign="top"> Get Server Set Commands Information </td>
+<td valign="top"> (see AX=F27Bh/SF=3Ch) </td>
+</tr>
+<tr>
+<td valign="top" nowrap align="left">
+<p align="right"><b>7Bh / 3Dh</b>
+</td>
+<td valign="top"> Get Server Set Categories </td>
+<td valign="top"> (see AX=F27Bh/SF=3Dh) </td>
+</tr>
+</table>
+<hr>
+<table border="3" cellpadding="3" cellspacing="3">
+<tr>
+<td valign="top" align="center" nowrap>
+<p align="left"><b>Note:</b></td>
+<td valign="top" align="center">
+<p align="left">The subfunction is stored at DS:SI for AL=56h, 57h, DS:SI+2 for
+AL=15h-17h, 23h.
+</td>
+</tr>
+</table>
+<p> </p>
+</body>
+</html>

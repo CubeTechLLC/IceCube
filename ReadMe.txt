@@ -1,0 +1,1 @@
+I own these files except as stated in other files and directories.

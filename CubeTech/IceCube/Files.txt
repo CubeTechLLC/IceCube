@@ -1,0 +1,23 @@
+Binaries for OS
+----------------
+MBR:
+Floppy MBR - floppy.asm - mbr\floppy_mbr.img
+Hard Drive MBR - hdd.asm - mbr\hdd_mbr.img
+USB MBR - udb.asm - mbr\usb_mbr.img
+
+Whole OS:
+Floppy Only OS - floppy.asm - floppy.img
+Hard Drive Only OS - hdd.asm - hdd.img
+USB Only OS - udb.asm - usb.img
+
+OS Only:
+OS without MBR - os.asm - os.img
+
+Special:
+Android Bootloaders
+-u-boot - android\{device_model}\u-boot.asm - android\{device_model}\u-boot.img
+-x-loader - android\{device_model}\x-loader.asm - android\{device_model}\x-loader.img
+-Boot Image - ? - android\{device_model}\boot.img
+-Alternate Install Files (Ex. KDZ for LG) - android\{device_model}\alternate_install_files\
+-Website and Script for different hardware download and upload - android\android_boot_files.bat
+--Make site parameters for Script

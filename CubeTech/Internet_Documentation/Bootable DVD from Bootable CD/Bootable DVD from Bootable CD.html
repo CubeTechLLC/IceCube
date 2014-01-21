@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]> <html lang="en-US"class="no-js iem7"> <![endif]-->
+<!--[if lt IE 7 ]> <html lang="en-US" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en-US" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en-US" class="no-js ie8"> <![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!-->
+<html class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" lang="en-US"><!--<![endif]--><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		
+		<title>
+			   Using Mkisofs to make a bootable DVD from a bootable CD. | Random Musings - Who knew? 
+		</title>
+				
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- icons & favicons -->
+		<!-- For iPhone 4 -->
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://adityanag.com/journal/wp-content/themes/wordpress-bootstrap/library/images/icons/h/apple-touch-icon.png">
+		<!-- For iPad 1-->
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://adityanag.com/journal/wp-content/themes/wordpress-bootstrap/library/images/icons/m/apple-touch-icon.png">
+		<!-- For iPhone 3G, iPod Touch and Android -->
+		<link rel="apple-touch-icon-precomposed" href="https://adityanag.com/journal/wp-content/themes/wordpress-bootstrap/library/images/icons/l/apple-touch-icon-precomposed.png">
+		<!-- For Nokia -->
+		<link rel="shortcut icon" href="https://adityanag.com/journal/wp-content/themes/wordpress-bootstrap/library/images/icons/l/apple-touch-icon.png">
+		<!-- For everything else -->
+	
+				
+		<!-- media-queries.js (fallback) -->
+		<!--[if lt IE 9]>
+			<script src="https://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>			
+		<![endif]-->
+
+		<!-- html5.js -->
+		<!--[if lt IE 9]>
+			<script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		
+  		<link rel="pingback" href="https://adityanag.com/journal/xmlrpc.php">
+
+  		<link rel="stylesheet/less" type="text/css" href="https://adityanag.com/journal/wp-content/themes/wordpress-bootstrap/less/bootstrap.less">
+  		<link rel="stylesheet/less" type="text/css" href="https://adityanag.com/journal/wp-content/themes/wordpress-bootstrap/less/responsive.less">
+
+		<!-- wordpress head functions -->
+		
+            <script type="text/javascript" async="" src="Bootable%20DVD%20from%20Bootable%20CD_files/quant.js"></script><script src="Bootable%20DVD%20from%20Bootable%20CD_files/ga.js" async="" type="text/javascript"></script><script type="text/javascript">//<![CDATA[
+            // Google Analytics for WordPress by Yoast v4.3.3 | http://yoast.com/wordpress/google-analytics/
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-60697-1']);
+				            _gaq.push(['_trackPageview']);
+            (function () {
+                var ga = document.createElement('script');
+                ga.type = 'text/javascript';
+                ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(ga, s);
+            })();
+            //]]></script>
+			<link rel="stylesheet" id="jetpack-widgets-css" href="Bootable%20DVD%20from%20Bootable%20CD_files/widgets.css" type="text/css" media="all">
+<link rel="stylesheet" id="bootstrap-css" href="Bootable%20DVD%20from%20Bootable%20CD_files/bootstrap.css" type="text/css" media="all">
+<link rel="stylesheet" id="bootstrap-responsive-css" href="Bootable%20DVD%20from%20Bootable%20CD_files/responsive.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-bootstrap-css" href="Bootable%20DVD%20from%20Bootable%20CD_files/style.css" type="text/css" media="all">
+<script type="text/javascript" src="Bootable%20DVD%20from%20Bootable%20CD_files/jquery-1.js"></script>
+<script type="text/javascript" src="Bootable%20DVD%20from%20Bootable%20CD_files/bootstrap.js"></script>
+<script type="text/javascript" src="Bootable%20DVD%20from%20Bootable%20CD_files/scripts.js"></script>
+<script type="text/javascript" src="Bootable%20DVD%20from%20Bootable%20CD_files/modernizr.js"></script>
+<link rel="canonical" href="https://adityanag.com/journal/2007/09/06/using-mkisofs-to-make-a-bootable-dvd-from-a-bootable-cd/">
+<link rel="shortlink" href="http://wp.me/poswL-1B">
+
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="Using Mkisofs to make a bootable DVD from a bootable CD.">
+<meta property="og:url" content="https://adityanag.com/journal/2007/09/06/using-mkisofs-to-make-a-bootable-dvd-from-a-bootable-cd/">
+<meta property="og:description" content="NOTE: This is a reminder to myself. Normal people, please do not read this. To make a bootable DVD image from a CD image, here's what to do. 1. Mount the CD image. 2. Copy all files, including the ...">
+<meta property="og:site_name" content="Random Musings">
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #fdfbf7; }
+</style>
+		<!-- end of wordpress head -->
+
+		<!-- theme options from options panel -->
+		<style>
+        h1, h2, h3, h4, h5, h6{ 
+          font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; 
+          font-weight: normal; 
+          color: ; 
+        }
+        body{ 
+          font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; 
+          font-weight: normal; 
+          color: ; 
+        }
+        .hero-unit { 
+          background-color: #b82828;
+        }
+        #main article {
+          border-bottom: none;
+        }
+        </style>
+						
+	<link rel="stylesheet" type="text/css" id="gravatar-card-css" href="Bootable%20DVD%20from%20Bootable%20CD_files/hovercard.css"><link rel="stylesheet" type="text/css" id="gravatar-card-services-css" href="Bootable%20DVD%20from%20Bootable%20CD_files/services.css"></head>
+	
+	<body data-twttr-rendered="true" class="single single-post postid-99 single-format-standard custom-background">
+				
+		<header role="banner">
+		
+			<div id="inner-header" class="clearfix">
+				
+				<div class="navbar navbar-fixed-top">
+					<div class="navbar-inner">
+						<div class="container-fluid nav-container">
+							<nav role="navigation">
+								<a class="brand" id="logo" title="Who knew?" href="https://adityanag.com/journal">Random Musings</a>
+								
+								<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+							        <span class="icon-bar"></span>
+							        <span class="icon-bar"></span>
+							        <span class="icon-bar"></span>
+								</a>
+								
+								<div class="nav-collapse">
+									<ul id="menu-home-3" class="nav"><li id="menu-item-373" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="http://www.adityanag.com/">Home</a></li>
+<li id="menu-item-374" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="http://www.adityanag.com/?page_id=5">About</a></li>
+<li id="menu-item-375" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="http://www.adityanag.com/?page_id=18">Articles</a></li>
+<li id="menu-item-376" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="http://www.adityanag.com/journal">My Journal</a></li>
+</ul>								</div>
+								
+							</nav>
+							
+														
+						</div>
+					</div>
+				</div>
+			
+			</div> <!-- end #inner-header -->
+		
+		</header> <!-- end header -->
+		
+		<div class="container-fluid">
+			
+			<div id="content" class="clearfix row-fluid">
+			
+				<div id="main" class="span8 clearfix" role="main">
+
+										
+					<article id="post-99" class="post-99 post type-post status-publish format-standard hentry category-random tag-boot-load tag-capable-systems tag-image tag-iso tag-iso9660 tag-isolinux tag-long-file-names tag-man tag-need tag-reminder clearfix" role="article" itemscope="" itemtype="http://schema.org/BlogPosting">
+						
+						<header>
+						
+														
+							<div class="page-header"><h1 class="single-title" itemprop="headline">Using Mkisofs to make a bootable DVD from a bootable CD.</h1></div>
+							
+							<p class="meta">Posted <time datetime="2007-09-6" pubdate="">September 6, 2007</time> by <a href="https://adityanag.com/journal/author/aditya/" title="Posts by Aditya" rel="author">Aditya</a> <span class="amp">&amp;</span> filed under <a href="https://adityanag.com/journal/category/random/" title="View all posts in Random" rel="category tag">Random</a>.</p>
+						
+						</header> <!-- end article header -->
+					
+						<section class="post_content clearfix" itemprop="articleBody">
+							<p class="lead">NOTE: This is a reminder to myself. Normal people, please do not read this.</p>
+<p>To make a bootable DVD image from a CD image, here’s what to do.</p>
+<p>1. Mount the CD image.<br>
+2. Copy all files, including the hidden ones, to a directory<br>
+3. Add all the other files you need into the directory.<br>
+4. Use the following command:</p>
+<p>mkisofs  -o $ISONAME.iso -b isolinux/isolinux.bin -c 
+isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -l 
+-allow-leading-dots -relaxed-filenames -joliet-long 
+-max-iso9660-filenames -D -R -J -T -V $VOLID -v 
+/path/to/directory/full/of/files</p>
+<p>The switches are as follows:</p>
+<p>-l = enables Long file names<br>
+-allow-leading-dots = enables filenames with a period in the beginning.<br>
+-max-iso9660-filenames: LOOK UP MAN FILE<br>
+-R = enables RockRidge.<br>
+-J = Enables Joliet support for long file names.<br>
+-T = generates a Trans.tbl in each directory which is used on non-RR capable systems to help establish correct file names.<br>
+-joliet-long = LOOK UP MAN FILE<br>
+-V = Volume Name<br>
+-D = Do not use deep directory relocation, and instead just pack them in the way we see them.<br>
+If ISO9660:1999 has not been selected, this violates the ISO9660 
+standard, but it happens to work on many systems. Use with caution.<br>
+-relaxed-filenames = LOOK UP MAN FILE</p>
+<p>This will create a bootable dvd that also contains extra files. 
+Remember to check the filenames and file paths to make sure that long 
+file names work.</p>
+							
+												
+						</section> <!-- end article section -->
+						
+						<footer>
+			
+							<p class="tags"><span class="tags-title">Tags:</span> <a class="label" href="https://adityanag.com/journal/tag/boot-load/" rel="tag">boot load</a> <a class="label" href="https://adityanag.com/journal/tag/capable-systems/" rel="tag">capable systems</a> <a class="label" href="https://adityanag.com/journal/tag/image/" rel="tag">image</a> <a class="label" href="https://adityanag.com/journal/tag/iso/" rel="tag">iso</a> <a class="label" href="https://adityanag.com/journal/tag/iso9660/" rel="tag">iso9660</a> <a class="label" href="https://adityanag.com/journal/tag/isolinux/" rel="tag">isolinux</a> <a class="label" href="https://adityanag.com/journal/tag/long-file-names/" rel="tag">long file names</a> <a class="label" href="https://adityanag.com/journal/tag/man/" rel="tag">MAN</a> <a class="label" href="https://adityanag.com/journal/tag/need/" rel="tag">need</a> <a class="label" href="https://adityanag.com/journal/tag/reminder/" rel="tag">reminder</a></p>							
+														
+						</footer> <!-- end article footer -->
+					
+					</article> <!-- end article -->
+					
+					
+<!-- You can start editing here. -->
+
+		<h3 id="comments"><span>5</span> Responses to “Using Mkisofs to make a bootable DVD from a bootable CD.”</h3>
+
+	<nav id="comment-nav">
+		<ul class="clearfix">
+	  		<li></li>
+	  		<li></li>
+	 	</ul>
+	</nav>
+	
+	<ol class="commentlist">
+			<li class="comment even thread-even depth-1">
+		<article id="comment-17397" class="clearfix">
+			<div class="comment-author vcard row-fluid clearfix">
+				<div class="avatar span2">
+					<img id="grav-false-0" alt="" src="Bootable%20DVD%20from%20Bootable%20CD_files/a.html" class="avatar avatar-75 photo avatar-default grav-hashed grav-hijack" height="75" width="75">				</div>
+				<div class="span10 comment-text">
+					<h4>Anonymous</h4>					                    
+                                        
+                    <p>Why no new entries?</p>
+                    
+                    <time datetime="2007-09-14"><a href="https://adityanag.com/journal/2007/09/06/using-mkisofs-to-make-a-bootable-dvd-from-a-bootable-cd/comment-page-1/#comment-17397">September 14th, 2007 </a></time>
+                    
+					                </div>
+			</div>
+		</article>
+    <!-- </li> is added by wordpress automatically -->
+</li>
+	<li class="comment odd alt thread-odd thread-alt depth-1">
+		<article id="comment-17539" class="clearfix">
+			<div class="comment-author vcard row-fluid clearfix">
+				<div class="avatar span2">
+					<img id="grav-false-1" alt="" src="Bootable%20DVD%20from%20Bootable%20CD_files/a.html" class="avatar avatar-75 photo avatar-default grav-hashed grav-hijack" height="75" width="75">				</div>
+				<div class="span10 comment-text">
+					<h4>Anonymous</h4>					                    
+                                        
+                    <p>Yet again: why no new entires?</p>
+                    
+                    <time datetime="2007-09-17"><a href="https://adityanag.com/journal/2007/09/06/using-mkisofs-to-make-a-bootable-dvd-from-a-bootable-cd/comment-page-1/#comment-17539">September 17th, 2007 </a></time>
+                    
+					                </div>
+			</div>
+		</article>
+    <!-- </li> is added by wordpress automatically -->
+</li>
+	<li class="comment even thread-even depth-1">
+		<article id="comment-59556" class="clearfix">
+			<div class="comment-author vcard row-fluid clearfix">
+				<div class="avatar span2">
+					<img id="grav-false-2" alt="" src="Bootable%20DVD%20from%20Bootable%20CD_files/a.html" class="avatar avatar-75 photo avatar-default grav-hashed grav-hijack" height="75" width="75">				</div>
+				<div class="span10 comment-text">
+					<h4>Anonymous</h4>					                    
+                                        
+                    <p>very usefull, thanx</p>
+                    
+                    <time datetime="2009-11-8"><a href="https://adityanag.com/journal/2007/09/06/using-mkisofs-to-make-a-bootable-dvd-from-a-bootable-cd/comment-page-1/#comment-59556">November 8th, 2009 </a></time>
+                    
+					                </div>
+			</div>
+		</article>
+    <!-- </li> is added by wordpress automatically -->
+</li>
+	<li class="comment odd alt thread-odd thread-alt depth-1">
+		<article id="comment-90914" class="clearfix">
+			<div class="comment-author vcard row-fluid clearfix">
+				<div class="avatar span2">
+					<img id="grav-0dace94f575a4ebd31b79dad80dc2da3-0" alt="" src="Bootable%20DVD%20from%20Bootable%20CD_files/0dace94f575a4ebd31b79dad80dc2da3.html" class="avatar avatar-75 photo grav-hashed grav-hijack" height="75" width="75">				</div>
+				<div class="span10 comment-text">
+					<h4><a href="http://www.diveblog.org/" onclick="javascript:_gaq.push(['_trackEvent','outbound-commentauthor','http://www.diveblog.org']);" rel="external nofollow" class="url">William</a></h4>					                    
+                                        
+                    <p>Thank you so much! I had forgotten this over the years and I was in a pinch for time.</p>
+                    
+                    <time datetime="2013-03-26"><a href="https://adityanag.com/journal/2007/09/06/using-mkisofs-to-make-a-bootable-dvd-from-a-bootable-cd/comment-page-1/#comment-90914">March 26th, 2013 </a></time>
+                    
+					                </div>
+			</div>
+		</article>
+    <!-- </li> is added by wordpress automatically -->
+</li>
+	<li class="comment byuser comment-author-aditya bypostauthor even thread-even depth-1">
+		<article id="comment-90915" class="clearfix">
+			<div class="comment-author vcard row-fluid clearfix">
+				<div class="avatar span2">
+					<img id="grav-2bf449c52ef0b64cf2336b1f94855e3c-0" alt="" src="Bootable%20DVD%20from%20Bootable%20CD_files/2bf449c52ef0b64cf2336b1f94855e3c.html" class="avatar avatar-75 photo grav-hashed grav-hijack" height="75" width="75">				</div>
+				<div class="span10 comment-text">
+					<h4><a href="http://www.adityanag.com/" rel="external nofollow" class="url">Aditya</a></h4>					                    
+                                        
+                    <p>William: I’m glad this came in handy! It’s been years since I wrote this, happy to see that someone still uses it.</p>
+                    
+                    <time datetime="2013-03-26"><a href="https://adityanag.com/journal/2007/09/06/using-mkisofs-to-make-a-bootable-dvd-from-a-bootable-cd/comment-page-1/#comment-90915">March 26th, 2013 </a></time>
+                    
+					                </div>
+			</div>
+		</article>
+    <!-- </li> is added by wordpress automatically -->
+</li>
+	</ol>
+	
+		
+		
+	<nav id="comment-nav">
+		<ul class="clearfix">
+	  		<li></li>
+	  		<li></li>
+		</ul>
+	</nav>
+  
+	
+
+
+<section id="respond" class="respond-form">
+
+	<h3 id="comment-form-title">Leave a Reply</h3>
+
+	<div id="cancel-comment-reply">
+		<p class="small"><a class="btn btn-danger btn-mini" rel="nofollow" id="cancel-comment-reply-link" href="https://adityanag.com/journal/2007/09/06/using-mkisofs-to-make-a-bootable-dvd-from-a-bootable-cd/#respond" style="display:none;">Cancel</a></p>
+	</div>
+
+	
+	<form action="https://adityanag.com/journal/wp-comments-post.php" method="post" class="form-vertical" id="commentform">
+
+		
+	<ul id="comment-form-elements" class="clearfix">
+		
+		<li>
+			<div class="control-group">
+			  <label for="author">Name </label>
+			  <div class="input-prepend">
+			  	<span class="add-on"><i class="icon-user"></i></span><input class="placeholder" name="author" id="author" value="Your Name" placeholder="Your Name" tabindex="1" type="text">
+			  </div>
+		  	</div>
+		</li>
+		
+		<li>
+			<div class="control-group">
+			  <label for="email">Mail </label>
+			  <div class="input-prepend">
+			  	<span class="add-on"><i class="icon-envelope"></i></span><input class="placeholder" name="email" id="email" value="Your Email" placeholder="Your Email" tabindex="2" type="email">
+			  	<span class="help-inline">(will not be published)</span>
+			  </div>
+		  	</div>
+		</li>
+		
+		<li>
+			<div class="control-group">
+			  <label for="url">Website</label>
+			  <div class="input-prepend">
+			  <span class="add-on"><i class="icon-home"></i></span><input class="placeholder" name="url" id="url" value="Your Website" placeholder="Your Website" tabindex="3" type="url">
+			  </div>
+		  	</div>
+		</li>
+		
+	</ul>
+
+		
+	<div class="clearfix">
+		<div class="input">
+			<textarea class="placeholder" name="comment" id="comment" placeholder="Your Comment Here…" tabindex="4">Your Comment Here…</textarea>
+		</div>
+	</div>
+	
+	<div class="form-actions">
+	  <input class="btn btn-primary" name="submit" id="submit" tabindex="5" value="Submit Comment" type="submit">
+	  <input name="comment_post_ID" value="99" id="comment_post_ID" type="hidden">
+<input name="comment_parent" id="comment_parent" value="0" type="hidden">
+	</div>
+	
+		
+	</form>
+	
+	</section>
+
+					
+								
+					
+								
+				</div> <!-- end #main -->
+    
+								<div id="sidebar1" class="fluid-sidebar sidebar span4" role="complementary">
+				
+					
+						<div id="search-3" class="widget widget_search"><form action="https://adityanag.com/journal/" method="get" class="form-stacked">
+    <fieldset>
+		<div class="clearfix">
+			<div class="input-append input-prepend">
+				<span class="add-on"><i class="icon-search"></i></span><input class="placeholder" name="s" id="search" placeholder="Search" value="Search" type="text"><button type="submit" class="btn btn-primary">Search</button>
+			</div>
+        </div>
+    </fieldset>
+</form></div><div id="twitter_timeline-2" class="widget widget_twitter_timeline"><h4 class="widgettitle">Follow me on Twitter</h4><iframe title="Twitter Timeline Widget" style="border: medium none; max-width: 100%; min-width: 180px;" allowtransparency="true" class="twitter-timeline twitter-timeline-rendered" id="twitter-widget-0" frameborder="0" height="400" scrolling="no" width="180"></iframe></div><div id="archives-3" class="widget widget_archive"><h4 class="widgettitle">Archives</h4>		<ul>
+			<li><a href="https://adityanag.com/journal/2013/05/" title="May 2013">May 2013</a></li>
+	<li><a href="https://adityanag.com/journal/2013/04/" title="April 2013">April 2013</a></li>
+	<li><a href="https://adityanag.com/journal/2013/03/" title="March 2013">March 2013</a></li>
+	<li><a href="https://adityanag.com/journal/2012/11/" title="November 2012">November 2012</a></li>
+	<li><a href="https://adityanag.com/journal/2012/10/" title="October 2012">October 2012</a></li>
+	<li><a href="https://adityanag.com/journal/2012/05/" title="May 2012">May 2012</a></li>
+	<li><a href="https://adityanag.com/journal/2012/02/" title="February 2012">February 2012</a></li>
+	<li><a href="https://adityanag.com/journal/2012/01/" title="January 2012">January 2012</a></li>
+	<li><a href="https://adityanag.com/journal/2011/10/" title="October 2011">October 2011</a></li>
+	<li><a href="https://adityanag.com/journal/2011/09/" title="September 2011">September 2011</a></li>
+	<li><a href="https://adityanag.com/journal/2011/03/" title="March 2011">March 2011</a></li>
+	<li><a href="https://adityanag.com/journal/2011/01/" title="January 2011">January 2011</a></li>
+	<li><a href="https://adityanag.com/journal/2010/12/" title="December 2010">December 2010</a></li>
+	<li><a href="https://adityanag.com/journal/2010/11/" title="November 2010">November 2010</a></li>
+	<li><a href="https://adityanag.com/journal/2010/10/" title="October 2010">October 2010</a></li>
+	<li><a href="https://adityanag.com/journal/2010/09/" title="September 2010">September 2010</a></li>
+	<li><a href="https://adityanag.com/journal/2010/08/" title="August 2010">August 2010</a></li>
+	<li><a href="https://adityanag.com/journal/2010/07/" title="July 2010">July 2010</a></li>
+	<li><a href="https://adityanag.com/journal/2010/06/" title="June 2010">June 2010</a></li>
+	<li><a href="https://adityanag.com/journal/2010/05/" title="May 2010">May 2010</a></li>
+	<li><a href="https://adityanag.com/journal/2010/03/" title="March 2010">March 2010</a></li>
+	<li><a href="https://adityanag.com/journal/2010/02/" title="February 2010">February 2010</a></li>
+	<li><a href="https://adityanag.com/journal/2010/01/" title="January 2010">January 2010</a></li>
+	<li><a href="https://adityanag.com/journal/2009/11/" title="November 2009">November 2009</a></li>
+	<li><a href="https://adityanag.com/journal/2009/10/" title="October 2009">October 2009</a></li>
+	<li><a href="https://adityanag.com/journal/2009/09/" title="September 2009">September 2009</a></li>
+	<li><a href="https://adityanag.com/journal/2009/08/" title="August 2009">August 2009</a></li>
+	<li><a href="https://adityanag.com/journal/2009/07/" title="July 2009">July 2009</a></li>
+	<li><a href="https://adityanag.com/journal/2009/06/" title="June 2009">June 2009</a></li>
+	<li><a href="https://adityanag.com/journal/2009/05/" title="May 2009">May 2009</a></li>
+	<li><a href="https://adityanag.com/journal/2009/04/" title="April 2009">April 2009</a></li>
+	<li><a href="https://adityanag.com/journal/2009/03/" title="March 2009">March 2009</a></li>
+	<li><a href="https://adityanag.com/journal/2009/02/" title="February 2009">February 2009</a></li>
+	<li><a href="https://adityanag.com/journal/2009/01/" title="January 2009">January 2009</a></li>
+	<li><a href="https://adityanag.com/journal/2008/12/" title="December 2008">December 2008</a></li>
+	<li><a href="https://adityanag.com/journal/2008/11/" title="November 2008">November 2008</a></li>
+	<li><a href="https://adityanag.com/journal/2008/10/" title="October 2008">October 2008</a></li>
+	<li><a href="https://adityanag.com/journal/2008/08/" title="August 2008">August 2008</a></li>
+	<li><a href="https://adityanag.com/journal/2008/06/" title="June 2008">June 2008</a></li>
+	<li><a href="https://adityanag.com/journal/2008/05/" title="May 2008">May 2008</a></li>
+	<li><a href="https://adityanag.com/journal/2008/04/" title="April 2008">April 2008</a></li>
+	<li><a href="https://adityanag.com/journal/2008/03/" title="March 2008">March 2008</a></li>
+	<li><a href="https://adityanag.com/journal/2008/02/" title="February 2008">February 2008</a></li>
+	<li><a href="https://adityanag.com/journal/2008/01/" title="January 2008">January 2008</a></li>
+	<li><a href="https://adityanag.com/journal/2007/12/" title="December 2007">December 2007</a></li>
+	<li><a href="https://adityanag.com/journal/2007/11/" title="November 2007">November 2007</a></li>
+	<li><a href="https://adityanag.com/journal/2007/10/" title="October 2007">October 2007</a></li>
+	<li><a href="https://adityanag.com/journal/2007/09/" title="September 2007">September 2007</a></li>
+	<li><a href="https://adityanag.com/journal/2007/08/" title="August 2007">August 2007</a></li>
+	<li><a href="https://adityanag.com/journal/2007/07/" title="July 2007">July 2007</a></li>
+	<li><a href="https://adityanag.com/journal/2007/06/" title="June 2007">June 2007</a></li>
+	<li><a href="https://adityanag.com/journal/2007/05/" title="May 2007">May 2007</a></li>
+	<li><a href="https://adityanag.com/journal/2007/04/" title="April 2007">April 2007</a></li>
+	<li><a href="https://adityanag.com/journal/2007/03/" title="March 2007">March 2007</a></li>
+	<li><a href="https://adityanag.com/journal/2007/02/" title="February 2007">February 2007</a></li>
+	<li><a href="https://adityanag.com/journal/2007/01/" title="January 2007">January 2007</a></li>
+	<li><a href="https://adityanag.com/journal/2006/12/" title="December 2006">December 2006</a></li>
+	<li><a href="https://adityanag.com/journal/2006/11/" title="November 2006">November 2006</a></li>
+	<li><a href="https://adityanag.com/journal/2006/10/" title="October 2006">October 2006</a></li>
+	<li><a href="https://adityanag.com/journal/2006/09/" title="September 2006">September 2006</a></li>
+	<li><a href="https://adityanag.com/journal/2006/08/" title="August 2006">August 2006</a></li>
+	<li><a href="https://adityanag.com/journal/2006/05/" title="May 2006">May 2006</a></li>
+	<li><a href="https://adityanag.com/journal/2006/04/" title="April 2006">April 2006</a></li>
+	<li><a href="https://adityanag.com/journal/2006/03/" title="March 2006">March 2006</a></li>
+	<li><a href="https://adityanag.com/journal/2006/02/" title="February 2006">February 2006</a></li>
+		</ul>
+</div>
+					
+				</div>    
+			</div> <!-- end #content -->
+
+			<footer role="contentinfo">
+			
+				<div id="inner-footer" class="clearfix">
+		          <hr>
+		          <div id="widget-footer" class="clearfix row-fluid">
+		            		            		            		            		            		            		          </div>
+					
+					<nav class="clearfix">
+						<div class="footer-links clearfix"><ul id="menu-home-4" class="menu"><li id="menu-item-373" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-373"><a href="http://www.adityanag.com/">Home</a></li>
+<li id="menu-item-374" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-374"><a href="http://www.adityanag.com/?page_id=5">About</a></li>
+<li id="menu-item-375" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-375"><a href="http://www.adityanag.com/?page_id=18">Articles</a></li>
+<li id="menu-item-376" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-376"><a href="http://www.adityanag.com/journal">My Journal</a></li>
+</ul></div>					</nav>
+					
+					
+			
+					<p class="attribution">© Random Musings</p>
+				
+				</div> <!-- end #inner-footer -->
+				
+			</footer> <!-- end footer -->
+		
+		</div> <!-- end #container -->
+				
+		<!--[if lt IE 7 ]>
+  			<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+  			<script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+		<![endif]-->
+		
+			<div style="display:none">
+	<div class="grofile-hash-map-d41d8cd98f00b204e9800998ecf8427e">
+	</div>
+	<div class="grofile-hash-map-0dace94f575a4ebd31b79dad80dc2da3">
+	</div>
+	<div class="grofile-hash-map-2bf449c52ef0b64cf2336b1f94855e3c">
+	</div>
+	</div>
+<script type="text/javascript" src="Bootable%20DVD%20from%20Bootable%20CD_files/widgets.js"></script>
+<script type="text/javascript" src="Bootable%20DVD%20from%20Bootable%20CD_files/devicepx-jetpack.js"></script>
+<script type="text/javascript" src="Bootable%20DVD%20from%20Bootable%20CD_files/gprofiles.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Bootable%20DVD%20from%20Bootable%20CD_files/wpgroho.js"></script>
+
+	<script src="Bootable%20DVD%20from%20Bootable%20CD_files/e-201326.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	st_go({v:'ext',j:'1:2.2.5',blog:'5829535',post:'99',tz:'-4'});
+	var load_cmc = function(){linktracker_init(5829535,99,2);};
+	if ( typeof addLoadEvent != 'undefined' ) addLoadEvent(load_cmc);
+	else load_cmc();
+	</script><img id="wpstats" src="Bootable%20DVD%20from%20Bootable%20CD_files/g.gif" alt="">
+	
+
+<iframe style="display: none;" allowtransparency="true" id="rufous-sandbox" frameborder="0" scrolling="no"></iframe></body></html>
