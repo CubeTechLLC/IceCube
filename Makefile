@@ -20,7 +20,7 @@
 
 #dd if=boot.bin of=./VM/IceCube.img #This method is flawed if the copied has an original and it was overwritten, for it would not overwrite completely.
 
-all: make floppy hdd usb android
+all: make floppy hdd usb sdcard cd android
 
 make:
 	test -d mbr || mkdir mbr
@@ -40,7 +40,14 @@ usb: license
 	nasm usb.asm -f bin -o mbr/usb_mbr.img
 	cp mbr/usb_mbr.img usb.img
 	test -s usb.img && dd if=os.img of=usb.img bs=$(stat -c%s usb.img) seek=1 || dd if=os.img of=usb.img bs=1 seek=1
-	
+
+sdcard:	license
+	nasm sd.asm -f bin -o mbr/sd_mbr.img
+	cp mbr/sd_mbr.img sd.img
+	test -s sd.img && dd if=os.img of=sd.img bs=$(stat -c%s sd.img) seek=1 || dd if=os.img of=sd.img bs=1 seek=1
+
+cd:	license
+
 android: license
 	
 run: license
