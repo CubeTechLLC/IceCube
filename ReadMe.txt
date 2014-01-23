@@ -17,6 +17,9 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 ---------------------------------------------------------------------
+CubeTech is a LLC (Limited Liability Corporation) business. For those that do not know what that means, it means 
+the business can only be sued for business property and not the owner's property. More about business types can 
+be found at <http://taxes.about.com/od/taxplanning/a/incorporating_2.htm>.
 
 For those on Windows, open the ReadMe in Notepad++ instead of the regular Notepad.
 ----------------------------------------------------------------------------------
