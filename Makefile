@@ -8,22 +8,22 @@ make: license initialize_directories
 floppy:	license
 	nasm source/floppy.asm -f bin -o bin/mbr/floppy_mbr.img
 	cp bin/mbr/floppy_mbr.img bin/release/floppy.img
-	test -s bin/release/floppy.img && dd if=bin/tmp/os.img of=bin/release/floppy.img bs=$(stat -c%s bin/release/floppy.img) seek=1 || dd if=bin/tmp/os.img of=bin/release/floppy.img bs=1 seek=1
+	test -s bin/release/floppy.img && dd if=bin/tmp/os.img of=bin/release/floppy.img bs=$(stat -c%s bin/release/floppy.img) || dd if=bin/tmp/os.img of=bin/release/floppy.img bs=1
 
 hdd: license
 	nasm source/hdd.asm -f bin -o bin/mbr/hdd_mbr.img
 	cp bin/mbr/hdd_mbr.img bin/release/hdd.img
-	test -s bin/release/hdd.img && dd if=bin/tmp/os.img of=bin/release/hdd.img bs=$(stat -c%s bin/release/hdd.img) seek=1 || dd if=bin/tmp/os.img of=bin/release/hdd.img bs=1 seek=1
+	test -s bin/release/hdd.img && dd if=bin/tmp/os.img of=bin/release/hdd.img bs=$(stat -c%s bin/release/hdd.img) || dd if=bin/tmp/os.img of=bin/release/hdd.img bs=1
 	
 usb: license
 	nasm source/usb.asm -f bin -o bin/mbr/usb_mbr.img
 	cp bin/mbr/usb_mbr.img bin/release/usb.img
-	test -s bin/release/usb.img && dd if=bin/tmp/os.img of=bin/release/usb.img bs=$(stat -c%s bin/release/usb.img) seek=1 || dd if=bin/tmp/os.img of=bin/release/usb.img bs=1 seek=1
+	test -s bin/release/usb.img && dd if=bin/tmp/os.img of=bin/release/usb.img bs=$(stat -c%s bin/release/usb.img) || dd if=bin/tmp/os.img of=bin/release/usb.img bs=1
 
 sdcard:	license
 	nasm source/sd.asm -f bin -o bin/mbr/sd_mbr.img
 	cp bin/mbr/sd_mbr.img bin/release/sd.img
-	test -s bin/release/sd.img && dd if=bin/tmp/os.img of=bin/release/sd.img bs=$(stat -c%s bin/release/sd.img) seek=1 || dd if=bin/tmp/os.img of=bin/release/sd.img bs=1 seek=1
+	test -s bin/release/sd.img && dd if=bin/tmp/os.img of=bin/release/sd.img bs=$(stat -c%s bin/release/sd.img) || dd if=bin/tmp/os.img of=bin/release/sd.img bs=1
 
 cd:	license
 
