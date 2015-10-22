@@ -10,7 +10,6 @@ build:
 
 deploy:
   steps:
-    # Execute the s3sync deploy step, a step provided by wercker
     - github-create-release:
         token: $GITHUB_TOKEN
         tag: v1.0.0
