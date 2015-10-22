@@ -13,7 +13,10 @@ deploy:
     - github-create-release:
         token: $GITHUB_TOKEN
         tag: v1.0.0
-  # notify slack on successful or failed deploys 1
+    - github-upload-asset:
+        token: $GITHUB_TOKEN
+        file: build.tgz
+  # notify slack on successful or failed deploys
   after-steps:
     - kobim/slack-post:
         url: $SLACK_URL
