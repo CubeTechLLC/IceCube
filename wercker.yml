@@ -16,6 +16,7 @@ deploy:
     - github-upload-asset:
         token: $GITHUB_TOKEN
         file: build.tgz
+        release_id: 1
   # notify slack on successful or failed deploys
   after-steps:
     - kobim/slack-post:
