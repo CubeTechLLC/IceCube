@@ -1,20 +1,4 @@
-IceCube - It is an OS which allows privacy, usability (as in easy to use), and being open source.
-Copyright (C) 2013-2014  Brandon Andrew Gomez (bgbrandongomez)
-
-This file is part of IceCube.
-
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
+IceCube is copyrighted with All Rights Reserved with very loose rules described under License.txt.
 
 ---------------------------------------------------------------------
 CubeTech is a LLC (Limited Liability Corporation) business. For those that do not know what that means, it means 

@@ -1,1 +1,0 @@
-This is here to show I created these images for uses as logos and icons.

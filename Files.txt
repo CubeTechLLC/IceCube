@@ -1,23 +1,23 @@
 Binaries for OS
 ----------------
 MBR:
-Floppy MBR - floppy.asm - mbr\floppy_mbr.img
-Hard Drive MBR - hdd.asm - mbr\hdd_mbr.img
-USB MBR - udb.asm - mbr\usb_mbr.img
+Floppy MBR - source\floppy.asm - bin\mbr\floppy_mbr.img
+Hard Drive MBR - source\hdd.asm - bin\mbr\hdd_mbr.img
+USB MBR - source\udb.asm - bin\mbr\usb_mbr.img
 
 Whole OS:
-Floppy Only OS - floppy.asm - floppy.img
-Hard Drive Only OS - hdd.asm - hdd.img
-USB Only OS - udb.asm - usb.img
+Floppy Only OS - source\floppy.asm - bin\floppy.img
+Hard Drive Only OS - source\hdd.asm - bin\hdd.img
+USB Only OS - source\udb.asm - bin\usb.img
 
 OS Only:
-OS without MBR - os.asm - os.img
+OS without MBR - source\os.asm - bin\os.img
 
 Special:
 Android Bootloaders
--u-boot - android\{device_model}\u-boot.asm - android\{device_model}\u-boot.img
--x-loader - android\{device_model}\x-loader.asm - android\{device_model}\x-loader.img
--Boot Image - ? - android\{device_model}\boot.img
--Alternate Install Files (Ex. KDZ for LG) - android\{device_model}\alternate_install_files\
+-u-boot - source\android\{device_model}\u-boot.asm - bin\android\{device_model}\u-boot.img
+-x-loader - source\android\{device_model}\x-loader.asm - bin\android\{device_model}\x-loader.img
+-Boot Image - ? - bin\android\{device_model}\boot.img
+-Alternate Install Files (Ex. KDZ for LG) - bin\android\{device_model}\alternate_install_files\
 -Website and Script for different hardware download and upload - android\android_boot_files.bat
 --Make site parameters for Script

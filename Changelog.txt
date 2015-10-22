@@ -1,6 +1,17 @@
-IceCube  Copyright (C) 2013-2016  Brandon Andrew Gomez (bgbrandongomez or senorcontento)
+Sometime in November and December in 2013
+*Made Simple IceCube Bootloader
 
-License is All Rights Reserved Except if:
+January 2014
+*Uploaded IceCube to Github After Spending a Month Deciding on License
+*Decided to Release Open-Source as a Teaching OS (In a Way).
+*Called it Quits Because of School and Could Not Get to Boot USB.
+
+October 2015
+*Missed Working on My OS.
+*Decided to Set Up OS, but Knows too Busy to Do Any Real Work.
+*Decided When Major Change Occurs to Update License.
+*Rearranged compilation structure for purpose of CI (Continous Integration) style development.
+*License is All Rights Reserved Except if:
 -Person can use and compile code however he/she wants.
 -Person cannot under any circumstance sell my code without written permission.
 -Person can write OS based of of my code and do whatever he/she wants.

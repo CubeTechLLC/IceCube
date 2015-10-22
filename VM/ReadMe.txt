@@ -1,1 +1,0 @@
-The files ending in vbox are created by VirtualBox and the rest of the files have been created by me.
