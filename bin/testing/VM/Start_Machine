@@ -1,0 +1,6 @@
+CD=$(cd $(dirname "$0"); pwd)
+
+vboxmanage registervm "$CD/IceCube.vbox"
+virtualbox --startvm "Ice Cube"
+vboxmanage unregistervm "$CD/IceCube.vbox"
+vboxmanage closemedium floppy "$CD/IceCube.img"
