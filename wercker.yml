@@ -2,5 +2,8 @@ box: debian
 build:
   steps:
     - script:
-        name: Compile OS
+        name: Install
         code: apt-get update && apt-get install -y make nasm && rm -rf /var/lib/apt/lists/*
+    - script:
+        name: Compile OS
+        code: make
