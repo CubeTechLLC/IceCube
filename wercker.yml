@@ -19,7 +19,8 @@ deploy:
         release_id: 1
   # notify slack on successful or failed deploys
   after-steps:
-    - kobim/slack-post:
+    - slack-notifier:
         url: $SLACK_URL
-        channel: notifications
+        channel: wercker
         username: werckerbot
+        branch: nightly
