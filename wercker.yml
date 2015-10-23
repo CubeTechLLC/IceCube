@@ -20,7 +20,7 @@ deploy:
     - github-upload-asset:
         token: $GITHUB_TOKEN
         file: bin/release/floppy.img
-        release_id: 1
+        release_id: v1.0.0
 
   # notify slack on successful or failed deploys
   after-steps:
