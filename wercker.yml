@@ -3,7 +3,7 @@ build:
   steps:
     - script:
         name: Install Tools
-        code: apt-get update && apt-get install -y make nasm curl && rm -rf /var/lib/apt/lists/*
+        code: apt-get update && apt-get install -y make nasm && rm -rf /var/lib/apt/lists/*
     - script:
         name: Compile OS
         code: make
@@ -19,6 +19,9 @@ deploy:
         file: build.tgz
         release_id: 1
   Nightly:
+    - script:
+        name: Install Tools
+        code: apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
     - github-create-release:
         token: $GITHUB_TOKEN
         tag: v1.0.0
