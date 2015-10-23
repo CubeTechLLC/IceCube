@@ -3,7 +3,7 @@ build:
   steps:
     - script:
         name: Install Nasm
-        code: apt-get update && apt-get install -y make nasm && rm -rf /var/lib/apt/lists/*
+        code: apt-get update && apt-get install -y make nasm curl && rm -rf /var/lib/apt/lists/*
     - script:
         name: Compile OS
         code: make
