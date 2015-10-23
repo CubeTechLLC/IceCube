@@ -19,7 +19,7 @@ deploy:
         tag: v1.0.0
     - github-upload-asset:
         token: $GITHUB_TOKEN
-        file: bin/release/floppy.img
+        file: bin/release/*
         release_id: $WERCKER_GITHUB_CREATE_RELEASE_ID
 
   # notify slack on successful or failed deploys
