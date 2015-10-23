@@ -14,6 +14,15 @@ deploy:
     - script:
         name: Install Tools
         code: apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
+    - script:
+        name: Read Release Files
+        code: ls
+    - script:
+        name: Display all Files
+        code: find
+    - script:
+        name: Locate img Files
+        code: find | grep -i "img"
     - github-create-release:
         token: $GITHUB_TOKEN
         tag: v1.0.0
