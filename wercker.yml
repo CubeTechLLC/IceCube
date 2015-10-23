@@ -12,9 +12,6 @@ deploy:
   #steps: #steps is to deploy when a branch that does not exist is called. 
   Nightly:
     - script:
-        name: Debugging file param
-        code: pwd
-    - script:
         name: Install Tools
         code: apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
     - github-create-release:
@@ -22,7 +19,7 @@ deploy:
         tag: v1.0.0
     - github-upload-asset:
         token: $GITHUB_TOKEN
-        file: build.tgz
+        file: build.tgz #This should be the 4 files in the releases folder
         release_id: 1
 
   # notify slack on successful or failed deploys
