@@ -9,15 +9,7 @@ build:
         code: make
 
 deploy:
-  #This is to deploy if the deploy target specified does not exist.
-  steps:
-    - github-create-release:
-        token: $GITHUB_TOKEN
-        tag: v1.0.0
-    - github-upload-asset:
-        token: $GITHUB_TOKEN
-        file: build.tgz
-        release_id: 1
+  #steps: #steps is to deploy when a branch that does not exist is called.
   Nightly:
     - script:
         name: Install Tools
@@ -27,16 +19,9 @@ deploy:
         tag: v1.0.0
     - github-upload-asset:
         token: $GITHUB_TOKEN
-        file: build.tgz
+        file: bin/release/floppy.img
         release_id: 1
-  Master:
-    - github-create-release:
-        token: $GITHUB_TOKEN
-        tag: v1.0.0
-    - github-upload-asset:
-        token: $GITHUB_TOKEN
-        file: build.tgz
-        release_id: 1
+
   # notify slack on successful or failed deploys
   after-steps:
     - slack-notifier:
