@@ -10,16 +10,22 @@ build:
 
 deploy:
   #steps: #steps is to deploy when a branch that does not exist is called. 
-  Nightly:
+  nightly:
     - script:
         name: Install Tools
         code: apt-get update && apt-get install -y curl file && rm -rf /var/lib/apt/lists/*
+    - script:
+        name: Create Tar
+        code: cd bin/release && tar cfv release.tar . && cd ../..
+    - script:
+        name: Create Zip
+        code: echo Zip...
     - github-create-release:
         token: $GITHUB_TOKEN
         tag: v1.0.0
     - github-upload-asset:
         token: $GITHUB_TOKEN
-        file: bin/release/*
+        file: bin/release/release.tar
         release_id: $WERCKER_GITHUB_CREATE_RELEASE_ID
 
   # notify slack on successful or failed deploys
