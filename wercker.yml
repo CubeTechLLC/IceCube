@@ -16,7 +16,7 @@ deploy:
         code: apt-get update && apt-get install -y curl file zip && rm -rf /var/lib/apt/lists/*
     - script:
         name: Versioning
-        code: export APP_VERSION=$(v$(./version)-nightly$(date +%s))
+        code: export APP_VERSION=$(v-nightly$(date +%s))
     - script:
         name: Create Tar
         code: cd out/bin/release && tar cfv ../export/binaries-$APP_VERSION.tar * && cd ../..
