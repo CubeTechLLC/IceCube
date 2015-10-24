@@ -13,7 +13,7 @@ deploy:
   nightly:
     - script:
         name: Install Tools
-        code: apt-get update && apt-get install -y curl file && rm -rf /var/lib/apt/lists/*
+        code: apt-get update && apt-get install -y curl file zip && rm -rf /var/lib/apt/lists/*
     - script:
         name: Create Tar
         code: cd out/bin/release && tar cfv ../export/binaries.tar * && cd ../..
