@@ -22,8 +22,7 @@ deploy:
         code: zip -j out/bin/export/binaries.zip out/bin/release/*
     - script:
             name: Versioning
-            code: export APP_VERSION=$(./version)
-            code: export NIGHTLY_VERSION=$(v$(echo $APP_VERSION)-nightly$(date +%s))
+            code: export NIGHTLY_VERSION=$(v$(./version)-nightly$(date +%s))
     - github-create-release:
         token: $GITHUB_TOKEN
         tag: $NIGHTLY_VERSION
