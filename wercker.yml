@@ -29,12 +29,12 @@ deploy:
     - github-upload-asset:
         token: $GITHUB_TOKEN
         file: out/bin/export/binaries.tar
-	filename: binaries-$NIGHTLY_VERSION.tar
+        filename: binaries-$NIGHTLY_VERSION.tar
         release_id: $WERCKER_GITHUB_CREATE_RELEASE_ID
     - github-upload-asset:
         token: $GITHUB_TOKEN
         file: out/bin/export/binaries.zip
-	filename: binaries-$NIGHTLY_VERSION.zip
+        filename: binaries-$NIGHTLY_VERSION.zip
         release_id: $WERCKER_GITHUB_CREATE_RELEASE_ID
 
   # notify slack on successful or failed deploys
