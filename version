@@ -8,4 +8,8 @@
 #Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format.
 #Quoted from semver.org
 
+#This is a modified semantic versioning number. The modified part comes from the -nightly###### in the nightly builds,
+#but that is only to prevent manually changing the version every time for nightlies and otherwise very unstable code.
+#This version number was designed to be used in wercker.yml, but can be read by execution in bash offline or other ways.
+
 echo "0.0.1"

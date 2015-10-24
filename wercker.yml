@@ -25,7 +25,7 @@ deploy:
             code: export APP_VERSION=$(./version)
     - github-create-release:
         token: $GITHUB_TOKEN
-        tag: v$(echo $APP_VERSION)-nightly$(echo $GITHUB_RELEASE_VERSION)
+        tag: v$(echo $APP_VERSION)-nightly$(echo $WERCKER_GITHUB_CREATE_RELEASE_ID)
     - github-upload-asset:
         token: $GITHUB_TOKEN
         file: out/bin/export/binaries.tar
