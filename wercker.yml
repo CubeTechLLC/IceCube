@@ -19,7 +19,7 @@ deploy:
         code: export TIME=$(date +%s)
     - script:
         name: Create Tar
-        code: cd out/bin/release && tar cfv ../export/binaries-v$(./version)-nightly$(echo $TIME).tar * && cd ../..
+        code: cd out/bin/release && tar cfv ../export/binaries-v$(../../version)-nightly$(echo $TIME).tar * && cd ../..
     - script:
         name: Create Zip
         code: zip -j out/bin/export/binaries-v$(./version)-nightly$(echo $TIME).zip out/bin/release/*
