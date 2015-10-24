@@ -20,9 +20,12 @@ deploy:
     - script:
         name: Create Zip
         code: zip -j out/bin/export/binaries.zip out/bin/release/*
+    - script:
+            name: Versioning
+            code: export APP_VERSION=$(./version)
     - github-create-release:
         token: $GITHUB_TOKEN
-        tag: v1.0.0
+        tag: v$(echo $APP_VERSION)-nightly$(echo $GITHUB_RELEASE_VERSION)
     - github-upload-asset:
         token: $GITHUB_TOKEN
         file: out/bin/export/binaries.tar
