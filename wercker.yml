@@ -16,7 +16,7 @@ deploy:
         code: apt-get update && apt-get install -y curl file && rm -rf /var/lib/apt/lists/*
     - script:
         name: Create Tar
-        code: cd bin/release && tar cfv release.tar . && cd ../..
+        code: cd bin/release && tar cfv release.tar * && cd ../..
     - script:
         name: Create Zip
         code: echo Zip...
