@@ -15,26 +15,24 @@ deploy:
         name: Install Tools
         code: apt-get update && apt-get install -y curl file zip && rm -rf /var/lib/apt/lists/*
     - script:
+        name: Versioning
+        code: export NIGHTLY_VERSION=$(v$(./version)-nightly$(date +%s))
+    - script:
         name: Create Tar
-        code: cd out/bin/release && tar cfv ../export/binaries.tar * && cd ../..
+        code: cd out/bin/release && tar cfv ../export/binaries-$NIGHTLY_VERSION.tar * && cd ../..
     - script:
         name: Create Zip
-        code: zip -j out/bin/export/binaries.zip out/bin/release/*
-    - script:
-            name: Versioning
-            code: export NIGHTLY_VERSION=$(v$(./version)-nightly$(date +%s))
+        code: zip -j out/bin/export/binaries-$NIGHTLY_VERSION.zip out/bin/release/*
     - github-create-release:
         token: $GITHUB_TOKEN
         tag: $NIGHTLY_VERSION
     - github-upload-asset:
         token: $GITHUB_TOKEN
-        file: out/bin/export/binaries.tar
-        filename: binaries-$NIGHTLY_VERSION.tar
+        file: out/bin/export/binaries-$NIGHTLY_VERSION.tar
         release_id: $WERCKER_GITHUB_CREATE_RELEASE_ID
     - github-upload-asset:
         token: $GITHUB_TOKEN
-        file: out/bin/export/binaries.zip
-        filename: binaries-$NIGHTLY_VERSION.zip
+        file: out/bin/export/binaries-$NIGHTLY_VERSION.zip
         release_id: $WERCKER_GITHUB_CREATE_RELEASE_ID
 
   # notify slack on successful or failed deploys
