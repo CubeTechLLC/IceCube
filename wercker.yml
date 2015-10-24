@@ -2,38 +2,39 @@ box: debian
 build:
   steps:
     - script:
-        name: Install Nasm
+        name: Install Tools
         code: apt-get update && apt-get install -y make nasm && rm -rf /var/lib/apt/lists/*
     - script:
         name: Compile OS
         code: make
 
 deploy:
-  #This is to deploy if the deploy target specified does not exist.
-  steps:
+  #steps: #steps is to deploy when a branch that does not exist is called. 
+  nightly:
+    - script:
+        name: Install Tools
+        code: apt-get update && apt-get install -y curl file zip && rm -rf /var/lib/apt/lists/*
+    - script:
+        name: Create Tar
+        code: cd out/bin/release && tar cfv ../export/binaries.tar * && cd ../..
+    - script:
+        name: Create Zip
+        code: zip -j out/bin/export/binaries.zip out/bin/release/*
+    - script:
+            name: Versioning
+            code: export APP_VERSION=$(./version)
     - github-create-release:
         token: $GITHUB_TOKEN
-        tag: v1.0.0
+        tag: v$(echo $APP_VERSION)-nightly$(date +%s)
     - github-upload-asset:
         token: $GITHUB_TOKEN
-        file: build.tgz
-        release_id: 1
-  Nightly:
-    - github-create-release:
-        token: $GITHUB_TOKEN
-        tag: v1.0.0
+        file: out/bin/export/binaries.tar
+        release_id: $WERCKER_GITHUB_CREATE_RELEASE_ID
     - github-upload-asset:
         token: $GITHUB_TOKEN
-        file: build.tgz
-        release_id: 1
-  Master:
-    - github-create-release:
-        token: $GITHUB_TOKEN
-        tag: v1.0.0
-    - github-upload-asset:
-        token: $GITHUB_TOKEN
-        file: build.tgz
-        release_id: 1
+        file: out/bin/export/binaries.zip
+        release_id: $WERCKER_GITHUB_CREATE_RELEASE_ID
+
   # notify slack on successful or failed deploys
   after-steps:
     - slack-notifier:

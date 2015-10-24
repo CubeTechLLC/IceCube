@@ -11,6 +11,7 @@ October 2015
 *Decided to Set Up OS, but Knows too Busy to Do Any Real Work.
 *Decided When Major Change Occurs to Update License.
 *Rearranged compilation structure for purpose of CI (Continous Integration) style development.
+*Added versioning based off of Semantic Version. Slightly different for nightly builds, otherwise the same.
 *License is All Rights Reserved Except if:
 -Person can use and compile code however he/she wants.
 -Person cannot under any circumstance sell my code without written permission.

@@ -3,56 +3,58 @@
 all: make floppy hdd usb sdcard cd android
 
 make: license initialize_directories
-	nasm source/os.asm -f bin -o bin/tmp/os.img
+	nasm source/os.asm -f bin -o out/bin/build/os.img
 	
 floppy:	license
-	nasm source/floppy.asm -f bin -o bin/mbr/floppy_mbr.img
-	cp bin/mbr/floppy_mbr.img bin/release/floppy.img
-	test -s bin/release/floppy.img && dd if=bin/tmp/os.img of=bin/release/floppy.img bs=$(stat -c%s bin/release/floppy.img) || dd if=bin/tmp/os.img of=bin/release/floppy.img bs=1
+	nasm source/floppy.asm -f bin -o out/bin/build/mbr/floppy_mbr.img
+	cp out/bin/build/mbr/floppy_mbr.img out/bin/release/floppy.img
+	test -s out/bin/release/floppy.img && dd if=out/bin/build/os.img of=out/bin/release/floppy.img bs=$(stat -c%s out/bin/release/floppy.img) || dd if=out/bin/build/os.img of=out/bin/release/floppy.img bs=1
 
 hdd: license
-	nasm source/hdd.asm -f bin -o bin/mbr/hdd_mbr.img
-	cp bin/mbr/hdd_mbr.img bin/release/hdd.img
-	test -s bin/release/hdd.img && dd if=bin/tmp/os.img of=bin/release/hdd.img bs=$(stat -c%s bin/release/hdd.img) || dd if=bin/tmp/os.img of=bin/release/hdd.img bs=1
+	nasm source/hdd.asm -f bin -o out/bin/build/mbr/hdd_mbr.img
+	cp out/bin/build/mbr/hdd_mbr.img out/bin/release/hdd.img
+	test -s out/bin/release/hdd.img && dd if=out/bin/build/os.img of=out/bin/release/hdd.img bs=$(stat -c%s out/bin/release/hdd.img) || dd if=out/bin/build/os.img of=out/bin/release/hdd.img bs=1
 	
 usb: license
-	nasm source/usb.asm -f bin -o bin/mbr/usb_mbr.img
-	cp bin/mbr/usb_mbr.img bin/release/usb.img
-	test -s bin/release/usb.img && dd if=bin/tmp/os.img of=bin/release/usb.img bs=$(stat -c%s bin/release/usb.img) || dd if=bin/tmp/os.img of=bin/release/usb.img bs=1
+	nasm source/usb.asm -f bin -o out/bin/build/mbr/usb_mbr.img
+	cp out/bin/build/mbr/usb_mbr.img out/bin/release/usb.img
+	test -s out/bin/release/usb.img && dd if=out/bin/build/os.img of=out/bin/release/usb.img bs=$(stat -c%s out/bin/release/usb.img) || dd if=out/bin/build/os.img of=out/bin/release/usb.img bs=1
 
 sdcard:	license
-	nasm source/sd.asm -f bin -o bin/mbr/sd_mbr.img
-	cp bin/mbr/sd_mbr.img bin/release/sd.img
-	test -s bin/release/sd.img && dd if=bin/tmp/os.img of=bin/release/sd.img bs=$(stat -c%s bin/release/sd.img) || dd if=bin/tmp/os.img of=bin/release/sd.img bs=1
+	nasm source/sd.asm -f bin -o out/bin/build/mbr/sd_mbr.img
+	cp out/bin/build/mbr/sd_mbr.img out/bin/release/sd.img
+	test -s out/bin/release/sd.img && dd if=out/bin/build/os.img of=out/bin/release/sd.img bs=$(stat -c%s out/bin/release/sd.img) || dd if=out/bin/build/os.img of=out/bin/release/sd.img bs=1
 
 cd:	license
 
 android: license
 
 initialize_directories:
-	test -d bin || mkdir bin
-	test -d bin/mbr || mkdir bin/mbr
-	test -d bin/release || mkdir bin/release
-	test -d bin/testing || mkdir bin/testing
-	test -d bin/testing/VM || mkdir bin/testing/VM
-	test -d bin/tmp || mkdir bin/tmp
+	test -d out || mkdir out	#Output directory for binaries
+	test -d out/bin || mkdir out/bin	#
+	test -d out/bin/build || mkdir out/bin/build	#Non final binaries
+	test -d out/bin/build/mbr || mkdir out/bin/build/mbr	#OS MBR binaries
+	test -d out/bin/export || mkdir out/bin/export	#Archives for github. Designated for ic builds to export packages for releases.
+	test -d out/bin/release || mkdir out/bin/release	#Final binaries
+	test -d test || mkdir test
+	test -d test/VM || mkdir test/VM
 
 run: license
   ifeq ($(OS), Windows_NT)
-	.\bin\testing\VM\Start_Machine.bat
+	.\test\VM\Start_Machine.bat
   else
-	./bin/testing/VM/Start_Machine
+	./test/VM/Start_Machine
   endif
 
 clean: license
 	find | grep .img | xargs rm -f *.img
-	rm -R -f ./bin/testing/VM/Logs
+	rm -R -f ./test/VM/Logs
 
 install: license
-	cp bin/release/floppy.img ./bin/testing/VM/IceCube.img
+	cp out/bin/release/floppy.img ./test/VM/IceCube.img
 
 uninstall: license
-	rm -f ./bin/testing/VM/IceCube.img
+	rm -f ./test/VM/IceCube.img
 
 everything: all install run
 
