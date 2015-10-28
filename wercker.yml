@@ -9,7 +9,31 @@ build:
         code: make
 
 deploy:
-  #steps: #steps is to deploy when a branch that does not exist is called. 
+  #steps: #steps is to deploy when a branch that does not exist is called.
+  stable:
+    - script:
+        name: Install Tools
+        code: apt-get update && apt-get install -y curl file zip && rm -rf /var/lib/apt/lists/*
+    - script:
+        name: Create Tar
+        code: cd out/bin/release && tar cfv ../export/binaries-v$(../../../version).tar * && cd ../..
+    - script:
+        name: Create Zip
+        code: zip -j out/bin/export/binaries-v$(./version).zip out/bin/release/*
+    - script:
+        name: Versioning
+        code: export APP_VERSION=$(./version)
+    - github-create-release:
+        token: $GITHUB_TOKEN
+        tag: v$(echo $APP_VERSION)
+    - github-upload-asset:
+        token: $GITHUB_TOKEN
+        file: out/bin/export/binaries-v$(./version).tar
+        release_id: $WERCKER_GITHUB_CREATE_RELEASE_ID
+    - github-upload-asset:
+        token: $GITHUB_TOKEN
+        file: out/bin/export/binaries-v$(./version).zip
+        release_id: $WERCKER_GITHUB_CREATE_RELEASE_ID
   nightly:
     - script:
         name: Install Tools
@@ -24,8 +48,8 @@ deploy:
         name: Create Zip
         code: zip -j out/bin/export/binaries-v$(./version)-nightly$(echo $TIME).zip out/bin/release/*
     - script:
-            name: Versioning
-            code: export APP_VERSION=$(./version)
+        name: Versioning
+        code: export APP_VERSION=$(./version)
     - github-create-release:
         token: $GITHUB_TOKEN
         tag: v$(echo $APP_VERSION)-nightly$(echo $TIME)
